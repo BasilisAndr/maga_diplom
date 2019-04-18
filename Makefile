@@ -22,7 +22,7 @@ TARGETS_COMMON = $(LANG1)_guesser.automorf.hfst $(LANG1)_guesser.automorf.bin
 #	$(LANG1).autopgen.bin
 
 
-$(LANG1).lexc.hfst: $(LANG1).lexc
+all: $(LANG1).lexc
 	cat $(LANG1).lexc > all.$(LANG1).lexc
 	echo "LEXICON Nouns" >> all.$(LANG1).lexc
 	cat lexc/roots_k.lexc >> all.$(LANG1).lexc
@@ -34,6 +34,7 @@ $(LANG1).lexc.hfst: $(LANG1).lexc
 	cat lexc/roots_a_ija.lexc >> all.$(LANG1).lexc
 	# --Werror
 	hfst-lexc all.$(LANG1).lexc -o $(LANG1).lexc.hfst
+	hfst-fst2fst --format=optimized-lookup-weighted -i $(LANG1).lexc.hfst -o $(LANG1).hfstol
 
 
 
@@ -61,4 +62,4 @@ $(LANG1)_guesser.automorf.hfst: $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst
 # 	lt-comp lr .deps/$(LANG1)_guesser.autogen.att $@
 
 clear:
-	rm guesser.hfst $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst $(LANG1)_guesser.automorf.hfst $(LANG1).lexc.hfst
+	rm guesser.hfst $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst $(LANG1)_guesser.automorf.hfst $(LANG1).lexc.hfst $(LANG1).hfstol
