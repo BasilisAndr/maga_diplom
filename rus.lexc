@@ -42,7 +42,7 @@ LEXICON NOUN_PREFIXES4
 из:из%- Nouns ;
 : Nouns ;
 
-
+!!! NOMINAL STUFF
 
 LEXICON AFTER_NOUN
 о:%-о%- NOUNS_AGAIN ;
@@ -106,10 +106,20 @@ LEXICON SUF5
 юн:%-ун SUF6 ;
 ок:%-ок # ;
 арь:%-арь # ;
+ор:%-ор SUF6 ;
+ёр:%-ор SUF6 ;
+ер:%-ор SUF6 ;
+ант:%-ант SUF6 ;
+ент:%-ент SUF6 ;
+ат:%-ат # ;
+ят:%-ат # ;
+лк:%-лк FLEXION_NOUN ;
+ловк:%-ловк FLEXION_NOUN ;
 : SUF6 ;
 
 LEXICON SUF6
 к:%-к FLEXION_NOUN ;
+ш:%-ш FLEXION_NOUN ;
 ь:%-j FLEXION_NOUN ;
 : # ;
 
@@ -117,3 +127,6 @@ LEXICON FLEXION_NOUN
 а:%-а # ;
 я:%-а # ;
 е:%-е # ;
+
+
+!!! VERBAL STUFF
