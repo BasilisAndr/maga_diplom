@@ -1,27 +1,43 @@
 LEXICON Root
 Nouns ;
-Noun_Prefixes1 ;
+Noun_Prefixes ;
+
+LEXICON Noun_Prefixes
+воз:воз%- NOUN_PREFIXES1 ;
+за:за%- NOUN_PREFIXES1 ;
+до:до%- NOUN_PREFIXES1 ;
+под:под%- NOUN_PREFIXES1 ;
+из:из%- NOUN_PREFIXES1 ;
+пре:пре%- NOUN_PREFIXES1 ;
+сверх:сверх%- NOUN_PREFIXES1 ;
+при:при%- NOUN_PREFIXES1 ;
+раз:раз%- NOUN_PREFIXES1 ;
+рас:рас%- NOUN_PREFIXES1 ;
+роз:роз%- NOUN_PREFIXES1 ;
+рос:рос%- NOUN_PREFIXES1 ;
+по:по%- NOUN_PREFIXES1 ;
 
 
-LEXICON Noun_Prefixes1
-а:а%- NOUN_PREFIXES2 ;
+LEXICON NOUN_PREFIXES1
 не:не%- NOUN_PREFIXES2 ;
 : NOUN_PREFIXES2 ;
 
-
 LEXICON NOUN_PREFIXES2
-без:без%- NOUN_PREFIXES3 ;
-бес:без%- NOUN_PREFIXES3 ;
-воз:воз%- NOUN_PREFIXES3 ;
-вос:воз%- NOUN_PREFIXES3 ;
-вс:воз%- NOUN_PREFIXES3 ;
-вз:воз%- NOUN_PREFIXES3 ;
-пере:пере%- NOUN_PREFIXES3 ;
-до:до%- NOUN_PREFIXES3 ;
-: NOUN_PREFIXES3 ;
-
+а:а%- NOUN_PREFIXES3 ;
 
 LEXICON NOUN_PREFIXES3
+без:без%- NOUN_PREFIXES4 ;
+бес:без%- NOUN_PREFIXES4 ;
+воз:воз%- NOUN_PREFIXES4 ;
+вос:воз%- NOUN_PREFIXES4 ;
+вс:воз%- NOUN_PREFIXES4 ;
+вз:воз%- NOUN_PREFIXES4 ;
+пере:пере%- NOUN_PREFIXES4 ;
+до:до%- NOUN_PREFIXES4 ;
+: NOUN_PREFIXES4 ;
+
+
+LEXICON NOUN_PREFIXES4
 за:за%- Nouns ;
 из:из%- Nouns ;
 : Nouns ;
@@ -33,41 +49,68 @@ LEXICON AFTER_NOUN
 : SUF1 ;
 
 LEXICON SUF1
-ов:%-ов SUF2 ;
-ив:%-ив SUF2 ;
+! ова:%-ова SUF2 ;
+! ива:%-ива SUF2 ;
 ен:%-ен SUF2 ;
-в:%-ив SUF2 ;
+! ва:%-ива SUF2 ;
 и:%-и SUF2 ;
 им:%-им SUF2 ;
 : SUF2 ;
 : FLEXION_NOUN ;
 
 LEXICON SUF2
-а:%-а SUF3 ;
-
-! ова:%-ова SUF3 ;
-! ива:%-ива SUF3 ;
-! ва:%-ива SUF3 ;
+! а:%-а SUF3 ;
+ова:%-ова SUF3 ;
+ива:%-ива SUF3 ;
+ва:%-ива SUF3 ;
+ева:%-ева SUF3 ;
 : SUF3 ;
 
 LEXICON SUF3
 тель:%-тель SUF4 ;
+итель:%-итель SUF4 ;
 : SUF4 ;
 
 LEXICON SUF4
-н:%-н SUF5 ;
+! н:%-н SUF5 ;
 изац:%-изац SUF5 ;
+атор:%-атор SUF5 ;
+ятор:%-атор SUF5 ;
+итор:%-итор SUF5 ;
 : SUF5 ;
 
 LEXICON SUF5
-к:%-к FLEXION_NOUN ;
 ость:%-ость # ;
 изм:%-изм # ;
 и:%-иj FLEXION_NOUN ;
 ь:%-j FLEXION_NOUN ;
-ик:%-ик # ;
-иц:%-иц FLEXION_NOUN ;
+ник:%-ник # ;
+еник:%-еник # ;
+ниц:%-ниц FLEXION_NOUN ;
+щик:%-щик # ;
+чик:%-чик # ;
+щиц:%-щиц FLEXION_NOUN ;
+чиц:%-чиц FLEXION_NOUN ;
+льщик:%-льщик # ;
+льщиц:%-льщиц FLEXION_NOUN ;
+льник:%-льник # ;
+льниц:%-льниц FLEXION_NOUN ;
 ль:%-ль # ;
+ец:%-ец # ;
+омец:%-омец # ;
+лец:%-лец # ;
+ак:%-ак # ;
+як:%-ак # ;
+ач:%-ач SUF6 ;
+ун:%-ун SUF6 ;
+юн:%-ун SUF6 ;
+ок:%-ок # ;
+арь:%-арь # ;
+: SUF6 ;
+
+LEXICON SUF6
+к:%-к FLEXION_NOUN ;
+ь:%-j FLEXION_NOUN ;
 : # ;
 
 LEXICON FLEXION_NOUN
