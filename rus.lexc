@@ -44,46 +44,91 @@ LEXICON NOUN_PREFIXES4
 
 !!! NOMINAL STUFF
 
-LEXICON AFTER_NOUN
-о:%-о%- NOUNS_AGAIN ;
-: SUF1 ;
+!! concrete
+LEXICON AFTER_ROOT
+о:%-о%- ROOTS_AGAIN ;
+: NOUN_SUF1 ;
 
-LEXICON SUF1
-! ова:%-ова SUF2 ;
-! ива:%-ива SUF2 ;
-ен:%-ен SUF2 ;
-! ва:%-ива SUF2 ;
-и:%-и SUF2 ;
-им:%-им SUF2 ;
-: SUF2 ;
-: FLEXION_NOUN ;
 
-LEXICON SUF2
-! а:%-а SUF3 ;
-ова:%-ова SUF3 ;
-ива:%-ива SUF3 ;
-ва:%-ива SUF3 ;
-ева:%-ева SUF3 ;
-: SUF3 ;
+LEXICON NOUN_SUF1
+тель:%-тель NOUN_SUF2 ;
+итель:%-итель NOUN_SUF2 ;
+: NOUN_SUF2 ;
 
-LEXICON SUF3
-тель:%-тель SUF4 ;
-итель:%-итель SUF4 ;
-: SUF4 ;
+LEXICON NOUN_SUF2
+! н:%-н NOUN_SUF5 ;
+изац:%-изац NOUN_SUF3 ;
+атор:%-атор NOUN_SUF3 ;
+ятор:%-атор NOUN_SUF3 ;
+итор:%-итор NOUN_SUF3 ;
+: NOUN_SUF3 ;
 
-LEXICON SUF4
-! н:%-н SUF5 ;
-изац:%-изац SUF5 ;
-атор:%-атор SUF5 ;
-ятор:%-атор SUF5 ;
-итор:%-итор SUF5 ;
-: SUF5 ;
+LEXICON NOUN_SUF3
+! non-productive
+ух:%-ух # ;                         ! пастух
+атай:%-атай # ;                     ! глашатай
+атый:%-ат%-ый # ;                   ! вожатый
+ер:%-ер NOUN_SUF6 ;                      ! интервьюер(ка)
+с:%-с FLEXION_NOUN ;                ! плакса
+ц:%-ц FLEXION_NOUN ;                ! убийца + пяльцы
+ай:%-ай # ;                         ! урожай, случай
+яй:%-ай # ;
+в:%-в FLEXION_NOUN ;                ! кряква
+тельниц:%-тельниц FLEXION_NOUN ;    ! плевательница
+ёнк:%-ёнк FLEXION_NOUN ;            ! тоже сосуды
+ль:%-ль NOUN_SUF4 ;                      ! падаль(щик)
+оль:%-оль # ;                       ! опухоль
+ад:ад NOUN_SUF4 ;                        ! маринад(ница)
+! ец
+ец:%-ец # ;
+нец:%-нец # ;
+енец:%-енец # ;
+омец:%-омец # ;
+! лец
+лец:%-лец # ;
+! ак
+ак:%-ак # ;
+як:%-ак # ;
+! ач
+ач:%-ач NOUN_SUF4 ;
+! ун
+ун:%-ун NOUN_SUF4 ;
+юн:%-ун NOUN_SUF4 ;
+! ок
+ок:%-ок # ;
+! other
+арь:%-арь # ;
+аль:%-аль # ;
+! ор
+ор:%-ор NOUN_SUF4 ;
+ёр:%-ор NOUN_SUF4 ;
+ер:%-ор NOUN_SUF4 ;
+ант:%-ант NOUN_SUF4 ;
+ент:%-ент NOUN_SUF4 ;
+ат:%-ат # ;
+ят:%-ат # ;
+! ух
+уш:%-ух NOUN_SUF4 ;                      ! развалюшка
+иш:%-их NOUN_SUF4 ;
+юш:%-ух NOUN_SUF4 ;
+! лк
+лоч:%-лк NOUN_SUF4 ;                     ! горелочка, вешалочка
+ень:%-ень # ;                       ! баловень
+нь:%-нь # ;                         ! ткань, рвань, дань, ругань
+ыш:%-иш # ;                         ! заморыш, зародыш
+ин:%-ин NOUN_SUF4 ;                      ! трещинка, промоина
+! имость
+имость:%-имость # ;                 ! рождаемость, успеваемость
+емость:%-емость # ;                 ! FIXME: отличать от -ом/им-ость
+! ённость
+ённость:%-ённость # ;               ! договорённость
+нность:%-нность # ;                 ! сработанность
+тость:%-тость # ;                   ! впетость
+: NOUN_SUF4 ;
 
-LEXICON SUF5
-ость:%-ость # ;
-изм:%-изм # ;
-и:%-иj FLEXION_NOUN ;
-ь:%-j FLEXION_NOUN ;
+
+LEXICON NOUN_SUF4
+! ник
 ник:%-ник # ;
 еник:%-еник # ;
 ниц:%-ниц FLEXION_NOUN ;
@@ -95,38 +140,77 @@ LEXICON SUF5
 льщиц:%-льщиц FLEXION_NOUN ;
 льник:%-льник # ;
 льниц:%-льниц FLEXION_NOUN ;
-ль:%-ль # ;
-ец:%-ец # ;
-омец:%-омец # ;
-лец:%-лец # ;
-ак:%-ак # ;
-як:%-ак # ;
-ач:%-ач SUF6 ;
-ун:%-ун SUF6 ;
-юн:%-ун SUF6 ;
-ок:%-ок # ;
-арь:%-арь # ;
-ор:%-ор SUF6 ;
-ёр:%-ор SUF6 ;
-ер:%-ор SUF6 ;
-ант:%-ант SUF6 ;
-ент:%-ент SUF6 ;
-ат:%-ат # ;
-ят:%-ат # ;
-лк:%-лк FLEXION_NOUN ;
-ловк:%-ловк FLEXION_NOUN ;
-: SUF6 ;
+лиц:%-лиц FLEXION_NOUN ;                    ! виселица
+! ага
+яг:%-аг FLEXION_NOUN ;
+аг:%-аг FLEXION_NOUN ;                      ! деляга бродяга
+яж:%-аг FLEXION_NOUN ;
+! аг
+ак:%-ак FLEXION_NOUN ;                      ! зевака
+як:%-ак FLEXION_NOUN ;
+! ух
+ух:%-ух FLEXION_NOUN ;                      ! развалюха
+их:%-их FLEXION_NOUN ;
+юх:%-ух FLEXION_NOUN ;
 
-LEXICON SUF6
-к:%-к FLEXION_NOUN ;
+лк:%-лк FLEXION_NOUN ;                      ! горелка
+ловк:%-ловк FLEXION_NOUN ;                  ! забегаловка
+! ниj
+ни:%-­ниj FLEXION_NOUN ;                     ! кушанье, видение, привидение, звание, название, прозвание, препятствие
+нь:%-­ниj FLEXION_NOUN ;
+ени:%-ениj FLEXION_NOUN ;
+ани:%-аниj FLEXION_NOUN ;
+и:%-иj FLEXION_NOUN ;
+стви:%-ствиj FLEXION_NOUN ;
+! ш
 ш:%-ш FLEXION_NOUN ;
+уш:%-уш FLEXION_NOUN ;
+! уль
+ул:%-уль FLEXION_NOUN ;
+юл:%-уль FLEXION_NOUN ;
+! еj
+е:%-еj FLEXION_NOUN ;
+! j
 ь:%-j FLEXION_NOUN ;
+! х
+х:%-х FLEXION_NOUN ;
+ох:%-ох FLEXION_NOUN ;
+! к
+к:%-к FLEXION_NOUN ;
+ушк:%-ушк FLEXION_NOUN ;
+­ульк:%-ульк FLEXION_NOUN ;
+анк:%-анк FLEXION_NOUN ;
+ачк:%-ачк FLEXION_NOUN ;
+авк:%-авк FLEXION_NOUN ;
+ейк:%-ейк FLEXION_NOUN ;
+шк:%-шк FLEXION_NOUN ;            ! крышка, замарашка, открывашка (разг.), подачка, тянучка
+чк:%-чк FLEXION_NOUN ;
+! н
+н:%-н FLEXION_NOUN ;              ! квашня
+льн:%-льн FLEXION_NOUN ;          ! спальня
+! ищ
+­ищ:%-ищ FLEXION_NOUN ;
+лищ:%-лищ FLEXION_NOUN ;
+бищ:%-бищ FLEXION_NOUN ;
+! л
+л:%-л FLEXION_NOUN ;              ! трепала, мыло, точило
+! ив
+ив:%-ив FLEXION_NOUN ;            ! чтиво, топливо, курево
+ев:%-ив FLEXION_NOUN ;
+! унк
+унк:%-унк FLEXION_NOUN ;          ! бегунки, ползунки, ходунки
 : # ;
+
 
 LEXICON FLEXION_NOUN
 а:%-а # ;
 я:%-а # ;
-е:%-е # ;
+е:%-о # ;
+о:%-о # ;
+ё:%-о # ;                         ! свежевьё
+и:%-и # ;                         ! выжимки, издержки
+
+!! abstract
 
 
 !!! VERBAL STUFF

@@ -1,5 +1,5 @@
-LEXICON NOUNS_AGAIN
-лог:лог AFTER_NOUN ;
-скоп:скоп AFTER_NOUN ;
-фил:фил AFTER_NOUN ;
-гам:гам AFTER_NOUN ;
+LEXICON ROOTS_AGAIN
+лог:лог AFTER_ROOT ;
+скоп:скоп AFTER_ROOT ;
+фил:фил AFTER_ROOT ;
+гам:гам AFTER_ROOT ;
