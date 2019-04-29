@@ -25,13 +25,15 @@ TARGETS_COMMON = $(LANG1)_guesser.automorf.hfst $(LANG1)_guesser.automorf.bin
 all: $(LANG1).lexc
 	cat $(LANG1).lexc > all.$(LANG1).lexc
 	echo "LEXICON Nouns" >> all.$(LANG1).lexc
-	cat lexc/roots_k.lexc >> all.$(LANG1).lexc
-	cat lexc/roots_ost.lexc >> all.$(LANG1).lexc
-	cat lexc/roots_a_ija.lexc >> all.$(LANG1).lexc
+	cat lexc/roots.lexc >> all.$(LANG1).lexc
+	# cat lexc/roots_k.lexc >> all.$(LANG1).lexc
+	# cat lexc/roots_ost.lexc >> all.$(LANG1).lexc
+	# cat lexc/roots_a_ija.lexc >> all.$(LANG1).lexc
 	cat lexc/morphoids.lexc >> all.$(LANG1).lexc
-	cat lexc/roots_k.lexc >> all.$(LANG1).lexc
-	cat lexc/roots_ost.lexc >> all.$(LANG1).lexc
-	cat lexc/roots_a_ija.lexc >> all.$(LANG1).lexc
+	cat lexc/roots.lexc >> all.$(LANG1).lexc
+	# cat lexc/roots_k.lexc >> all.$(LANG1).lexc
+	# cat lexc/roots_ost.lexc >> all.$(LANG1).lexc
+	# cat lexc/roots_a_ija.lexc >> all.$(LANG1).lexc
 	# --Werror
 	hfst-lexc all.$(LANG1).lexc -o $(LANG1).lexc.hfst
 	hfst-fst2fst --format=optimized-lookup-weighted -i $(LANG1).lexc.hfst -o $(LANG1).hfstol
