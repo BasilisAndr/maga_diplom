@@ -64,7 +64,9 @@ LEXICON Noun_Prefixes
 
 LEXICON NOUN_PREFIXES1
 ! не:не%- NOUN_PREFIXES2 ;
+: Noun_Prefixes ;
 : Roots ;
+: Verb_prefixes ;
 !
 ! LEXICON NOUN_PREFIXES2
 ! а:а%- NOUN_PREFIXES3 ;
@@ -107,50 +109,51 @@ LEXICON T_AUG
 @P.AUG.et@ет:@P.AUG.et@ет NOUN_SUF1 ;       ! стр. 191 (систематика, энергетика)
 @P.AUG.at@ат:@P.AUG.at@ат NOUN_SUF1 ;
 : NOUN_SUF1 ;
+: # ;
 
 
 LEXICON NOUN_SUF1
 тель:%-тель NOUN_SUF2 ;
 итель:%-итель NOUN_SUF2 ;
-: NOUN_SUF2 ;
-
-
-LEXICON NOUN_SUF2
+! : NOUN_SUF2 ;
+!
+!
+! LEXICON NOUN_SUF2
 ! н:%-н NOUN_SUF5 ;
-изац:%-изац NOUN_SUF3 ;
-атор:%-атор NOUN_SUF3 ;
-ятор:%-атор NOUN_SUF3 ;
-итор:%-итор NOUN_SUF3 ;
-: NOUN_SUF3 ;
-
-
-LEXICON NOUN_SUF3
+изац:%-изац NOUN_SUF2 ;
+атор:%-атор NOUN_SUF2 ;
+ятор:%-атор NOUN_SUF2 ;
+итор:%-итор NOUN_SUF2 ;
+! : NOUN_SUF3 ;
+!
+!
+! LEXICON NOUN_SUF3
 ! non-productive
 ух:%-ух # ;                         ! пастух
 атай:%-атай # ;                     ! глашатай
 атый:%-ат%-ый # ;                   ! вожатый
-ер:%-ер NOUN_SUF4 ;                 ! интервьюер(ка)
+ер:%-ер NOUN_SUF2 ;                 ! интервьюер(ка)
 с:%-с FLEXION_NOUN ;                ! плакса
-ц:%-ц NOUN_SUF4 ;                   ! убийца + пяльцы + словцо
+ц:%-ц NOUN_SUF2 ;                   ! убийца + пяльцы + словцо
 @D.AUG@ай:@D.AUG@%-ай # ;           ! урожай, случай
 яй:%-ай # ;
 в:%-в FLEXION_NOUN ;                ! кряква
 тельниц:%-тельниц FLEXION_NOUN ;    ! плевательница
 ёнк:%-ёнк FLEXION_NOUN ;            ! тоже сосуды
-ль:%-ль NOUN_SUF4 ;                 ! падаль(щик)
+ль:%-ль NOUN_SUF2 ;                 ! падаль(щик)
 оль:%-оль # ;                       ! опухоль
-ад:ад NOUN_SUF4 ;                   ! маринад(ница)
-иад:иад NOUN_SUF4 ;                 ! олимпиадница
+ад:ад NOUN_SUF2 ;                   ! маринад(ница)
+иад:иад NOUN_SUF2 ;                 ! олимпиадница
 @D.AUG@ель:@D.AUG@%-ель # ;                       ! FIXME тель = т+ель - вроде done
 @D.AUG@ль:@D.AUG@%-ль # ;
-@D.AUG@ел:@D.AUG@%-ель NOUN_SUF4 ;                ! метелица
+@D.AUG@ел:@D.AUG@%-ель NOUN_SUF2 ;                ! метелица
 ыш:%-ыш # ;                         ! розыгрыш выигрыш
 от:%-от # ;                         ! топот цокот
 он:%-он # ;                         ! выпивон
 аж:%-аж # ;                         ! шпионаж
-оз:%-оз NOUN_SUF4 ;                 ! туберкулёзница
-ёз:%-оз NOUN_SUF4 ;
-ол:%-ол NOUN_SUF4 ;                 ! бензольщик
+оз:%-оз NOUN_SUF2 ;                 ! туберкулёзница
+ёз:%-оз NOUN_SUF2 ;
+ол:%-ол NOUN_SUF2 ;                 ! бензольщик
 арий:%-арий # ;                     ! планетарий
 орий:%-орий # ;                     ! крематорий
 анк:%-анк FLEXION_NOUN ;            ! ушанка
@@ -167,41 +170,41 @@ LEXICON NOUN_SUF3
 ак:%-ак # ;                         ! моряк, сибиряк
 як:%-ак # ;
 ! ач
-ач:%-ач NOUN_SUF4 ;
+ач:%-ач NOUN_SUF2 ;
 ! ун
-ун:%-ун NOUN_SUF4 ;
-юн:%-ун NOUN_SUF4 ;
+ун:%-ун NOUN_SUF2 ;
+юн:%-ун NOUN_SUF2 ;
 ! ок
 ок:%-ок # ;
 ! other
 арь:%-арь # ;
 аль:%-аль # ;
 ! ор
-ор:%-ор NOUN_SUF4 ;                 ! агрессор
-ёр:%-ор NOUN_SUF4 ;
-ер:%-ор NOUN_SUF4 ;
-тор:%-тор NOUN_SUF4 ;
-тр:%-тор NOUN_SUF4 ;                ! директриса
-тёр:%-тор NOUN_SUF4 ;               ! актёр
-! ант:%-ант NOUN_SUF4 ;
-ент:%-ент NOUN_SUF4 ;
+ор:%-ор NOUN_SUF2 ;                 ! агрессор
+ёр:%-ор NOUN_SUF2 ;
+ер:%-ор NOUN_SUF2 ;
+тор:%-тор NOUN_SUF2 ;
+тр:%-тор NOUN_SUF2 ;                ! директриса
+тёр:%-тор NOUN_SUF2 ;               ! актёр
+! ант:%-ант NOUN_SUF2 ;
+ент:%-ент NOUN_SUF2 ;
 ат:%-ат # ;
 ят:%-ат # ;
 иат:%-иат # ;                       ! секретариат
 !ит
-ит:%-ит NOUN_SUF4 ;                 ! рахитик
+ит:%-ит NOUN_SUF2 ;                 ! рахитик
 ! ух
-уш:%-ух NOUN_SUF4 ;                 ! развалюшка
-иш:%-их NOUN_SUF4 ;
-юш:%-ух NOUN_SUF4 ;
-юшк:%-ушк NOUN_SUF4 ;
+уш:%-ух NOUN_SUF2 ;                 ! развалюшка
+иш:%-их NOUN_SUF2 ;
+юш:%-ух NOUN_SUF2 ;
+юшк:%-ушк NOUN_SUF2 ;
 ! ушк:%-ушк FLEXION_NOUN ;            ! верхушка
 ! лк
-лоч:%-лк NOUN_SUF4 ;                ! горелочка, вешалочка
+лоч:%-лк NOUN_SUF2 ;                ! горелочка, вешалочка
 ень:%-ень # ;                       ! баловень
 нь:%-нь # ;                         ! ткань, рвань, дань, ругань
 ыш:%-иш # ;                         ! заморыш, зародыш
-ин:%-ин NOUN_SUF4 ;                 ! трещинка, промоина
+ин:%-ин NOUN_SUF2 ;                 ! трещинка, промоина
 ! имость
 имость:%-имость # ;                 ! рождаемость, успеваемость
 емость:%-емость # ;                 ! FIXME: отличать от -ом/им-ость
@@ -210,43 +213,43 @@ LEXICON NOUN_SUF3
 нность:%-нность # ;                 ! сработанность
 тость:%-тость # ;                   ! впетость
 ! ич
-ич:%-ич NOUN_SUF4 ;                 ! омичка
-ыч:%-ич NOUN_SUF4 ;
-ович:%-ович NOUN_SUF4 ;
-евич:%-евич NOUN_SUF4 ;
+ич:%-ич NOUN_SUF2 ;                 ! омичка
+ыч:%-ич NOUN_SUF2 ;
+ович:%-ович NOUN_SUF2 ;
+евич:%-евич NOUN_SUF2 ;
 ! ан
-ан:%-ан NOUN_SUF4 ;
-иан:%-иан NOUN_SUF4 ;
-итян:%-итян NOUN_SUF4 ;
-ичан:%-ичан NOUN_SUF4 ;
-овчан:%-овчан NOUN_SUF4 ;
+ан:%-ан NOUN_SUF2 ;
+иан:%-иан NOUN_SUF2 ;
+итян:%-итян NOUN_SUF2 ;
+ичан:%-ичан NOUN_SUF2 ;
+овчан:%-овчан NOUN_SUF2 ;
 ! ист
-ист:%-ист NOUN_SUF4 ;               ! футболистка
+ист:%-ист NOUN_SUF2 ;               ! футболистка
 ! ант
-ант:%-ант NOUN_SUF4 ;               ! музыкант
-янт:%-ант NOUN_SUF4 ;
+ант:%-ант NOUN_SUF2 ;               ! музыкант
+янт:%-ант NOUN_SUF2 ;
 ! ер
-ер:%-ер NOUN_SUF4 ;                 ! пенсионер, банкир
-онер:%-онер NOUN_SUF4 ;
-ьер:%-jер NOUN_SUF4 ;
-ир:%-ер NOUN_SUF4 ;
+ер:%-ер NOUN_SUF2 ;                 ! пенсионер, банкир
+онер:%-онер NOUN_SUF2 ;
+ьер:%-jер NOUN_SUF2 ;
+ир:%-ер NOUN_SUF2 ;
 ! смен
-смен:%-смен NOUN_SUF4 ;
-мейстер:%-мейстер NOUN_SUF4 ;
-ей:%-ей NOUN_SUF4 ;                 ! грамотей
-ачей:%-ачей NOUN_SUF4 ;             ! казначей
+смен:%-смен NOUN_SUF2 ;
+мейстер:%-мейстер NOUN_SUF2 ;
+ей:%-ей NOUN_SUF2 ;                 ! грамотей
+ачей:%-ачей NOUN_SUF2 ;             ! казначей
 ! ага
-яг:%-аг NOUN_SUF4 ;
-аг:%-аг NOUN_SUF4 ;                 ! деляга бродяга
-яж:%-аг NOUN_SUF4 ;                 ! бродяжечка
-уг:%-уг NOUN_SUF4 ;
-юг:%-уг NOUN_SUF4 ;
-уж:%-уг NOUN_SUF4 ;                 ! пьянчужка
+яг:%-аг NOUN_SUF2 ;
+аг:%-аг NOUN_SUF2 ;                 ! деляга бродяга
+яж:%-аг NOUN_SUF2 ;                 ! бродяжечка
+уг:%-уг NOUN_SUF2 ;
+юг:%-уг NOUN_SUF2 ;
+уж:%-уг NOUN_SUF2 ;                 ! пьянчужка
 
-: NOUN_SUF4 ;
-
-
-LEXICON NOUN_SUF4
+! : NOUN_SUF4 ;
+!
+!
+! LEXICON NOUN_SUF4
 ! ник
 @D.AUG@ник:@D.AUG@%-ник # ;
 еник:%-еник # ;
@@ -256,12 +259,12 @@ LEXICON NOUN_SUF4
 овниц:%-овниц FLEXION_NOUN ;
 очниц:%-очниц FLEXION_NOUN ;
 ичниц:%-ичниц FLEXION_NOUN ;
-нич:%-ник NOUN_SUF5 ;
+нич:%-ник NOUN_SUF2 ;
 атник:%-атник # ;
 арник:%-арник # ;
 овник:%-овник # ;
 ятник:%-ятник # ;
-ярник:%-ярник # ;
+ярник:%-ярник # ;                       ! полярничество
 атниц:%-атниц FLEXION_NOUN ;
 арниц:%-арниц FLEXION_NOUN ;
 овниц:%-овниц FLEXION_NOUN ;
@@ -399,7 +402,7 @@ LEXICON NOUN_SUF4
 ! инка
 инк:%-инк FLEXION_NOUN ;            ! сластинка
 ! ик
-ик:%-ик NOUN_SUF5 ;                 ! сатирик, теоретик
+ик:%-ик NOUN_SUF2 ;                 ! сатирик, теоретик
 ик:%-ик FLEXION_NOUN ;              ! лингвистика
 ! ис
 ис:%-ис FLEXION_NOUN ;
@@ -415,12 +418,12 @@ LEXICON NOUN_SUF4
 оноч:%-онк FLEXION_NOUN ;           ! девчоночий
 ! ёшк
 ёшк:%-ёшк FLEXION_NOUN ;            ! рыбёшка
-: NOUN_SUF5 ;
-: FLEXION_NOUN ;
-: # ;
-
-
-LEXICON NOUN_SUF5
+! : NOUN_SUF2 ;
+! : FLEXION_NOUN ;
+! : # ;
+!
+!
+! LEXICON NOUN_SUF5
 ! ство
 ств:%-ств FLEXION_NOUN ;          ! вмешательство
 еств:%-еств FLEXION_NOUN ;
@@ -441,12 +444,19 @@ LEXICON NOUN_SUF5
 ан:%-ан FLEXION_NOUN_SOFT ;
 яш:%-аш FLEXION_NOUN ;
 ян:%-ан FLEXION_NOUN_SOFT ;
-: FLEXION_NOUN ;
+! : FLEXION_NOUN ;
+! : # ;
+
+LEXICON NOUN_SUF2
+: NOUN_SUF1 ;
+: ADJ_SUFF ;
+: VERB_SUFF ;
 : # ;
 
 
 LEXICON FLEXION_NOUN
 : ADJ_SUFF ;
+: VERB_SUFF ;
 а:%-а # ;
 о:%-о # ;
 ё:%-о # ;                         ! свежевьё
@@ -456,6 +466,8 @@ LEXICON FLEXION_NOUN
 ый:%-ий # ;
 
 LEXICON FLEXION_NOUN_SOFT
+: ADJ_SUFF ;
+: VERB_SUFF ;
 я:%-а # ;
 е:%-о # ;
 и:%-и # ;
@@ -693,7 +705,7 @@ LEXICON VERB_SUFF
 ыва:%-ыва VERB_SUFF2 ;
 
 LEXICON VERB_SUFF2
-: NOUN_SUF1 ;
+: T_AUG ;
 ть:%-ть # ;
 ти:%-ти # ;
 сть:%-сть # ;
