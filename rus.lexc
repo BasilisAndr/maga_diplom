@@ -1,6 +1,7 @@
 LEXICON Root
 Roots ;
 Noun_Prefixes ;
+Verb_prefixes ;
 
 LEXICON Noun_Prefixes
 а:а%- NOUN_PREFIXES1 ;
@@ -97,6 +98,8 @@ LEXICON AFTER_ROOT
 о%-:%-о%- ROOTS_AGAIN ;
 %-:%- ROOTS_AGAIN ;
 : T_AUG ;
+: VERB_SUFF ;
+: ADJ_SUFF ;
 
 
 LEXICON T_AUG
@@ -613,6 +616,87 @@ LEXICON FLEXION_ADJ_SOFT
 
 
 !!! VERBAL STUFF
+
+LEXICON Verb_prefixes
+в:в%- VERB_PREFIXES2 ;
+во:во%- VERB_PREFIXES2 ;
+вз:вз%- VERB_PREFIXES2 ;
+вс:вс%- VERB_PREFIXES2 ;
+взо:взо%- VERB_PREFIXES2 ;
+воз:воз%- VERB_PREFIXES2 ;
+возо:возо%- VERB_PREFIXES2 ;
+вос:вос%- VERB_PREFIXES2 ;
+вы:вы%- VERB_PREFIXES2 ;
+де:де%- VERB_PREFIXES2 ;
+дез:дез%- VERB_PREFIXES2 ;
+дис:дис%- VERB_PREFIXES2 ;
+до:до%- VERB_PREFIXES2 ;
+за:за%- VERB_PREFIXES2 ;
+из:из%- VERB_PREFIXES2 ;
+изо:изо%- VERB_PREFIXES2 ;
+ис:ис%- VERB_PREFIXES2 ;
+на:на%- VERB_PREFIXES2 ;
+над:над%- VERB_PREFIXES2 ;
+надо:надо%- VERB_PREFIXES2 ;
+недо:недо%- VERB_PREFIXES2 ;
+низ:низ%- VERB_PREFIXES2 ;
+низо:низо%- VERB_PREFIXES2 ;
+о:о%- VERB_PREFIXES2 ;
+об:об%- VERB_PREFIXES2 ;
+обо:обо%- VERB_PREFIXES2 ;
+от:от%- VERB_PREFIXES2 ;
+ото:ото%- VERB_PREFIXES2 ;
+пере:пере%- VERB_PREFIXES2 ;
+по:по%- VERB_PREFIXES2 ;
+под:под%- VERB_PREFIXES2 ;
+подо:подо%- VERB_PREFIXES2 ;
+пре:пре%- VERB_PREFIXES2 ;
+пред:пред%- VERB_PREFIXES2 ;
+предо:предо%- VERB_PREFIXES2 ;
+при:при%- VERB_PREFIXES2 ;
+про:про%- VERB_PREFIXES2 ;
+раз:раз%- VERB_PREFIXES2 ;
+рас:рас%- VERB_PREFIXES2 ;
+разо:разо%- VERB_PREFIXES2 ;
+ре:ре%- VERB_PREFIXES2 ;
+с:с%- VERB_PREFIXES2 ;
+со:со%- VERB_PREFIXES2 ;
+у:у%- VERB_PREFIXES2 ;
+противо:противо%- VERB_PREFIXES2 ;
+сверх:сверх%- VERB_PREFIXES2 ;
+меж:меж%- VERB_PREFIXES2 ;
+
+
+LEXICON VERB_PREFIXES2
+: Verb_prefixes ;
+: Noun_Prefixes ;
+: Roots ;
+
+
+LEXICON VERB_SUFF
+и:%-и VERB_SUFF2 ;
+ова:%-ова VERB_SUFF2 ;
+ева:%-ева VERB_SUFF2 ;
+изова:%-изова VERB_SUFF2 ;
+ирова:%-ирова VERB_SUFF2 ;
+изирова:%-изирова VERB_SUFF2 ;
+нича:%-нича VERB_SUFF2 ;
+ича:%-ича VERB_SUFF2 ;
+ствова:%-ствова VERB_SUFF2 ;
+ествова:%-ествова VERB_SUFF2 ;
+а:%-а VERB_SUFF2 ;
+ка:%-ка VERB_SUFF2 ;
+е:%-е VERB_SUFF2 ;
+ну:%-ну VERB_SUFF2 ;
+ану:%-ану VERB_SUFF2 ;
+ива:%-ива VERB_SUFF2 ;
+ыва:%-ыва VERB_SUFF2 ;
+
+LEXICON VERB_SUFF2
+: NOUN_SUF1 ;
+ть:%-ть # ;
+ти:%-ти # ;
+сть:%-сть # ;
 LEXICON Roots
 баб:баб AFTER_ROOT ;		![баб]	баба
 жаб:жаб AFTER_ROOT ;		![жаб]	жаба
