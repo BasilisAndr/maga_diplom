@@ -1,3 +1,11 @@
+Multichar_Symbols
+%[cross%]
+%-
+%.root
+
+
+
+
 LEXICON Root
 Roots ;
 Noun_Prefixes ;
@@ -63,34 +71,12 @@ LEXICON Noun_Prefixes
 
 
 LEXICON NOUN_PREFIXES1
-! не:не%- NOUN_PREFIXES2 ;
+
 : Noun_Prefixes ;
 : Roots ;
-: Verb_prefixes ;
+%[cross%]: Verb_prefixes ;
 !
-! LEXICON NOUN_PREFIXES2
-! а:а%- NOUN_PREFIXES3 ;
-! : NOUN_PREFIXES3 ;
-!
-! LEXICON NOUN_PREFIXES3
-! без:без%- NOUN_PREFIXES4 ;
-! бес:без%- NOUN_PREFIXES4 ;
-! : NOUN_PREFIXES4 ;
-!
-! LEXICON NOUN_PREFIXES4
-! воз:воз%- NOUN_PREFIXES5 ;
-! вос:воз%- NOUN_PREFIXES5 ;
-! вс:воз%- NOUN_PREFIXES5 ;
-! вз:воз%- NOUN_PREFIXES5 ;
-! пере:пере%- NOUN_PREFIXES5 ;
-! до:до%- NOUN_PREFIXES5 ;
-! : NOUN_PREFIXES5 ;
-!
-!
-! LEXICON NOUN_PREFIXES5
-! за:за%- Nouns ;
-! из:из%- Nouns ;
-! : Nouns ;
+
 
 !!! NOMINAL STUFF
 
@@ -110,6 +96,11 @@ LEXICON T_AUG
 @P.AUG.at@ат:@P.AUG.at@ат NOUN_SUF1 ;
 : NOUN_SUF1 ;
 : # ;
+
+LEXICON NOUN_SUF1
+: NOUNS_FROM_ADJ ;
+: NOUNS_FROM_VERBS ;
+: NOUNS_FROM_NOUNS ;
 
 
 LEXICON NOUNS_FROM_VERBS
@@ -181,8 +172,8 @@ LEXICON NOUNS_FROM_VERBS
 юх:%-ух FLEXION_NOUN ;
 ш:%-ш FLEXION_NOUN ;
 уш:%-уш FLEXION_NOUN ;
-ул:%-уль FLEXION_NOUN ;
-юл:%-уль FLEXION_NOUN ;
+ул:%-уль FLEXION_NOUN_SOFT ;
+юл:%-уль FLEXION_NOUN_SOFT ;
 е:%-еj FLEXION_NOUN_SOFT ;
 ! ниj
 ни:%-­ниj FLEXION_NOUN_SOFT ;                     ! кушанье, видение, привидение, звание, название, прозвание, препятствие
@@ -646,15 +637,15 @@ LEXICON NOUNS_FROM_NOUNS
 
 
 LEXICON NOUN_END
-: NOUNS-FROM-NOUNS ;
+: NOUNS_FROM_NOUNS ;
 : # ;
 
 
 
 LEXICON FLEXION_NOUN
-: NOUNS-FROM-NOUNS ;
-: ADJ_SUFF ;
-: VERB_SUFF ;
+: NOUNS_FROM_NOUNS ;
+%[cross%]: ADJ_SUFF ;
+%[cross%]: VERB_SUFF ;
 а:%-а # ;
 о:%-о # ;
 ё:%-о # ;                         ! свежевьё
@@ -664,9 +655,9 @@ LEXICON FLEXION_NOUN
 ый:%-ий # ;
 
 LEXICON FLEXION_NOUN_SOFT
-: NOUNS-FROM-NOUNS ;
-: ADJ_SUFF ;
-: VERB_SUFF ;
+: NOUNS_FROM_NOUNS ;
+%[cross%]: ADJ_SUFF ;
+%[cross%]: VERB_SUFF ;
 я:%-а # ;
 е:%-о # ;
 и:%-и # ;
@@ -817,12 +808,12 @@ LEXICON ADJ_SUFF
 
 
 LEXICON FLEXION_ADJ
-: NOUNS_FROM_ADJ ;
+%[cross%]: NOUNS_FROM_ADJ ;
 ый:%-ый # ;
 
 
 LEXICON FLEXION_ADJ_SOFT
-: NOUNS_FROM_ADJ ;
+%[cross%]: NOUNS_FROM_ADJ ;
 ий:%-ый # ;
 
 
@@ -882,7 +873,7 @@ LEXICON Verb_prefixes
 
 LEXICON VERB_PREFIXES2
 : Verb_prefixes ;
-: Noun_Prefixes ;
+%[cross%]: Noun_Prefixes ;
 : Roots ;
 
 
@@ -906,7 +897,7 @@ LEXICON VERB_SUFF
 ыва:%-ыва VERB_SUFF2 ;
 
 LEXICON VERB_SUFF2
-: T_AUG ;
+%[cross%]: NOUNS_FROM_VERBS ;
 ть:%-ть # ;
 ти:%-ти # ;
 сть:%-сть # ;
