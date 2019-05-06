@@ -1,0 +1,913 @@
+LEXICON Root
+Roots ;
+Noun_Prefixes ;
+Verb_prefixes ;
+
+LEXICON Noun_Prefixes
+а:а%- NOUN_PREFIXES1 ;
+анти:анти%- NOUN_PREFIXES1 ;
+архи:архи%- NOUN_PREFIXES1 ;
+без:без%- NOUN_PREFIXES1 ;
+бес:бес%- NOUN_PREFIXES1 ;
+вз:вз%- NOUN_PREFIXES1 ;
+вице:вице%- NOUN_PREFIXES1 ;
+вс:вс%- NOUN_PREFIXES1 ;
+де:де%- NOUN_PREFIXES1 ;
+дез:дез%- NOUN_PREFIXES1 ;
+дис:дис%- NOUN_PREFIXES1 ;
+до:до%- NOUN_PREFIXES1 ;
+за:за%- NOUN_PREFIXES1 ;
+из:из%- NOUN_PREFIXES1 ;
+контр:контр%- NOUN_PREFIXES1 ;
+меж:меж%- NOUN_PREFIXES1 ;
+между:между%- NOUN_PREFIXES1 ;
+на:на%- NOUN_PREFIXES1 ;
+над:над%- NOUN_PREFIXES1 ;
+не:не%- NOUN_PREFIXES1 ;
+недо:недо%- NOUN_PREFIXES1 ;
+о:о%- NOUN_PREFIXES1 ;
+об:об%- NOUN_PREFIXES1 ;
+обер:обер%- NOUN_PREFIXES1 ;
+около:около%- NOUN_PREFIXES1 ;
+от:от%- NOUN_PREFIXES1 ;
+па:па%- NOUN_PREFIXES1 ;
+пере:пере%- NOUN_PREFIXES1 ;
+по:по%- NOUN_PREFIXES1 ;
+под:под%- NOUN_PREFIXES1 ;
+после:после%- NOUN_PREFIXES1 ;
+пра:пра%- NOUN_PREFIXES1 ;
+пре:пре%- NOUN_PREFIXES1 ;
+пред:пред%- NOUN_PREFIXES1 ;
+преди:преди%- NOUN_PREFIXES1 ;
+при:при%- NOUN_PREFIXES1 ;
+про:про%- NOUN_PREFIXES1 ;
+противо:противо%- NOUN_PREFIXES1 ;
+прото:прото%- NOUN_PREFIXES1 ;
+раз:раз%- NOUN_PREFIXES1 ;
+рас:рас%- NOUN_PREFIXES1 ;
+ре:ре%- NOUN_PREFIXES1 ;
+с:с%- NOUN_PREFIXES1 ;
+сверх:сверх%- NOUN_PREFIXES1 ;
+со:со%- NOUN_PREFIXES1 ;
+су:су%- NOUN_PREFIXES1 ;
+суб:суб%- NOUN_PREFIXES1 ;
+супер:супер%- NOUN_PREFIXES1 ;
+у:у%- NOUN_PREFIXES1 ;
+ультра:ультра%- NOUN_PREFIXES1 ;
+экс%-:экс%- NOUN_PREFIXES1 ;
+экстра:экстра%- NOUN_PREFIXES1 ;
+полу:пол%-у%- NOUN_PREFIXES1 ;
+пол%-:пол%- NOUN_PREFIXES1 ;
+пол:пол%- NOUN_PREFIXES1 ;
+: NOUN_PREFIXES1 ;
+
+
+LEXICON NOUN_PREFIXES1
+! не:не%- NOUN_PREFIXES2 ;
+: Noun_Prefixes ;
+: Roots ;
+: Verb_prefixes ;
+!
+! LEXICON NOUN_PREFIXES2
+! а:а%- NOUN_PREFIXES3 ;
+! : NOUN_PREFIXES3 ;
+!
+! LEXICON NOUN_PREFIXES3
+! без:без%- NOUN_PREFIXES4 ;
+! бес:без%- NOUN_PREFIXES4 ;
+! : NOUN_PREFIXES4 ;
+!
+! LEXICON NOUN_PREFIXES4
+! воз:воз%- NOUN_PREFIXES5 ;
+! вос:воз%- NOUN_PREFIXES5 ;
+! вс:воз%- NOUN_PREFIXES5 ;
+! вз:воз%- NOUN_PREFIXES5 ;
+! пере:пере%- NOUN_PREFIXES5 ;
+! до:до%- NOUN_PREFIXES5 ;
+! : NOUN_PREFIXES5 ;
+!
+!
+! LEXICON NOUN_PREFIXES5
+! за:за%- Nouns ;
+! из:из%- Nouns ;
+! : Nouns ;
+
+!!! NOMINAL STUFF
+
+!! concrete
+LEXICON AFTER_ROOT
+о:%.root%-о%- ROOTS_AGAIN ;
+о%-:%.root%-о%- ROOTS_AGAIN ;
+%-:%.root%- ROOTS_AGAIN ;
+:%.root T_AUG ;
+:%.root VERB_SUFF ;
+:%.root ADJ_SUFF ;
+
+
+LEXICON T_AUG
+@P.AUG.t@т:@P.AUG.t@т NOUN_SUF1 ;
+@P.AUG.et@ет:@P.AUG.et@ет NOUN_SUF1 ;       ! стр. 191 (систематика, энергетика)
+@P.AUG.at@ат:@P.AUG.at@ат NOUN_SUF1 ;
+: NOUN_SUF1 ;
+: # ;
+
+
+LEXICON NOUNS_FROM_VERBS
+
+тель:%-тель NOUN_END ;
+итель:%-итель NOUN_END ;
+@D.AUG@ник:@D.AUG@%-ник NOUN_END ;
+еник:%-еник NOUN_END ;
+@D.AUG@ниц:@D.AUG@%-ниц FLEXION_NOUN ;
+ьниц:%-ниц FLEXION_NOUN ;
+ениц:%-ениц FLEXION_NOUN ;
+нич:%-ник NOUN_END ;
+щик:%-щик NOUN_END ;
+ьщик:%-щик NOUN_END ;
+чик:%-чик NOUN_END ;
+щиц:%-щиц FLEXION_NOUN ;
+чиц:%-чиц FLEXION_NOUN ;
+льщик:%-льщик NOUN_END ;
+льщиц:%-льщиц FLEXION_NOUN ;
+льник:%-льник NOUN_END ;
+льниц:%-льниц FLEXION_NOUN ;
+ец:%-ец NOUN_END ;
+нец:%-нец NOUN_END ;
+енец:%-енец NOUN_END ;
+омец:%-омец NOUN_END ;
+лец:%-лец NOUN_END ;                       ! беглец
+як:%-ак NOUN_END ;                         ! моряк, сибиряк
+! ач
+ач:%-ач NOUN_END ;
+! ун
+ун:%-ун NOUN_END ;
+юн:%-ун NOUN_END ;
+! ок
+ок:%-ок NOUN_END ;
+! other
+арь:%-арь NOUN_END ;
+аль:%-аль NOUN_END ;
+атор:%-атор NOUN_END ;
+ятор:%-атор NOUN_END ;
+итор:%-итор NOUN_END ;
+ор:%-ор NOUN_END ;                 ! агрессор
+ёр:%-ор NOUN_END ;
+ер:%-ор NOUN_END ;
+ант:%-ант NOUN_END ;               ! музыкант
+янт:%-ант NOUN_END ;
+ент:%-ент NOUN_END ;
+ат:%-ат NOUN_END ;
+ят:%-ат NOUN_END ;
+лк:%-лк FLEXION_NOUN ;                      ! горелка
+ловк:%-ловк FLEXION_NOUN ;                  ! забегаловка
+л:%-л FLEXION_NOUN ;              ! трепала, мыло, точило
+! к
+к:%-к FLEXION_NOUN ;
+ушк:%-ушк FLEXION_NOUN ;
+­ульк:%-ульк FLEXION_NOUN ;
+анк:%-анк FLEXION_NOUN ;
+ачк:%-ачк FLEXION_NOUN ;
+авк:%-авк FLEXION_NOUN ;
+ейк:%-ейк FLEXION_NOUN ;
+шк:%-шк FLEXION_NOUN ;            ! крышка, замарашка, открывашка (разг.), подачка, тянучка
+чк:%-чк FLEXION_NOUN ;
+овк:%-овк FLEXION_NOUN ;
+отк:%-отк FLEXION_NOUN ;
+ёжк:%-ёжк FLEXION_NOUN ;
+яг:%-аг NOUN_END ;               ! деляга бродяга
+ак:%-ак FLEXION_NOUN ;                      ! зевака
+як:%-ак FLEXION_NOUN ;
+ух:%-ух FLEXION_NOUN ;                      ! развалюха
+юх:%-ух FLEXION_NOUN ;
+ш:%-ш FLEXION_NOUN ;
+уш:%-уш FLEXION_NOUN ;
+ул:%-уль FLEXION_NOUN ;
+юл:%-уль FLEXION_NOUN ;
+е:%-еj FLEXION_NOUN_SOFT ;
+! ниj
+ни:%-­ниj FLEXION_NOUN_SOFT ;                     ! кушанье, видение, привидение, звание, название, прозвание, препятствие
+нь:%-­ниj FLEXION_NOUN_SOFT ;                     ! воздаяние
+ени:%-ениj FLEXION_NOUN_SOFT ;
+ани:%-аниj FLEXION_NOUN_SOFT ;
+яни:%-аниj FLEXION_NOUN_SOFT ;
+и:%-иj FLEXION_NOUN_SOFT ;
+стви:%-ствиj FLEXION_NOUN_SOFT ;
+н:%-н FLEXION_NOUN_SOFT ;           ! болтовня, трескотня
+льн:%-льн FLEXION_NOUN_SOFT ;     ! спальня
+ищ:%-ищ FLEXION_NOUN_SOFT ;       ! пепелище
+лищ:%-лищ FLEXION_NOUN_SOFT ;
+бищ:%-бищ FLEXION_NOUN_SOFT ;
+лиц:%-лиц FLEXION_NOUN ;                    ! виселица
+ень:%-ень NOUN_END ;                       ! баловень
+нь:%-нь NOUN_END ;                         ! ткань, рвань, дань, ругань
+ь:%-j FLEXION_NOUN_SOFT ;
+ыш:%-иш NOUN_END ;                         ! заморыш, зародыш
+ин:%-ин FLEXION_NOUN ;                 ! трещинка, промоина
+ив:%-ив FLEXION_NOUN ;            ! чтиво, топливо, курево
+ев:%-ив FLEXION_NOUN ;
+к:%-к FLEXION_NOUN_SOFT ;
+лк:%-лк FLEXION_NOUN_SOFT ;
+унк:%-унк FLEXION_NOUN_SOFT ;
+! имость
+имость:%-имость NOUN_END ;                 ! рождаемость, успеваемость
+емость:%-емость NOUN_END ;                 ! FIXME: отличать от -ом/им-ость
+! ённость
+ённость:%-ённость NOUN_END ;               ! договорённость
+нность:%-нность NOUN_END ;                 ! сработанность
+тость:%-тость NOUN_END ;                   ! впетость
+! non-productive
+ух:%-ух NOUN_END ;                         ! пастух
+атай:%-атай NOUN_END ;                     ! глашатай
+атый:%-ат%-ый NOUN_END ;                   ! вожатый
+ер:%-ер NOUN_END ;                 ! интервьюер(ка)
+с:%-с FLEXION_NOUN ;                ! плакса
+ц:%-ц FLEXION_NOUN ;                   ! убийца + пяльцы + словцо
+@D.AUG@ай:@D.AUG@%-ай NOUN_END ;           ! урожай, случай
+яй:%-ай NOUN_END ;
+в:%-в FLEXION_NOUN ;                ! кряква
+тельниц:%-тельниц FLEXION_NOUN ;    ! плевательница
+ёнк:%-ёнк FLEXION_NOUN ;            ! тоже сосуды
+ль:%-ль NOUN_END ;                 ! падаль(щик)
+оль:%-оль NOUN_END ;                       ! опухоль
+ад:ад NOUN_END ;                   ! маринад(ница)
+! тий
+ти:%-тиj FLEXION_NOUN_SOFT ;           ! раздутие, развитие,
+ть:%-тиj FLEXION_NOUN_SOFT ;           ! житьё
+! ация
+аци:%-ациj FLEXION_NOUN_SOFT ;
+яци:%-ациj FLEXION_NOUN_SOFT ;
+ици:%-ициj FLEXION_NOUN_SOFT ;
+енци:%-енциj FLEXION_NOUN_SOFT ;
+ци:%-циj FLEXION_NOUN_SOFT ;
+! ство
+ств:%-ств FLEXION_NOUN ;          ! вмешательство
+еств:%-еств FLEXION_NOUN ;
+тельств:%-тельств FLEXION_NOUN ;
+овств:%-овств FLEXION_NOUN ;
+от:%-от FLEXION_NOUN ;
+ет:%-от FLEXION_NOUN ;
+! ба
+б:б FLEXION_NOUN ;
+! ня
+отн:%-отн FLEXION_NOUN_SOFT ;
+овн:%-овн FLEXION_NOUN_SOFT ;
+! аж
+аж:%-аж NOUN_END ;
+яж:%-аж NOUN_END ;
+! ёж
+ёж:%-ёж NOUN_END ;                ! кутёж, грабёж
+! ость
+ость:%-ость NOUN_END ;                   ! леность, жалость, погрешность
+ть:%-ть NOUN_END ;
+ность:%-ность NOUN_END ;
+! изм
+изм:%-изм NOUN_END ;
+! ура
+@D.AUG@ур:@D.AUG@%-ур FLEXION_NOUN ;
+@D.AUG@юр:@D.AUG@%-ур FLEXION_NOUN ;      ! гравюра
+! ча
+ч:%-ч FLEXION_NOUN ;
+@D.AUG@ель:@D.AUG@%-ель NOUN_END ;                       ! FIXME тель = т+ель - вроде done
+@D.AUG@ль:@D.AUG@%-ль NOUN_END ;
+@D.AUG@ел:@D.AUG@%-ель NOUN_END ;                ! метелица
+от:%-от NOUN_END ;                         ! топот цокот
+он:%-он NOUN_END ;                         ! выпивон
+! к
+шк:%-шк FLEXION_NOUN_SOFT ;         ! пятнашки
+ушк:%-ушк FLEXION_NOUN_SOFT ;       ! потягушки
+ин:%-ин FLEXION_NOUN ;              ! смотрины
+иц:%-иц FLEXION_NOUN ;
+овиц:%-овиц FLEXION_NOUN ;
+отк:%-отк FLEXION_NOUN ;
+тв:%-тв FLEXION_NOUN ;                  ! битва
+ад:%-ад FLEXION_NOUN ;
+изн:%-изн FLEXION_NOUN ;
+чин:%-чин FLEXION_NOUN ;
+ик:%-ик FLEXION_NOUN ;
+истик:%-истик FLEXION_NOUN ;
+мент:%-мент FLEXION_NOUN ;
+ень:%-ень NOUN_END ;
+знь:%-знь NOUN_END ;
+ат:%-ат NOUN_END ;
+ант:%-ант NOUN_END ;
+емент:%-емент NOUN_END ;
+анс:%-анс NOUN_END ;
+инг:%-инг NOUN_END ;
+овь:%-овь NOUN_END ;
+арий:%-арий NOUN_END ;           ! комментарий
+
+
+
+LEXICON NOUNS_FROM_ADJ
+
+ик:%-ик NOUN_END ;
+@D.AUG@ник:@D.AUG@%-ник NOUN_END ;
+евик:%-евик NOUN_END ;
+овик:%-овик NOUN_END ;
+щик:%-щик NOUN_END ;
+ьщик:%-щик NOUN_END ;
+чик:%-чик NOUN_END ;
+ец:%-ец NOUN_END ;                     ! мертвец
+овец:%-овец NOUN_END ;
+авец:%-авец NOUN_END ;
+! ист
+ист:%-ист NOUN_END ;               ! футболистка
+изм:%-изм NOUN_END ;
+як:%-ак NOUN_END ;                         ! моряк, сибиряк
+ач:%-ач NOUN_END ;
+! к
+к:%-к FLEXION_NOUN ;
+ушк:%-ушк FLEXION_NOUN ;
+­ашк:%-ашк FLEXION_NOUN ;
+яшк:%-яшк FLEXION_NOUN ;
+янк:%-янк FLEXION_NOUN ;
+анк:%-анк FLEXION_NOUN ;
+инк:%-инк FLEXION_NOUN ;
+овк:%-овк FLEXION_NOUN ;
+отк:%-отк FLEXION_NOUN ;
+ютк:%-ютк FLEXION_NOUN ;
+явк:%-явк FLEXION_NOUN ;
+лк:%-лк FLEXION_NOUN ;
+ловк:%-ловк FLEXION_NOUN ;
+шк:%-шк FLEXION_NOUN ;
+!
+ин:%-ин FLEXION_NOUN ;
+овин:%-овин FLEXION_NOUN ;
+атин:%-атин FLEXION_NOUN ;
+иц:%-иц FLEXION_NOUN ;
+ух:%-ух FLEXION_NOUN ;
+уш:%-уш FLEXION_NOUN ;
+яг:%-яг FLEXION_NOUN ;                ! скромняга
+юг:%-юг FLEXION_NOUN ;                ! жадюга
+юк:%-юк FLEXION_NOUN ;                ! злюка
+ышк:%-ышк FLEXION_NOUN ;               ! худышка
+щин:%-щин FLEXION_NOUN ;
+чин:%-чин FLEXION_NOUN ;
+ик:%-ик FLEXION_NOUN ;
+ств:%-ств FLEXION_NOUN ;
+еств:%-еств FLEXION_NOUN ;
+инств:%-инств FLEXION_NOUN ;          ! меньшинство
+ш:%-ш FLEXION_NOUN ;
+ош:%-ош FLEXION_NOUN ;
+об:%-об FLEXION_NOUN ;                ! жадоба
+от:%-от FLEXION_NOUN ;                ! острота
+ён:%-ён FLEXION_NOUN ;
+ёх:%-ёх FLEXION_NOUN ;
+ил:%-ил FLEXION_NOUN ;
+аш:%-аш FLEXION_NOUN ;                ! милаша
+изн:%-изн FLEXION_NOUN ;               ! отчизна
+овизн:%-овизн FLEXION_NOUN ;
+ц:%-ц FLEXION_NOUN ;
+ытьб:%-ытьб FLEXION_NOUN ;
+аци:ациj FLEXION_NOUN ;
+ур:%-ур FLEXION_NOUN ;
+атур:%-атур FLEXION_NOUN ;
+ь:%-j FLEXION_NOUN_SOFT ;              ! громадьё
+ул:%-ул FLEXION_NOUN_SOFT ;
+ищ:%-ищ FLEXION_NOUN_SOFT ;
+ын:%-ын FLEXION_NOUN_SOFT ;
+к:%-к FLEXION_NOUN_SOFT ;
+он:%-он FLEXION_NOUN_SOFT ;
+и:%-и FLEXION_NOUN_SOFT ;
+стви:%-стви FLEXION_NOUN_SOFT ;
+иш:%-иш NOUN_END ;                ! плохиш
+ыш:%-ыш NOUN_END ;                ! крепыш
+ость:%-ость NOUN_END ;
+ность:%-ность NOUN_END ;
+ок:%-ок NOUN_END ;
+ан:%-ан NOUN_END ;
+иян:%-иян NOUN_END ;
+яй:%-яй NOUN_END ;                ! негодяй
+енец:%-енец NOUN_END ;
+аш:%-аш NOUN_END ;
+яш:%-яш NOUN_END ;
+арь:%-арь NOUN_END ;               ! дикарь
+ун:%-ун NOUN_END ;                ! толстун
+няк:%-няк NOUN_END ;
+ёжь:%-ёжь NOUN_END ;
+ядь:%-ядь NOUN_END ;
+ей:%-ей NOUN_END ;
+атор:%-атор NOUN_END ;              ! новатор
+ий:%-ий NOUN_END ;                ! аграрий
+оть:%-оть NOUN_END ;               ! мякоть
+ель:%-ель NOUN_END ;
+ырь:%-ырь NOUN_END ;               ! пустырь
+ть:%-ть NOUN_END ;
+анин:%-ан%-ин NOUN_END ;
+
+
+LEXICON NOUNS_FROM_NOUNS
+
+@D.AUG@ник:@D.AUG@%-ник NOUN_END ;
+@D.AUG@ниц:@D.AUG@%-ниц FLEXION_NOUN ;
+атник:%-атник NOUN_END ;
+арник:%-арник NOUN_END ;
+овник:%-овник NOUN_END ;
+ятник:%-ятник NOUN_END ;
+ярник:%-ярник NOUN_END ;                       ! полярничество
+атниц:%-атниц FLEXION_NOUN ;
+арниц:%-арниц FLEXION_NOUN ;
+овниц:%-овниц FLEXION_NOUN ;
+ятниц:%-ятниц FLEXION_NOUN ;
+ярниц:%-ярниц FLEXION_NOUN ;
+ениц:%-ениц FLEXION_NOUN ;
+овниц:%-овниц FLEXION_NOUN ;
+очниц:%-очниц FLEXION_NOUN ;
+ичниц:%-ичниц FLEXION_NOUN ;
+ятниц:%-ятниц FLEXION_NOUN ;
+щик:%-щик NOUN_END ;
+ьщик:%-щик NOUN_END ;
+чик:%-чик NOUN_END ;
+овщик:%-овщик NOUN_END ;
+овщиц:%-овщиц FLEXION_NOUN ;
+щиц:%-щиц FLEXION_NOUN ;
+чиц:%-чиц FLEXION_NOUN ;
+ец:%-ец NOUN_END ;
+инец:%-инец NOUN_END ;
+ак:%-ак NOUN_END ;
+як:%-як NOUN_END ;
+ач:%-ач NOUN_END ;
+ич:%-ич NOUN_END ;                      ! москвич
+ыч:%-ыч NOUN_END ;
+ович:%-ович NOUN_END ;
+евич:%-евич NOUN_END ;
+анин:%-ан%-ин NOUN_END ;
+чанин:%-чан%-ин NOUN_END ;
+ан:%-ан NOUN_END ;
+ян:%-ан NOUN_END ;
+арь:%-арь NOUN_END ;
+ар:%-арь NOUN_END ;
+ар:%-ар NOUN_END ;
+яр:%-ар NOUN_END ;
+атор:%-атор NOUN_END ;
+ятор:%-атор NOUN_END ;
+тор:%-тор NOUN_END ;
+итор:%-итор NOUN_END ;
+ист:%-ист NOUN_END ;
+ик:%-ик NOUN_END ;
+ант:%-ант NOUN_END ;
+янт:%-янт NOUN_END ;
+ор:%-ор NOUN_END ;
+ер:%-ер NOUN_END ;
+ёр:%-ёр NOUN_END ;
+изм:%-изм NOUN_END ;
+ат:%-ат NOUN_END ;
+ит:%-ит NOUN_END ;
+ин:%-ин NOUN_END ;
+аж:%-аж NOUN_END ;
+смен:%-смен NOUN_END ;
+мейстер:%-мейстер NOUN_END ;
+оз:%-оз NOUN_END ;
+ёз:%-оз NOUN_END ;
+ол:%-ол NOUN_END ;
+арий:%-арий NOUN_END ;
+орий:%-орий NOUN_END ;
+ничий:%-нич%-ий NOUN_END ;
+ей:%-ей NOUN_END ;
+ачей:%-ачей NOUN_END ;
+очей:%-очей NOUN_END ;
+ун:%-ун NOUN_END ;
+юн:%-ун NOUN_END ;                   ! горбун
+тяй:%-тяй NOUN_END ;
+арий:%-арий NOUN_END ;
+ариус:%-ариус NOUN_END ;
+ал:%-ал NOUN_END ;                        ! театрал
+ман:%-ман NOUN_END ;
+евт:%-евт NOUN_END ;
+ург:%-ург NOUN_END ;
+аш:%-аш NOUN_END ;
+яш:%-аш NOUN_END ;
+ент:%-ент NOUN_END ;
+амент:%-амент NOUN_END ;
+аль:%-аль NOUN_END ;
+ад:%-ад NOUN_END ;
+арад:%-арад NOUN_END ;                      ! маскарад
+юх:%-юх NOUN_END ;
+ет:%-ет NOUN_END ;
+иот:%-иот NOUN_END ;
+ень:%-ень NOUN_END ;
+ёл:%-ёл NOUN_END ;
+ай:%-ай NOUN_END ;
+ыль:%-ыль NOUN_END ;
+онок:%-онок NOUN_END ;
+ёнок:%-онок NOUN_END ;
+ив:%-ив NOUN_END ;                        ! реактив
+ёж:%-ож NOUN_END ;                   ! картёж
+чонок:%-чонок NOUN_END ;
+оныш:%-оныш NOUN_END ;
+ёныш:%-оныш NOUN_END ;
+ок:%-ок NOUN_END ;
+ик:%-ик NOUN_END ;
+оид:%-оид NOUN_END ;
+им:%-им NOUN_END ;
+няк:%-няк NOUN_END ;
+итет:%-итет NOUN_END ;
+ышек:%-ышек NOUN_END ;
+ешек:%-ешек NOUN_END ;
+анёк:%-анёк NOUN_END ;
+ёк:%-ок NOUN_END ;
+ук:%-ук NOUN_END ;
+лан:%-лан NOUN_END ;
+уган:%-уган NOUN_END ;
+юган:%-уган NOUN_END ;
+алей:%-алей NOUN_END ;
+
+н:%-н FLEXION_NOUN_SOFT ;
+ищ:%-ищ FLEXION_NOUN_SOFT ;
+овищ:%-овищ FLEXION_NOUN_SOFT ;
+и:%-иj FLEXION_NOUN_SOFT ;
+овани:%-ованиj FLEXION_NOUN_SOFT ;
+аци:%-ациj FLEXION_NOUN_SOFT ;
+изаци:%-ациj FLEXION_NOUN_SOFT ;
+ын:%-ын FLEXION_NOUN_SOFT ;
+л:%-л FLEXION_NOUN_SOFT ;                     ! пискля
+ышн:%-ышн FLEXION_NOUN_SOFT ;
+ышен:%-ышен FLEXION_NOUN_SOFT ;
+ул:%-ул FLEXION_NOUN_SOFT ;
+ин:%-ин FLEXION_NOUN_SOFT ;
+ь:j FLEXION_NOUN_SOFT ;
+ери:%-ериj FLEXION_NOUN_SOFT ;
+ун:%-ун FLEXION_NOUN_SOFT ;
+ус:%-ус FLEXION_NOUN_SOFT ;
+енци:%-енциj FLEXION_NOUN_SOFT ;
+
+ин:%-ин FLEXION_NOUN ;
+овин:%-овин FLEXION_NOUN ;
+евин:%-овин FLEXION_NOUN ;                 ! сердцевина
+атин:%-атин FLEXION_NOUN ;
+ик:%-ик FLEXION_NOUN ;
+ур:%-ур FLEXION_NOUN ;
+атур:%-атур FLEXION_NOUN ;
+ад:%-ад FLEXION_NOUN ;
+иад:%-иад FLEXION_NOUN ;
+иан:%-иан FLEXION_NOUN ;
+овк:%-овк FLEXION_NOUN ;
+ёвк:%-овк FLEXION_NOUN ;
+анк:%-анк FLEXION_NOUN ;
+ух:%-ух FLEXION_NOUN ;
+юх:%-ух FLEXION_NOUN ;
+уш:%-уш FLEXION_NOUN ;
+юш:%-уш FLEXION_NOUN ;
+ш:%-ш FLEXION_NOUN ;
+ств:%-ств FLEXION_NOUN ;
+еств:%-еств FLEXION_NOUN ;
+ерк:%-ерк FLEXION_NOUN ;
+ероч:%-ероч FLEXION_NOUN ;
+онк:%-онк FLEXION_NOUN ;
+оноч:%-оноч FLEXION_NOUN ;
+ёнк:%-ёнк FLEXION_NOUN ;
+ёноч:%-ёноч FLEXION_NOUN ;
+ив:%-ив FLEXION_NOUN ;
+ев:%-ев FLEXION_NOUN ;                       ! зарево
+ол:%-ол FLEXION_NOUN ;
+яг:%-яг FLEXION_NOUN ;
+ён:%-он FLEXION_NOUN ;
+урк:%-урк FLEXION_NOUN ;
+юк:%-ук FLEXION_NOUN ;
+ышк:%-ышк FLEXION_NOUN ;
+ышеч:%-ышеч FLEXION_NOUN ;
+изн:%-изн FLEXION_NOUN ;
+ат:%-ат FLEXION_NOUN ;
+ят:%-ат FLEXION_NOUN ;
+б:%-б FLEXION_NOUN ;
+д:%-д FLEXION_NOUN ;                         ! вражда
+из:%-из FLEXION_NOUN ;
+! к
+к:%-к FLEXION_NOUN ;
+овк:%-овк FLEXION_NOUN ;
+ёвк:%-ёвк FLEXION_NOUN ;
+анк:%-анк FLEXION_NOUN ;
+янк:%-янк FLEXION_NOUN ;
+ичк:%-ичк FLEXION_NOUN ;
+ачк:%-ачк FLEXION_NOUN ;
+ячк:%-ячк FLEXION_NOUN ;
+овоч:%-овк FLEXION_NOUN ;
+ёвоч:%-ёвк FLEXION_NOUN ;
+аноч:%-анк FLEXION_NOUN ;
+яноч:%-янк FLEXION_NOUN ;
+ичеч:%-ичк FLEXION_NOUN ;
+ачеч:%-ачк FLEXION_NOUN ;
+ячеч:%-ячк FLEXION_NOUN ;
+ашк:%-ашк FLEXION_NOUN ;
+ашеч:%-ашк FLEXION_NOUN ;
+яшк:%-яшк FLEXION_NOUN ;
+яшеч:%-яшк FLEXION_NOUN ;
+ечк:%-ечк FLEXION_NOUN ;
+ечеч:%-ечк FLEXION_NOUN ;
+уроч:%-урк FLEXION_NOUN ;
+инк:%-инк FLEXION_NOUN ;
+иноч:%-инк FLEXION_NOUN ;
+ейк:%-ейк FLEXION_NOUN ;
+ееч:%-ейк FLEXION_NOUN ;
+ийк:%-ийк FLEXION_NOUN ;
+
+иц:%-иц FLEXION_NOUN ;
+их:%-их FLEXION_NOUN ;
+н:%-н FLEXION_NOUN ;
+иничн:%-иничн FLEXION_NOUN ;
+есс:%-есс FLEXION_NOUN ;
+ис:%-ис FLEXION_NOUN ;
+ех:%-ох FLEXION_NOUN ;
+в:%-в FLEXION_NOUN ;
+вор:%-вор FLEXION_NOUN ;
+ар:%-ар FLEXION_NOUN ;                    ! мошкара
+инк:%-инк FLEXION_NOUN ;
+иноч:%-иноч FLEXION_NOUN ;
+як:%-як FLEXION_NOUN ;
+ц:%-ц FLEXION_NOUN ;
+ец:%-ец FLEXION_NOUN ;
+ишк:%-ишк FLEXION_NOUN ;
+ишеч:%-ишеч FLEXION_NOUN ;
+ушк:%-ушк FLEXION_NOUN ;
+ушеч:%-ушк FLEXION_NOUN ;
+оньк:%-оньк FLEXION_NOUN ;
+еньк:%-оньк FLEXION_NOUN ;
+ёшк:%-ёшк FLEXION_NOUN ;
+ёшеч:%-ёшк FLEXION_NOUN ;
+ут:%-ут FLEXION_NOUN ;
+ет:%-ет FLEXION_NOUN ;
+етт:%-етт FLEXION_NOUN ;
+етк:%-етк FLEXION_NOUN ;
+шк:%-шк FLEXION_NOUN ;
+аг:%-аг FLEXION_NOUN ;
+яг:%-аг FLEXION_NOUN ;
+уг:%-уг FLEXION_NOUN ;
+юг:%-уг FLEXION_NOUN ;
+юк:%-ук FLEXION_NOUN ;                 ! пылюка
+ах:%-ах FLEXION_NOUN ;
+ох:%-ох FLEXION_NOUN ;
+ях:%-ах FLEXION_NOUN ;
+ёх:%-ох FLEXION_NOUN ;
+от:%-от FLEXION_NOUN ;
+яр:%-ар FLEXION_NOUN ;                      ! котяра
+об:%-об FLEXION_NOUN ;
+истик:%-истик FLEXION_NOUN ;
+
+
+
+LEXICON NOUN_END
+: NOUNS-FROM-NOUNS ;
+: # ;
+
+
+
+LEXICON FLEXION_NOUN
+: NOUNS-FROM-NOUNS ;
+: ADJ_SUFF ;
+: VERB_SUFF ;
+а:%-а # ;
+о:%-о # ;
+ё:%-о # ;                         ! свежевьё
+и:%-и # ;                         ! выжимки, издержки
+ы:%-ы # ;
+ий:%-ий # ;                         ! лесничий
+ый:%-ий # ;
+
+LEXICON FLEXION_NOUN_SOFT
+: NOUNS-FROM-NOUNS ;
+: ADJ_SUFF ;
+: VERB_SUFF ;
+я:%-а # ;
+е:%-о # ;
+и:%-и # ;
+
+
+!!! ADJECTIVE STUFF
+
+LEXICON ADJ_SUFF
+! смешанное склонение
+ов:%-ов # ;
+ев:%-ев # ;
+нин:%-нин # ;
+ий:%-ий # ;
+ачий:%-ачий # ;
+ичий:%-ичий # ;
+овий:%-овий # ;
+! краткие формы
+ен:%-ен # ;
+ствен:%-ствен # ;
+енек:%-енек # ;
+онек:%-онек # ;
+! адъективное склонение
+ин:%-ин FLEXION_ADJ ;
+н:%-н FLEXION_ADJ ;
+ен:%-ен FLEXION_ADJ ;
+енн:%-енн FLEXION_ADJ ;
+альн:%-альн FLEXION_ADJ ;
+арн:%-арн FLEXION_ADJ ;
+озн:%-озн FLEXION_ADJ ;
+орн:%-орн FLEXION_ADJ ;
+уальн:%-уальн FLEXION_ADJ ;
+ичн:%-ичн FLEXION_ADJ ;
+иальн:%-иальн FLEXION_ADJ ;
+онн:%-онн FLEXION_ADJ ;
+тельн:%-тельн FLEXION_ADJ ;
+ительн:%-ительн FLEXION_ADJ ;
+очн:%-очн FLEXION_ADJ ;
+овн:%-овн FLEXION_ADJ ;
+евн:%-евн FLEXION_ADJ ;
+ебн:%-ебн FLEXION_ADJ ;
+обн:%-обн FLEXION_ADJ ;
+ственн:%-ственн FLEXION_ADJ ;
+овенн:%-овенн FLEXION_ADJ ;
+ельн:%-ельн FLEXION_ADJ ;
+ильн:%-ильн FLEXION_ADJ ;
+идальн:%-идальн FLEXION_ADJ ;
+иозн:%-иозн FLEXION_ADJ ;
+езн:%-езн FLEXION_ADJ ;
+отн:%-отн FLEXION_ADJ ;
+ионн:%-ионн FLEXION_ADJ ;
+ационн:%-ационн FLEXION_ADJ ;
+яжн:%-яжн FLEXION_ADJ ;
+ейн:%-ейн FLEXION_ADJ ;                 ! швейный
+
+н:%-н FLEXION_ADJ_SOFT ;
+енн:%-енн FLEXION_ADJ_SOFT ;
+ашн:%-ашн FLEXION_ADJ_SOFT ;
+ишн:%-ишн FLEXION_ADJ_SOFT ;
+ешн:%-ешн FLEXION_ADJ_SOFT ;
+! back to normal
+ан:%-ан FLEXION_ADJ ;
+ян:%-ян FLEXION_ADJ ;
+янн:%-янн FLEXION_ADJ ;
+абельн:%-абельн FLEXION_ADJ ;
+ибельн:%-ибельн FLEXION_ADJ ;
+ированн:%-ированн FLEXION_ADJ ;
+ов:%-ов FLEXION_ADJ ;
+ев:%-ев FLEXION_ADJ ;
+! FLEXION_ADJ_SOFT
+ск:%-ск FLEXION_ADJ_SOFT ;
+еск:%-еск FLEXION_ADJ_SOFT ;
+овск:%-овск FLEXION_ADJ_SOFT ;
+анск:%-анск FLEXION_ADJ_SOFT ;
+инск:%-инск FLEXION_ADJ_SOFT ;
+ийск:%-ийск FLEXION_ADJ_SOFT ;
+ическ:%-ическ FLEXION_ADJ_SOFT ;
+ческ:%-ческ FLEXION_ADJ_SOFT ;
+йск:%-йск FLEXION_ADJ_SOFT ;
+нск:%-нск FLEXION_ADJ_SOFT ;
+вск:%-вск FLEXION_ADJ_SOFT ;
+ианск:%-ианск FLEXION_ADJ_SOFT ;
+ейск:%-ейск FLEXION_ADJ_SOFT ;
+эзск:%-эзск FLEXION_ADJ_SOFT ;
+лезск:%-лезск FLEXION_ADJ_SOFT ;
+евск:%-евск FLEXION_ADJ_SOFT ;
+енск:%-енск FLEXION_ADJ_SOFT ;
+имск:%-имск FLEXION_ADJ_SOFT ;
+унск:%-унск FLEXION_ADJ_SOFT ;
+истическ:%-истическ FLEXION_ADJ_SOFT ;
+ацк:%-ацк FLEXION_ADJ_SOFT ;
+янск:%-янск FLEXION_ADJ_SOFT ;
+к:%-к FLEXION_ADJ_SOFT ;
+яч:%-яч FLEXION_ADJ_SOFT ;
+тельск:%-тельск FLEXION_ADJ_SOFT ;
+ническ:%-ническ FLEXION_ADJ_SOFT ;
+уч:%-уч FLEXION_ADJ_SOFT ;
+ая:%-ая FLEXION_ADJ_SOFT ;
+юч:%-юч FLEXION_ADJ_SOFT ;
+яч:%-яч FLEXION_ADJ_SOFT ;
+оньк:%-оньк FLEXION_ADJ_SOFT ;
+охоньк:%-охоньк FLEXION_ADJ_SOFT ;
+ошеньк:%-ошеньк FLEXION_ADJ_SOFT ;
+усеньк:%-усеньк FLEXION_ADJ_SOFT ;
+ущ:%-ущ FLEXION_ADJ_SOFT ;
+ейш:%-ейш FLEXION_ADJ_SOFT ;
+ш:%-ш FLEXION_ADJ_SOFT ;
+ецк:%-ецк FLEXION_ADJ_SOFT ;
+ящ:%-ящ FLEXION_ADJ_SOFT ;
+ен:%-ен FLEXION_ADJ_SOFT ;
+ишн:%-ишн FLEXION_ADJ_SOFT ;
+ашн:%-ашн FLEXION_ADJ_SOFT ;
+шн:%-шн FLEXION_ADJ_SOFT ;
+
+! normal
+аст:%-аст FLEXION_ADJ ;
+яст:%-яст FLEXION_ADJ ;
+ат:%-ат FLEXION_ADJ ;
+чат:%-чат FLEXION_ADJ ;
+оват:%-оват FLEXION_ADJ ;
+овит:%-овит FLEXION_ADJ ;
+ист:%-ист FLEXION_ADJ ;
+лив:%-лив FLEXION_ADJ ;
+елив:%-елив FLEXION_ADJ ;
+ав:%-ав FLEXION_ADJ ;
+им:%-им FLEXION_ADJ ;
+л:%-л FLEXION_ADJ ;
+овал:%-овал FLEXION_ADJ ;
+ит:%-ит FLEXION_ADJ ;              ! имянитый:%-имянитый FLEXION_ADJ ;
+льн:%-льн FLEXION_ADJ ;
+тельн:%-тельн FLEXION_ADJ ;           ! удовлетворительный:%-удовлетворительный FLEXION_ADJ ;
+ительн:%-ительн FLEXION_ADJ ;
+ом:%-ом FLEXION_ADJ ;
+им:%-им FLEXION_ADJ ;              ! растяжимый:%-растяжимый FLEXION_ADJ ;
+чат:%-чат FLEXION_ADJ ;
+лив:%-лив FLEXION_ADJ ;
+чив:%-чив FLEXION_ADJ ;
+ив:%-ив FLEXION_ADJ ;
+члив:%-члив FLEXION_ADJ ;
+овлив:%-овлив FLEXION_ADJ ;           ! шаловливый
+л:%-л FLEXION_ADJ ;
+ён:%-ён FLEXION_ADJ ;
+т:%-т FLEXION_ADJ ;
+ённ:%-ённ FLEXION_ADJ ;
+оват:%-оват FLEXION_ADJ ;
+ав:%-ав FLEXION_ADJ ;
+яв:%-яв FLEXION_ADJ ;
+ощав:%-ощав FLEXION_ADJ ;
+
+
+LEXICON FLEXION_ADJ
+: NOUNS_FROM_ADJ ;
+ый:%-ый # ;
+
+
+LEXICON FLEXION_ADJ_SOFT
+: NOUNS_FROM_ADJ ;
+ий:%-ый # ;
+
+
+
+
+!!! VERBAL STUFF
+
+LEXICON Verb_prefixes
+в:в%- VERB_PREFIXES2 ;
+во:во%- VERB_PREFIXES2 ;
+вз:вз%- VERB_PREFIXES2 ;
+вс:вс%- VERB_PREFIXES2 ;
+взо:взо%- VERB_PREFIXES2 ;
+воз:воз%- VERB_PREFIXES2 ;
+возо:возо%- VERB_PREFIXES2 ;
+вос:вос%- VERB_PREFIXES2 ;
+вы:вы%- VERB_PREFIXES2 ;
+де:де%- VERB_PREFIXES2 ;
+дез:дез%- VERB_PREFIXES2 ;
+дис:дис%- VERB_PREFIXES2 ;
+до:до%- VERB_PREFIXES2 ;
+за:за%- VERB_PREFIXES2 ;
+из:из%- VERB_PREFIXES2 ;
+изо:изо%- VERB_PREFIXES2 ;
+ис:ис%- VERB_PREFIXES2 ;
+на:на%- VERB_PREFIXES2 ;
+над:над%- VERB_PREFIXES2 ;
+надо:надо%- VERB_PREFIXES2 ;
+недо:недо%- VERB_PREFIXES2 ;
+низ:низ%- VERB_PREFIXES2 ;
+низо:низо%- VERB_PREFIXES2 ;
+о:о%- VERB_PREFIXES2 ;
+об:об%- VERB_PREFIXES2 ;
+обо:обо%- VERB_PREFIXES2 ;
+от:от%- VERB_PREFIXES2 ;
+ото:ото%- VERB_PREFIXES2 ;
+пере:пере%- VERB_PREFIXES2 ;
+по:по%- VERB_PREFIXES2 ;
+под:под%- VERB_PREFIXES2 ;
+подо:подо%- VERB_PREFIXES2 ;
+пре:пре%- VERB_PREFIXES2 ;
+пред:пред%- VERB_PREFIXES2 ;
+предо:предо%- VERB_PREFIXES2 ;
+при:при%- VERB_PREFIXES2 ;
+про:про%- VERB_PREFIXES2 ;
+раз:раз%- VERB_PREFIXES2 ;
+рас:рас%- VERB_PREFIXES2 ;
+разо:разо%- VERB_PREFIXES2 ;
+ре:ре%- VERB_PREFIXES2 ;
+с:с%- VERB_PREFIXES2 ;
+со:со%- VERB_PREFIXES2 ;
+у:у%- VERB_PREFIXES2 ;
+противо:противо%- VERB_PREFIXES2 ;
+сверх:сверх%- VERB_PREFIXES2 ;
+меж:меж%- VERB_PREFIXES2 ;
+
+
+LEXICON VERB_PREFIXES2
+: Verb_prefixes ;
+: Noun_Prefixes ;
+: Roots ;
+
+
+LEXICON VERB_SUFF
+и:%-и VERB_SUFF2 ;
+ова:%-ова VERB_SUFF2 ;
+ева:%-ева VERB_SUFF2 ;
+изова:%-изова VERB_SUFF2 ;
+ирова:%-ирова VERB_SUFF2 ;
+изирова:%-изирова VERB_SUFF2 ;
+нича:%-нича VERB_SUFF2 ;
+ича:%-ича VERB_SUFF2 ;
+ствова:%-ствова VERB_SUFF2 ;
+ествова:%-ествова VERB_SUFF2 ;
+а:%-а VERB_SUFF2 ;
+ка:%-ка VERB_SUFF2 ;
+е:%-е VERB_SUFF2 ;
+ну:%-ну VERB_SUFF2 ;
+ану:%-ану VERB_SUFF2 ;
+ива:%-ива VERB_SUFF2 ;
+ыва:%-ыва VERB_SUFF2 ;
+
+LEXICON VERB_SUFF2
+: T_AUG ;
+ть:%-ть # ;
+ти:%-ти # ;
+сть:%-сть # ;
+сти:%-сти # ;
