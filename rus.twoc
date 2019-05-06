@@ -1,0 +1,10 @@
+Alphabet
+
+%[cross%]:0
+;
+
+Rules
+
+"Crosspos no more than two times"
+%[cross%]:0 <=> ( %[cross%]:0 ) :* _ [ : - %[cross%]:0 ] ;
+                [ : - %[cross%]:0 ] _ :* ( %[cross%]:0 ) ;
