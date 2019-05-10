@@ -10,11 +10,11 @@ Alphabet
 Rules
 
 "Г turns to ж before soft vowels"
-г:ж <= _ е ;
+г:ж => _ е ;
 
 
-"х turns to ш"
-C1:C2 <= _ н ;
+"Transformation before н"
+C1:C2 => _ н ;
       where
           C1 in ( г х ц к )
           C2 in ( ж ш ч ч ) matched ;

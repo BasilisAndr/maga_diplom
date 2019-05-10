@@ -3,3 +3,6 @@ LEXICON ROOTS_AGAIN
 скоп:скоп AFTER_ROOT ;
 фил:фил AFTER_ROOT ;
 гам:гам AFTER_ROOT ;
+лог:лог AFTER_ROOT ;
+граф:граф AFTER_ROOT ;
+метр:метр AFTER_ROOT ;

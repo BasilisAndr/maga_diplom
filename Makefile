@@ -39,6 +39,7 @@ all: $(LANG1)_rules.lexc $(LANG1).twoc
 	hfst-lexc $(LANG1).lexc -o $(LANG1).lexc.hfst
 	hfst-twolc $(LANG1).twoc -o $(LANG1).twoc.hfst
 	hfst-compose-intersect -1 $(LANG1).lexc.hfst -2 $(LANG1).twoc.hfst -o $(LANG1).hfst
+	hfst-invert $(LANG1).hfst -o $(LANG1).gen.hfst
 	hfst-fst2fst --format=optimized-lookup-weighted -i $(LANG1).hfst -o $(LANG1).hfstol
 
 
@@ -67,4 +68,4 @@ $(LANG1)_guesser.automorf.hfst: $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst
 # 	lt-comp lr .deps/$(LANG1)_guesser.autogen.att $@
 
 clear:
-	rm guesser.hfst $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst $(LANG1)_guesser.automorf.hfst $(LANG1).lexc.hfst $(LANG1).twoc.hfst $(LANG1).hfst $(LANG1).hfstol
+	rm guesser.hfst $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst $(LANG1)_guesser.automorf.hfst $(LANG1).lexc.hfst $(LANG1).twoc.hfst $(LANG1).hfst $(LANG1).hfstol $(LANG1).gen.hfst
