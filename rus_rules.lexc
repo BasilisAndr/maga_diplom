@@ -12,6 +12,14 @@ LEXICON Root
 Roots ;
 Noun_Prefixes ;
 Verb_prefixes ;
+Vy ;
+
+
+!!! zero root word
+
+LEXICON Vy
+вынуть:вы%-ø%-ну%-ть # ;
+
 
 LEXICON Noun_Prefixes
 а:а%- NOUN_PREFIXES1 ;
@@ -201,7 +209,7 @@ LEXICON NOUNS_FROM_VERBS
 нь:%-нь NOUN_END ;                         ! ткань, рвань, дань, ругань
 ь:%-j FLEXION_NOUN_SOFT ;
 ыш:%-иш NOUN_END ;                         ! заморыш, зародыш
-ин:%-ин FLEXION_NOUN ;                 ! трещинка, промоина
+@D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN ;                 ! трещинка, промоина
 ив:%-ив FLEXION_NOUN ;            ! чтиво, топливо, курево
 ев:%-ив FLEXION_NOUN ;
 к:%-к FLEXION_NOUN_SOFT ;
@@ -274,7 +282,7 @@ LEXICON NOUNS_FROM_VERBS
 ! к
 шк:%-шк FLEXION_NOUN_SOFT ;         ! пятнашки
 ушк:%-ушк FLEXION_NOUN_SOFT ;       ! потягушки
-ин:%-ин FLEXION_NOUN ;              ! смотрины
+@D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN ;              ! смотрины
 иц:%-иц FLEXION_NOUN ;
 овиц:%-овиц FLEXION_NOUN ;
 отк:%-отк FLEXION_NOUN ;
@@ -330,7 +338,7 @@ LEXICON NOUNS_FROM_ADJ
 ловк:%-ловк FLEXION_NOUN ;
 шк:%-шк FLEXION_NOUN ;
 !
-ин:%-ин FLEXION_NOUN ;
+@D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN ;
 овин:%-овин FLEXION_NOUN ;
 атин:%-атин FLEXION_NOUN ;
 иц:%-иц FLEXION_NOUN ;
@@ -359,7 +367,7 @@ LEXICON NOUNS_FROM_ADJ
 ц:%-ц FLEXION_NOUN ;
 ытьб:%-ытьб FLEXION_NOUN ;
 аци:ациj FLEXION_NOUN ;
-ур:%-ур FLEXION_NOUN ;
+@D.AUG@ур:@D.AUG@%-ур FLEXION_NOUN ;
 атур:%-атур FLEXION_NOUN ;
 ь:%-j FLEXION_NOUN_SOFT ;              ! громадьё
 ул:%-ул FLEXION_NOUN_SOFT ;
@@ -398,8 +406,8 @@ LEXICON NOUNS_FROM_ADJ
 
 LEXICON NOUNS_FROM_NOUNS
 
-ник:%-ник NOUN_END ;
-ниц:%-ниц FLEXION_NOUN ;
+@D.AUG@ник:@D.AUG@%-ник NOUN_END ;
+@D.AUG@ниц:@D.AUG@%-ниц FLEXION_NOUN ;
 атник:%-атник NOUN_END ;
 арник:%-арник NOUN_END ;
 овник:%-овник NOUN_END ;
@@ -451,7 +459,7 @@ LEXICON NOUNS_FROM_NOUNS
 ик:%-ик NOUN_END ;
 ант:%-ант NOUN_END ;
 янт:%-ант NOUN_END ;
-ор:%-ор NOUN_END ;
+@D.AUG@ор:@D.AUG@%-ор NOUN_END ;
 ер:%-ор NOUN_END ;
 ёр:%-ор NOUN_END ;
 ер:%-ер NOUN_END ;
@@ -462,7 +470,7 @@ LEXICON NOUNS_FROM_NOUNS
 изм:%-изм NOUN_END ;
 ат:%-ат NOUN_END ;
 ит:%-ит NOUN_END ;
-ин:%-ин NOUN_END ;
+@D.AUG@ин:@D.AUG@%-ин NOUN_END ;
 аж:%-аж NOUN_END ;
 смен:%-смен NOUN_END ;
 мейстер:%-мейстер NOUN_END ;
@@ -535,7 +543,7 @@ LEXICON NOUNS_FROM_NOUNS
 ышн:%-ышн FLEXION_NOUN_SOFT ;
 ышен:%-ышен FLEXION_NOUN_SOFT ;
 ул:%-ул FLEXION_NOUN_SOFT ;
-ин:%-ин FLEXION_NOUN_SOFT ;
+@D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN_SOFT ;
 ь:%-j FLEXION_NOUN_SOFT ;
 ери:%-ериj FLEXION_NOUN_SOFT ;
 ун:%-ун FLEXION_NOUN_SOFT ;
@@ -543,12 +551,12 @@ LEXICON NOUNS_FROM_NOUNS
 енци:%-енциj FLEXION_NOUN_SOFT ;
 ян:%-ан FLEXION_NOUN_SOFT ;
 
-ин:%-ин FLEXION_NOUN ;
+@D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN ;
 овин:%-овин FLEXION_NOUN ;
 евин:%-овин FLEXION_NOUN ;                 ! сердцевина
 атин:%-атин FLEXION_NOUN ;
 ик:%-ик FLEXION_NOUN ;
-ур:%-ур FLEXION_NOUN ;
+@D.AUG@ур:@D.AUG@%-ур FLEXION_NOUN ;
 атур:%-атур FLEXION_NOUN ;
 ад:%-ад FLEXION_NOUN ;
 иад:%-иад FLEXION_NOUN ;
@@ -659,8 +667,8 @@ LEXICON NOUNS_FROM_NOUNS
 
 LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 
-ник:%-ник NOUN_END ;
-ниц:%-ниц FLEXION_NOUN ;
+@D.AUG@ник:@D.AUG@%-ник NOUN_END ;
+@D.AUG@ниц:@D.AUG@%-ниц FLEXION_NOUN ;
 атник:%-атник NOUN_END ;
 арник:%-арник NOUN_END ;
 овник:%-овник NOUN_END ;
@@ -743,9 +751,9 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 ! ун:%-ун FLEXION_NOUN_SOFT ;
 ! ус:%-ус FLEXION_NOUN_SOFT ;
 енци:%-енциj FLEXION_NOUN_SOFT ;
-ин:%-ин FLEXION_NOUN_SOFT ;
+@D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN_SOFT ;
 
-ин:%-ин FLEXION_NOUN ;                      ! китятина
+@D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN ;                      ! китятина
 овин:%-овин FLEXION_NOUN ;
 евин:%-овин FLEXION_NOUN ;                 ! сердцевина
 атин:%-атин FLEXION_NOUN ;
@@ -923,7 +931,7 @@ LEXICON ADJ_FROM_NOUNS
 ичий:%-ичий # ;
 овий:%-овий # ;
 ! краткие формы
-ин:%-ин # ;
+@D.AUG@ин:@D.AUG@%-ин # ;
 н:%-н # ;
 ен:%-ен # ;
 енен:%-енен # ;
@@ -997,7 +1005,7 @@ LEXICON ADJ_FROM_NOUNS
 
 
 ! адъективное склонение
-ин:%-ин FLEXION_ADJ ;
+@D.AUG@ин:@D.AUG@%-ин FLEXION_ADJ ;
 н:%-н FLEXION_ADJ ;
 ен:%-ен FLEXION_ADJ ;
 енн:%-енн FLEXION_ADJ ;
