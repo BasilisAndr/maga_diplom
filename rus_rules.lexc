@@ -95,6 +95,7 @@ LEXICON AFTER_ROOT
 о:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
 о%-:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
 %-:%.root%- ROOTS_AGAIN "weight: -1.0" ;
+:%.root%- ROOTS_AGAIN "weight: -1.0" ;        ! кинопроба
 : T_AUG ;
 :%.root VERB_SUFF ;
 :%.root ADJ_SUFF ;
@@ -663,6 +664,7 @@ LEXICON NOUNS_FROM_NOUNS
 яр:%-ар FLEXION_NOUN ;                      ! котяра
 об:%-об FLEXION_NOUN ;
 истик:%-истик FLEXION_NOUN ;
+рав:%-рав FLEXION_NOUN ;
 
 
 LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
