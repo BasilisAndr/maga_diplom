@@ -6,3 +6,4 @@ LEXICON ROOTS_AGAIN
 лог:лог AFTER_ROOT ;
 граф:граф AFTER_ROOT ;
 метр:метр AFTER_ROOT ;
+полу:полу AFTER_ROOT ;

@@ -27,14 +27,8 @@ all: $(LANG1)_rules.lexc $(LANG1).twoc
 	cat $(LANG1)_rules.lexc > $(LANG1).lexc
 	echo "LEXICON Roots" >> $(LANG1).lexc
 	cat lexc/roots.lexc >> $(LANG1).lexc
-	# cat lexc/roots_k.lexc >> all.$(LANG1).lexc
-	# cat lexc/roots_ost.lexc >> all.$(LANG1).lexc
-	# cat lexc/roots_a_ija.lexc >> all.$(LANG1).lexc
 	cat lexc/morphoids.lexc >> $(LANG1).lexc
 	cat lexc/roots.lexc >> $(LANG1).lexc
-	# cat lexc/roots_k.lexc >> all.$(LANG1).lexc
-	# cat lexc/roots_ost.lexc >> all.$(LANG1).lexc
-	# cat lexc/roots_a_ija.lexc >> all.$(LANG1).lexc
 	# --Werror
 	hfst-lexc $(LANG1).lexc -o $(LANG1).lexc.hfst
 	hfst-twolc $(LANG1).twoc -o $(LANG1).twoc.hfst
