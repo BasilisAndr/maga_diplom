@@ -1,6 +1,6 @@
 Multichar_Symbols
 
-%[noun%]
+
 %-
 %.root
 @P.CROSS.cross@
@@ -92,20 +92,30 @@ LEXICON NOUN_PREFIXES1
 
 !! concrete
 LEXICON AFTER_ROOT
-о:%.root%-о%- ROOTS_AGAIN "weight: -0.5" ;
-е:%.root%-о%- ROOTS_AGAIN "weight: -0.5" ;
-о%-:%.root%-о%- ROOTS_AGAIN "weight: -0.5" ;
-%-:%.root%- ROOTS_AGAIN "weight: -0.5" ;
-:%.root%- ROOTS_AGAIN "weight: -0.5" ;        ! кинопроба
+о:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
+е:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
+о%-:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
+%-:%.root%- ROOTS_AGAIN "weight: -1.0" ;
+:%.root%- ROOTS_AGAIN "weight: -1.0" ;        ! кинопроба
 : T_AUG "weight: -0.15" ;
 :%.root VERB_SUFF "weight: -0.15" ;
 :%.root ADJ_SUFF "weight: -0.15" ;
-:%.root ADV "weight: -0.15"
-о:%.root%-о%- Noun_Prefixes "weight: -0.5" ;
-е:%.root%-о%- Noun_Prefixes "weight: -0.5" ;
-о%-:%.root%-о%- Noun_Prefixes "weight: -0.5" ;
-%-:%.root%- Noun_Prefixes "weight: -0.5" ;
+:%.root ADV "weight: -0.15" ;
+о:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
+е:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
+о%-:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
+%-:%.root%- Noun_Prefixes "weight: -1.0" ;
 :%.root # ;
+а:%.root%-а # ;
+о:%.root%-о # ;
+ё:%.root%-о # ;                         ! свежевьё
+и:%.root%-и # ;                         ! выжимки, издержки
+ы:%.root%-ы # ;
+я:%.root%-а # ;
+е:%.root%-о # ;
+и:%.root%-и # ;
+ый:%-ий # ;
+ий:%-ий # ;
 
 
 LEXICON T_AUG
@@ -846,7 +856,7 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 
 
 LEXICON NOUN_END
-:%[noun%] NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
+: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
 : ADJ_SUFF "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
 : # ;
@@ -854,7 +864,7 @@ LEXICON NOUN_END
 
 
 LEXICON FLEXION_NOUN
-:%[noun%] NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
+: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
 : ADJ_SUFF "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
 а:%-а # ;
@@ -862,11 +872,11 @@ LEXICON FLEXION_NOUN
 ё:%-о # ;                         ! свежевьё
 и:%-и # ;                         ! выжимки, издержки
 ы:%-ы # ;
-ий:%-ий # ;                         ! лесничий
-ый:%-ий # ;
+! ий:%-ий # ;                         ! лесничий
+! ый:%-ий # ;
 
 LEXICON FLEXION_NOUN_SOFT
-:%[noun%] NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
+: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
 : ADJ_SUFF "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
 я:%-а # ;
@@ -1212,13 +1222,15 @@ LEXICON ADJ_FROM_ADJ
 LEXICON FLEXION_ADJ
 : NOUNS_FROM_ADJ "weight: -0.5" ;
 : ADJ_FROM_ADJ "weight: -0.25" ;
-ый:%-ый # ;
+: VERB_SUFF "weight: -0.5" ;
+ый:%-ий # ;
 
 
 LEXICON FLEXION_ADJ_SOFT
 : NOUNS_FROM_ADJ "weight: -0.5" ;
 : ADJ_FROM_ADJ "weight: -0.25" ;
-ий:%-ый # ;
+: VERB_SUFF "weight: -0.5" ;
+ий:%-ий # ;
 
 
 
@@ -1294,16 +1306,22 @@ LEXICON VERB_SUFF
 ствова:%-ствова VERB_SUFF2 ;
 ествова:%-ествова VERB_SUFF2 ;
 а:%-а VERB_SUFF2 ;
+я:%-а VERB_SUFF2 ;
 ка:%-ка VERB_SUFF2 ;
 е:%-е VERB_SUFF2 ;
 ну:%-ну VERB_SUFF2 ;
 ану:%-ану VERB_SUFF2 ;
+яну:%-ану VERB_SUFF2 ;
 ива:%-ива VERB_SUFF2 ;
 ыва:%-ыва VERB_SUFF2 ;
+у:%-у VERB_SUFF2 ;
+ю:%-ю VERB_SUFF2 ;
+
 
 LEXICON VERB_SUFF2
 : NOUNS_FROM_VERBS "weight: -0.25" ;
 : ADJ_FROM_VERBS "weight: -0.25" ;
+: PRICH "weight: -0.25" ;
 ть:%-ть POST ;
 ти:%-ти POST ;
 сть:%-сть POST ;
@@ -1313,6 +1331,11 @@ LEXICON VERB_SUFF2
 LEXICON POST
 ся:%-ся # ;
 : # ;
+
+
+LEXICON PRICH
+ющ:%-ющ FLEXION_ADJ_SOFT ;
+ящ:%-ящ FLEXION_ADJ_SOFT ;
 
 
 LEXICON ADV
