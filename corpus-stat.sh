@@ -18,7 +18,7 @@ F=./corpus-stat-res_train.txt
 # for some reason putting the newline in directly doesn't work, so two seds
 # $CMD | apertium-destxt | hfst-proc ./rus.hfstol | apertium-retxt | sed 's/\$[^^]*\^/$^/g' | sed 's/\$\^/$\
 # ^/g' > $F
-$CMD | hfst-lookup rus.hfstol | python post.py > $F
+$CMD | hfst-lookup rus.hfstol | python post.py | python postpost.py > $F
 
 # first=$CMD | apertium-destxt | hfst-lookup ckt.hfst
 # echo first

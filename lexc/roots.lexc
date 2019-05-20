@@ -7317,3 +7317,6 @@
 резюм:резюм AFTER_ROOT ;
 магноли:магноли AFTER_ROOT ;
 казус:казус AFTER_ROOT ;
+дебет:дебет AFTER_ROOT ;
+арсенал:арсенал AFTER_ROOT ;
+альт:альт AFTER_ROOT ;
