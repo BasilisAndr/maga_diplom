@@ -30,9 +30,9 @@ all: $(LANG1)_rules.lexc $(LANG1).twoc
 	cat lexc/morphoids.lexc >> $(LANG1).lexc
 	cat lexc/roots.lexc >> $(LANG1).lexc
 	# --Werror
-	hfst-lexc $(LANG1).lexc -o $(LANG1).lexc.hfst
-	hfst-twolc $(LANG1).twoc -o $(LANG1).twoc.hfst
-	hfst-compose-intersect -1 $(LANG1).lexc.hfst -2 $(LANG1).twoc.hfst -o $(LANG1).hfst
+	hfst-lexc $(LANG1).lexc -o $(LANG1).hfst
+	# hfst-twolc $(LANG1).twoc -o $(LANG1).twoc.hfst
+	# hfst-compose-intersect -1 $(LANG1).lexc.hfst -2 $(LANG1).twoc.hfst -o $(LANG1).hfst
 	hfst-invert $(LANG1).hfst -o $(LANG1).gen.hfst
 	hfst-fst2fst --format=optimized-lookup-weighted -i $(LANG1).hfst -o $(LANG1).hfstol
 
@@ -43,13 +43,13 @@ all: $(LANG1)_rules.lexc $(LANG1).twoc
 guesser.hfst: $(LANG1).guesser.hfst
 	echo "" | hfst-xfst -e "source $<" -e "save stack $@" -e "quit"
 
-$(LANG1)_guesser.lexc.hfst: $(LANG1).lexc.hfst guesser.hfst
-	hfst-substitute -i $(LANG1).lexc.hfst -o $@ -f '{🂡}:{🂡}' -T guesser.hfst
+$(LANG1)_guesser.lexc.hfst: $(LANG1).hfst guesser.hfst
+	hfst-substitute -i $(LANG1).hfst -o $@ -f '{🂡}:{🂡}' -T guesser.hfst
 
 restrict_guesser.hfst: $(LANG1).restrict_guesser.hfst
 	hfst-regexp2fst $< -o $@
 
-$(LANG1)_guesser.automorf.hfst: $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst
+$(LANG1)_guesser.hfst: $(LANG1)_guesser.lexc.hfst restrict_guesser.hfst
 	cat $(LANG1)_guesser.lexc.hfst | hfst-invert | hfst-compose -1 - -2 restrict_guesser.hfst | hfst-invert | hfst-fst2fst -O -o $@
 # .deps/$(LANG1)_guesser.hfst: .deps/$(LANG1)_guesser.lexc.hfst .deps/$(LANG1).twol.hfst
 # 	hfst-compose-intersect -1 .deps/$(LANG1)_guesser.lexc.hfst -2 .deps/$(LANG1).twol.hfst -o $@

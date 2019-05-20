@@ -3,15 +3,17 @@ Multichar_Symbols
 
 %-
 %.root
-@P.CROSS.cross@
-
-
+@D.AUG@
+@P.AUG.t@
+@P.AUG.et@
+@P.AUG.at@
 
 
 LEXICON Root
 Roots ;
 Noun_Prefixes ;
 Verb_prefixes ;
+Adv_prefixes ;
 Vy ;
 
 
@@ -33,9 +35,11 @@ LEXICON Noun_Prefixes
 де:де%- NOUN_PREFIXES1 ;
 дез:дез%- NOUN_PREFIXES1 ;
 дис:дис%- NOUN_PREFIXES1 ;
+диз:диз%- NOUN_PREFIXES1 ;
 до:до%- NOUN_PREFIXES1 ;
 за:за%- NOUN_PREFIXES1 ;
 из:из%- NOUN_PREFIXES1 ;
+иc:из%- NOUN_PREFIXES1 ;
 контр:контр%- NOUN_PREFIXES1 ;
 меж:меж%- NOUN_PREFIXES1 ;
 между:между%- NOUN_PREFIXES1 ;
@@ -82,7 +86,7 @@ LEXICON Noun_Prefixes
 LEXICON NOUN_PREFIXES1
 
 : Noun_Prefixes "weight: -0.5" ;
-: Roots "weight: -0.25" ;
+: Roots "weight: -0.5" ;
 : Verb_prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
 !
@@ -97,10 +101,10 @@ LEXICON AFTER_ROOT
 о%-:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
 %-:%.root%- ROOTS_AGAIN "weight: -1.0" ;
 :%.root%- ROOTS_AGAIN "weight: -1.0" ;        ! кинопроба
-: T_AUG "weight: -0.15" ;
-:%.root VERB_SUFF "weight: -0.15" ;
-:%.root ADJ_SUFF "weight: -0.15" ;
-:%.root ADV "weight: -0.15" ;
+: T_AUG "weight: -0.5" ;
+:%.root VERB_SUFF "weight: -0.5" ;
+:%.root ADJ_SUFF "weight: -0.5" ;
+:%.root ADV "weight: -0.5" ;
 о:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
 е:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
 о%-:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
@@ -114,6 +118,14 @@ LEXICON AFTER_ROOT
 я:%.root%-а # ;
 е:%.root%-о # ;
 и:%.root%-и # ;
+ый:%.root%-ой # ;
+ий:%.root%-ой # ;
+ой:%.root%-ой # ;
+ть:%-ть POST ;
+ти:%-ти POST ;
+сть:%-сть POST ;
+сти:%-сти POST ;
+чь:%-чь POST ;
 
 
 LEXICON T_AUG
@@ -174,6 +186,7 @@ LEXICON NOUNS_FROM_VERBS
 ятор:%-атор NOUN_END ;
 итор:%-итор NOUN_END ;
 ор:%-ор NOUN_END ;                 ! агрессор
+р:%-ор NOUN_END ;                  ! лектриса
 ёр:%-ор NOUN_END ;
 ер:%-ор NOUN_END ;
 ант:%-ант NOUN_END ;               ! музыкант
@@ -211,6 +224,7 @@ LEXICON NOUNS_FROM_VERBS
 ни:%-ниj FLEXION_NOUN_SOFT ;                     ! кушанье, видение, привидение, звание, название, прозвание, препятствие
 нь:%-ниj FLEXION_NOUN_SOFT ;                     ! воздаяние
 ени:%-ениj FLEXION_NOUN_SOFT ;
+ень:%-ениj FLEXION_NOUN_SOFT ;
 ани:%-аниj FLEXION_NOUN_SOFT ;
 яни:%-аниj FLEXION_NOUN_SOFT ;
 и:%-иj FLEXION_NOUN_SOFT ;
@@ -252,7 +266,7 @@ LEXICON NOUNS_FROM_VERBS
 ёнк:%-ёнк FLEXION_NOUN ;            ! тоже сосуды
 ль:%-ль NOUN_END ;                 ! падаль(щик)
 оль:%-оль NOUN_END ;                       ! опухоль
-ад:ад NOUN_END ;                   ! маринад(ница)
+ад:%-ад NOUN_END ;                   ! маринад(ница)
 ! тий
 ти:%-тиj FLEXION_NOUN_SOFT ;           ! раздутие, развитие,
 ть:%-тиj FLEXION_NOUN_SOFT ;           ! житьё
@@ -270,7 +284,7 @@ LEXICON NOUNS_FROM_VERBS
 от:%-от FLEXION_NOUN ;
 ет:%-от FLEXION_NOUN ;
 ! ба
-б:б FLEXION_NOUN ;
+б:%-б FLEXION_NOUN ;
 ! ня
 отн:%-отн FLEXION_NOUN_SOFT ;
 овн:%-овн FLEXION_NOUN_SOFT ;
@@ -279,9 +293,10 @@ LEXICON NOUNS_FROM_VERBS
 яж:%-аж NOUN_END ;
 ! ёж
 ёж:%-ёж NOUN_END ;                ! кутёж, грабёж
+еж:%-еж NOUN_END ;
 ! ость
 ость:%-ость NOUN_END ;                   ! леность, жалость, погрешность
-ост:ост NOUN_END ;
+ост:%-ост NOUN_END ;
 ть:%-ть NOUN_END ;
 ность:%-ность NOUN_END ;
 ! изм
@@ -301,6 +316,7 @@ LEXICON NOUNS_FROM_VERBS
 ушк:%-ушк FLEXION_NOUN_SOFT ;       ! потягушки
 @D.AUG@ин:@D.AUG@%-ин FLEXION_NOUN ;              ! смотрины
 иц:%-иц FLEXION_NOUN ;
+иц:%-иц FLEXION_NOUN_SOFT ;
 овиц:%-овиц FLEXION_NOUN ;
 отк:%-отк FLEXION_NOUN ;
 тв:%-тв FLEXION_NOUN ;                  ! битва
@@ -393,7 +409,7 @@ LEXICON NOUNS_FROM_ADJ
 к:%-к FLEXION_NOUN_SOFT ;
 он:%-он FLEXION_NOUN_SOFT ;
 ! и:%-и FLEXION_NOUN_SOFT ;
-стви:%-стви FLEXION_NOUN_SOFT ;
+стви:%-ствиj FLEXION_NOUN_SOFT ;
 иш:%-иш NOUN_END ;                ! плохиш
 ыш:%-ыш NOUN_END ;                ! крепыш
 ость:%-ость NOUN_END ;
@@ -481,6 +497,7 @@ LEXICON NOUNS_FROM_NOUNS
 ёр:%-ор NOUN_END ;
 ер:%-ер NOUN_END ;
 онер:%-онер NOUN_END ;
+ионер:%-ион%-ер NOUN_END ;
 ир:%-ир NOUN_END ;
 иц:%-иц FLEXION_NOUN ;
 овиц:%-овиц FLEXION_NOUN ;
@@ -595,6 +612,8 @@ LEXICON NOUNS_FROM_NOUNS
 оноч:%-оноч FLEXION_NOUN ;
 ёнк:%-ёнк FLEXION_NOUN ;
 ёноч:%-ёноч FLEXION_NOUN ;
+енк:%-енк FLEXION_NOUN ;
+еноч:%-енк FLEXION_NOUN ;
 ив:%-ив FLEXION_NOUN ;
 ев:%-ев FLEXION_NOUN ;                       ! зарево
 ол:%-ол FLEXION_NOUN ;
@@ -632,6 +651,8 @@ LEXICON NOUNS_FROM_NOUNS
 яшеч:%-яшк FLEXION_NOUN ;
 ечк:%-ечк FLEXION_NOUN ;
 ечеч:%-ечк FLEXION_NOUN ;
+очк:%-очк FLEXION_NOUN ;
+очеч:%-очк FLEXION_NOUN ;
 уроч:%-урк FLEXION_NOUN ;
 инк:%-инк FLEXION_NOUN ;
 иноч:%-инк FLEXION_NOUN ;
@@ -681,6 +702,8 @@ LEXICON NOUNS_FROM_NOUNS
 об:%-об FLEXION_NOUN ;
 истик:%-истик FLEXION_NOUN ;
 рав:%-рав FLEXION_NOUN ;
+уз:%-уз NOUN_END ;
+уж:%-уж NOUN_END ;
 
 
 LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
@@ -808,6 +831,8 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 яшеч:%-яшк FLEXION_NOUN ;
 ечк:%-ечк FLEXION_NOUN ;
 ечеч:%-ечк FLEXION_NOUN ;
+очк:%-очк FLEXION_NOUN ;
+очеч:%-очк FLEXION_NOUN ;
 уроч:%-урк FLEXION_NOUN ;
 инк:%-инк FLEXION_NOUN ;
 иноч:%-инк FLEXION_NOUN ;
@@ -824,7 +849,7 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 есс:%-есс FLEXION_NOUN ;
 ис:%-ис FLEXION_NOUN ;
 инк:%-инк FLEXION_NOUN ;
-иноч:%-иноч FLEXION_NOUN ;
+иноч:%-инк FLEXION_NOUN ;
 ц:%-ц FLEXION_NOUN ;
 ец:%-ец FLEXION_NOUN ;
 ишк:%-ишк FLEXION_NOUN ;
@@ -837,6 +862,8 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 оноч:%-оноч FLEXION_NOUN ;
 ёнк:%-ёнк FLEXION_NOUN ;
 ёноч:%-ёноч FLEXION_NOUN ;
+енк:%-енк FLEXION_NOUN ;
+еноч:%-енк FLEXION_NOUN ;
 ёшк:%-ёшк FLEXION_NOUN ;
 ёшеч:%-ёшк FLEXION_NOUN ;
 ут:%-ут FLEXION_NOUN ;
@@ -855,16 +882,18 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 
 LEXICON NOUN_END
 : NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
-: ADJ_SUFF "weight: -0.5" ;
+: ADJ_FROM_NOUNS "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
+: ADV "weight: -0.5" ;
 : # ;
 
 
 
 LEXICON FLEXION_NOUN
 : NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
-: ADJ_SUFF "weight: -0.5" ;
+: ADJ_FROM_NOUNS "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
+: ADV "weight: -0.5" ;
 а:%-а # ;
 о:%-о # ;
 ё:%-о # ;                         ! свежевьё
@@ -875,8 +904,9 @@ LEXICON FLEXION_NOUN
 
 LEXICON FLEXION_NOUN_SOFT
 : NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
-: ADJ_SUFF "weight: -0.5" ;
+: ADJ_FROM_NOUNS "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
+: ADV "weight: -0.5" ;
 я:%-а # ;
 е:%-о # ;
 и:%-и # ;
@@ -935,7 +965,7 @@ LEXICON ADJ_PREFIXES
 : Verb_prefixes "weight: -0.5" ;
 : Noun_Prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
-: Roots ;
+: Roots "weight: -0.5" ;
 
 
 LEXICON ADJ_FROM_NOUNS
@@ -944,7 +974,7 @@ LEXICON ADJ_FROM_NOUNS
 ев:%-ов # ;
 ёв:%-ов # ;
 нин:%-нин # ;
-ий:%-ий # ;
+ий:%-ой # ;
 ачий:%-ачий # ;
 ичий:%-ичий # ;
 овий:%-овий # ;
@@ -1041,6 +1071,7 @@ LEXICON ADJ_FROM_NOUNS
 шн:%-шн FLEXION_ADJ ;
 ийн:%-ийн FLEXION_ADJ ;
 очн:%-очн FLEXION_ADJ ;
+ечн:%-ечн FLEXION_ADJ ;
 овн:%-овн FLEXION_ADJ ;
 евн:%-евн FLEXION_ADJ ;
 ебн:%-ебн FLEXION_ADJ ;
@@ -1058,9 +1089,9 @@ LEXICON ADJ_FROM_NOUNS
 ационн:%-ационн FLEXION_ADJ ;
 яжн:%-яжн FLEXION_ADJ ;
 ейн:%-ейн FLEXION_ADJ ;                 ! швейный
-альн:альн FLEXION_ADJ ;
-ивн:ивн FLEXION_ADJ ;
-озн:озн FLEXION_ADJ ;
+альн:%-альн FLEXION_ADJ ;
+ивн:%-ивн FLEXION_ADJ ;
+озн:%-озн FLEXION_ADJ ;
 
 н:%-н FLEXION_ADJ_SOFT ;
 енн:%-енн FLEXION_ADJ_SOFT ;
@@ -1221,14 +1252,25 @@ LEXICON FLEXION_ADJ
 : NOUNS_FROM_ADJ "weight: -0.5" ;
 : ADJ_FROM_ADJ "weight: -0.25" ;
 : VERB_SUFF "weight: -0.5" ;
-ый:%-ий # ;
+: ADV "weight: -0.25" ;
+о:%-о%- ROOTS_AGAIN "weight: -1.0" ;
+е:%-о%- ROOTS_AGAIN "weight: -1.0" ;
+о%-:%-о%- ROOTS_AGAIN "weight: -1.0" ;
+ый:%-ой # ;
+ой:%-ой # ;
+ая:%-ая # ;
+ое:%-ое # ;
 
 
 LEXICON FLEXION_ADJ_SOFT
 : NOUNS_FROM_ADJ "weight: -0.5" ;
 : ADJ_FROM_ADJ "weight: -0.25" ;
 : VERB_SUFF "weight: -0.5" ;
-ий:%-ий # ;
+: ADV "weight: -0.25" ;
+о:%-о%- ROOTS_AGAIN "weight: -1.0" ;
+е:%-о%- ROOTS_AGAIN "weight: -1.0" ;
+о%-:%-о%- ROOTS_AGAIN "weight: -1.0" ;
+ий:%-ой POST ;
 
 
 
@@ -1251,13 +1293,16 @@ LEXICON Verb_prefixes
 до:до%- VERB_PREFIXES2 ;
 за:за%- VERB_PREFIXES2 ;
 из:из%- VERB_PREFIXES2 ;
+изъ:из%- VERB_PREFIXES2 ;
 изо:изо%- VERB_PREFIXES2 ;
 ис:ис%- VERB_PREFIXES2 ;
 на:на%- VERB_PREFIXES2 ;
 над:над%- VERB_PREFIXES2 ;
+надъ:над%- VERB_PREFIXES2 ;
 надо:надо%- VERB_PREFIXES2 ;
 недо:недо%- VERB_PREFIXES2 ;
 низ:низ%- VERB_PREFIXES2 ;
+низъ:низ%- VERB_PREFIXES2 ;
 низо:низо%- VERB_PREFIXES2 ;
 о:о%- VERB_PREFIXES2 ;
 об:об%- VERB_PREFIXES2 ;
@@ -1289,7 +1334,7 @@ LEXICON VERB_PREFIXES2
 : Verb_prefixes "weight: -0.5" ;
 : Noun_Prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
-: Roots ;
+: Roots "weight: -0.5" ;
 
 
 LEXICON VERB_SUFF
@@ -1317,9 +1362,9 @@ LEXICON VERB_SUFF
 
 
 LEXICON VERB_SUFF2
-: NOUNS_FROM_VERBS "weight: -0.25" ;
-: ADJ_FROM_VERBS "weight: -0.25" ;
-: PRICH "weight: -0.25" ;
+: NOUNS_FROM_VERBS "weight: -0.5" ;
+: ADJ_FROM_VERBS "weight: -0.5" ;
+: PRICH "weight: -0.5" ;
 ть:%-ть POST ;
 ти:%-ти POST ;
 сть:%-сть POST ;
@@ -1328,6 +1373,7 @@ LEXICON VERB_SUFF2
 
 LEXICON POST
 ся:%-ся # ;
+сь:%-ся # ;
 : # ;
 
 
@@ -1336,9 +1382,14 @@ LEXICON PRICH
 ящ:%-ящ FLEXION_ADJ_SOFT ;
 
 
+LEXICON Adv_prefixes
+по%-:по%- Roots "weight: -0.5";
+
 LEXICON ADV
 е:%-о # ;
 о:%-о # ;
+! и:%-и # ;
+ом:%-ом # ;
 LEXICON Roots
 баб:баб AFTER_ROOT ;		![баб]	баба
 жаб:жаб AFTER_ROOT ;		![жаб]	жаба
@@ -1418,8 +1469,8 @@ LEXICON Roots
 журь:журь AFTER_ROOT ;		![жур]	журьба
 кось:кось AFTER_ROOT ;		![1кос]|[1каш]|[1кош]	косьба
 прось:прось AFTER_ROOT ;		![праш]|[прос]|[прош]	просьба
-! та:та AFTER_ROOT ;		![1та]	татьба
-! сел:сел AFTER_ROOT ;		![сел]|[сёл]	селитьба
+та:та AFTER_ROOT ;		![1та]	таить
+сел:сел AFTER_ROOT ;		![сел]|[сёл]	селитьба
 жен:жен AFTER_ROOT ;		![жен]|[жён]	женитьба
 колоть:колоть AFTER_ROOT ;		![колот]|[колач]|[колоч]	колотьба
 пас:пас AFTER_ROOT ;		![2пас]	пастьба
@@ -1503,7 +1554,7 @@ LEXICON Roots
 би:би AFTER_ROOT ;		![би(j)]|[1бо(j)]|[бь]	битва
 мол:мол AFTER_ROOT ;		![2мал]|[мол]	молитва
 бр:бр AFTER_ROOT ;		![2бр]	бритва
-электро:электро AFTER_ROOT ;		!	электробритва
+! электр:электр AFTER_ROOT ;		!	электробритва
 ботв:ботв AFTER_ROOT ;		![ботв]	ботва
 плот:плот AFTER_ROOT ;		![3плот]	плотва
 жертв:жертв AFTER_ROOT ;		![жертв]	жертва
@@ -1624,7 +1675,7 @@ LEXICON Roots
 бедн:бедн AFTER_ROOT ;		![бед]|[бежд]	бедняга
 кон:кон AFTER_ROOT ;		![2кон]	коняга
 двор:двор AFTER_ROOT ;		![двор]	дворняга
-сот:сот AFTER_ROOT ;		![1сот]|[ст]	сотняга
+! сот:сот AFTER_ROOT ;		![1сот]|[ст]	сотняга
 кочевряг:кочевряг AFTER_ROOT ;		![кочевряг]|[кочевряж]	кочевряга
 дряг:дряг AFTER_ROOT ;		![дряг]	передряга
 скряг:скряг AFTER_ROOT ;		![скряг]|[скряж]	скряга
@@ -1657,7 +1708,7 @@ LEXICON Roots
 всегда:всегда AFTER_ROOT ;		![4вес]|[вс]	всегда
 когда:когда AFTER_ROOT ;		![когда]	когда
 кой:кой AFTER_ROOT ;		!	кой-когда
-! ин:ин AFTER_ROOT ;		![1ин]	иногда
+ин:ин AFTER_ROOT ;		![1ин]	иногородний
 тогда:тогда AFTER_ROOT ;		![тогда]	тогда
 ед:ед AFTER_ROOT ;		![ед]|[1е]|[2ес]|[3я]|[яд]	еда
 лебед:лебед AFTER_ROOT ;		![лебед]|[лебёд]|[лебяж]	лебеда
@@ -2385,7 +2436,7 @@ LEXICON Roots
 кинет:кинет AFTER_ROOT ;		!	кинетостатика
 астр:астр AFTER_ROOT ;		!	астронавтика
 навт:навт AFTER_ROOT ;		!	астронавтика
-аэро:аэро AFTER_ROOT ;		!	аэронавтика
+аэр:аэр AFTER_ROOT ;		!	аэронавтика
 цит:цит AFTER_ROOT ;		!	цитогенетика
 ген:ген AFTER_ROOT ;		!	цитогенетика
 клит:клит AFTER_ROOT ;		!	энклитика
@@ -2518,7 +2569,7 @@ LEXICON Roots
 точ:точ AFTER_ROOT ;		![1тач]|[1ток]|[тек]|[тёк]|[теч]|[тёч]|[точ]	точилка
 ворош:ворош AFTER_ROOT ;		!	сеноворошилка
 суш:суш AFTER_ROOT ;		![2сох]|[сух]|[суш]|[сых]	сушилка
-вакуум:вакуум AFTER_ROOT ;		!	вакуум-сушилка
+! вакуум:вакуум AFTER_ROOT ;		!	вакуум-сушилка
 хлопк:хлопк AFTER_ROOT ;		!	хлопкосушилка
 кокон:кокон AFTER_ROOT ;		!	коконосушилка
 лощ:лощ AFTER_ROOT ;		![2лащ]|[2лос]|[лоск]|[лощ]	лощилка
@@ -2636,7 +2687,7 @@ LEXICON Roots
 греч:греч AFTER_ROOT ;		![грек]|[грец]|[греч]	гречанка
 волч:волч AFTER_ROOT ;		![волк]|[волч]	волчанка
 молч:молч AFTER_ROOT ;		![малк]|[малч]|[молк]|[молч]	молчанка
-оч:оч AFTER_ROOT ;		![ок]|[оч]	очанка
+! оч:оч AFTER_ROOT ;		![ок]|[оч]	очанка
 пес:пес AFTER_ROOT ;		![1пес]	песчанка
 мш:мш AFTER_ROOT ;		![1мош]|[мох]|[мш]	мшанка
 уш:уш AFTER_ROOT ;		![1ух]|[уш]	ушанка
@@ -2909,6 +2960,7 @@ LEXICON Roots
 табак:табак AFTER_ROOT ;		![табак]|[табач]	табакерка
 мер:мер AFTER_ROOT ;		![1мер]	мерка
 восьм:восьм AFTER_ROOT ;		![восем]|[восьм]|[осьм]	восьмёрка
+восьми:восьми AFTER_ROOT ;		![восем]|[восьм]|[осьм]	восьмёрка
 фанер:фанер AFTER_ROOT ;		![фанер]	фанерка
 поз:поз AFTER_ROOT ;		!	оппозиционерка
 революц:революц AFTER_ROOT ;		!	контрреволюционерка
@@ -3460,7 +3512,7 @@ LEXICON Roots
 дрем:дрем AFTER_ROOT ;		![дрем]|[дрём]	дрема
 дрём:дрём AFTER_ROOT ;		![дрем]|[дрём]	дрёма
 стрём:стрём AFTER_ROOT ;		![2стрем]|[стрём]	стрёма
-ант:ант AFTER_ROOT ;		!	энантема
+! ант:ант AFTER_ROOT ;		!	энантема
 схем:схем AFTER_ROOT ;		!	микросхема
 плазм:плазм AFTER_ROOT ;		!	метаплазма
 эндо:эндо AFTER_ROOT ;		!	эндоплазма
@@ -4310,7 +4362,7 @@ LEXICON Roots
 марш:марш AFTER_ROOT ;		!	марш-парад
 крад:крад AFTER_ROOT ;		!	казнокрад
 смрад:смрад AFTER_ROOT ;		![смерд]|[смород]|[смрад]	смрад
-пали:пали AFTER_ROOT ;		!	палисад
+! пали:пали AFTER_ROOT ;		!	палисад
 кита:кита AFTER_ROOT ;		!	китаевед
 музе:музе AFTER_ROOT ;		!	музеевед
 сердц:сердц AFTER_ROOT ;		!	сердцевед
@@ -4607,7 +4659,7 @@ LEXICON Roots
 рык:рык AFTER_ROOT ;		![рык]|[рыч]	рыкание
 брык:брык AFTER_ROOT ;		![брык]	брыкание
 мельк:мельк AFTER_ROOT ;		![мельк]|[мельт]	мелькание
-че:че AFTER_ROOT ;		!	ничегонеделание
+чего:чего AFTER_ROOT ;		!	ничегонеделание
 кла:кла AFTER_ROOT ;		![кла]|[клад]|[клаж]|[клас]	заклание
 стара:стара AFTER_ROOT ;		![стара]	старание
 пр:пр AFTER_ROOT ;		![1пер]|[1пёр]|[3пар]|[3пор]|[пир]|[пр]	попрание
@@ -4805,7 +4857,7 @@ LEXICON Roots
 лач:лач AFTER_ROOT ;		!	облачение
 конопач:конопач AFTER_ROOT ;		![конопат]|[конопач]	конопачение
 мрач:мрач AFTER_ROOT ;		![3мер]|[мерек]|[мереч]|[мерк]|[мерц]|[морач]|[морок]|[мороч]|[мрак]|[мрач]	помрачение
-мяг:мяг AFTER_ROOT ;		![мяг]|[мяк]	размягчение
+мягч:мягч AFTER_ROOT ;		![мяг]|[мяк]	размягчение
 веч:веч AFTER_ROOT ;		![1век]|[1веч]	увековечение
 увеч:увеч AFTER_ROOT ;		!	самоизувечение
 калеч:калеч AFTER_ROOT ;		![калек]|[калеч]	искалечение
@@ -4853,7 +4905,7 @@ LEXICON Roots
 вая:вая AFTER_ROOT ;		![вая]	ваяние
 ка:ка AFTER_ROOT ;		![1ка]	покаяние
 бле:бле AFTER_ROOT ;		![бле]	блеяние
-зи:зи AFTER_ROOT ;		![зи]	зияние
+зия:зия AFTER_ROOT ;		![зи]	зияние
 сия:сия AFTER_ROOT ;		![сия]	сияние
 ковыл:ковыл AFTER_ROOT ;		![1ковыл]	ковыляние
 обон:обон AFTER_ROOT ;		![обон]	обоняние
@@ -6088,6 +6140,7 @@ LEXICON Roots
 булыж:булыж AFTER_ROOT ;		![булыг]|[булыж]	булыжный
 вальяж:вальяж AFTER_ROOT ;		![вальяж]	вальяжный
 медвед:медвед AFTER_ROOT ;		!	медведеобразный
+медведь:медведь AFTER_ROOT ;
 желе:желе AFTER_ROOT ;		!	желеобразный
 кисел:кисел AFTER_ROOT ;		!	киселеобразный
 солнц:солнц AFTER_ROOT ;		!	солнцеобразный
@@ -6156,11 +6209,11 @@ LEXICON Roots
 паром:паром AFTER_ROOT ;		![паром]	паромный
 огром:огром AFTER_ROOT ;		!	преогромный
 дром:дром AFTER_ROOT ;		!	аэродромный
-скром:скром AFTER_ROOT ;		!	нескромный
+! скром:скром AFTER_ROOT ;		!	нескромный
 сором:сором AFTER_ROOT ;		![сором]|[срам]	соромный
 атом:атом AFTER_ROOT ;		!	субатомный
 кошом:кошом AFTER_ROOT ;		![кошм]|[кошом]	кошомный
-ваку:ваку AFTER_ROOT ;		!	электровакуумный
+вакуум:вакуум AFTER_ROOT ;		!	электровакуумный
 рев:рев AFTER_ROOT ;		!	зареванный
 диван:диван AFTER_ROOT ;		![диван]	диванный
 квалифиц:квалифиц AFTER_ROOT ;		!	неквалифицированный
@@ -6233,7 +6286,7 @@ LEXICON Roots
 любл:любл AFTER_ROOT ;		!	влюбленный
 ставл:ставл AFTER_ROOT ;		!	новопреставленный
 живл:живл AFTER_ROOT ;		!	оживленный
-ъяв:ъяв AFTER_ROOT ;		!	отъявленный
+яв:яв AFTER_ROOT ;		!	отъявленный
 хлам:хлам AFTER_ROOT ;		![хлам]	захламлённый
 щем:щем AFTER_ROOT ;		![щем]	ущемлённый
 холмл:холмл AFTER_ROOT ;		!	всхолмленный
@@ -6519,7 +6572,7 @@ LEXICON Roots
 памя:памя AFTER_ROOT ;		!	незлопамятный
 присн:присн AFTER_ROOT ;		!	приснопамятный
 вероят:вероят AFTER_ROOT ;		!	маловероятный
-ъя:ъя AFTER_ROOT ;		!	необъятный
+я:я AFTER_ROOT ;		!	необъятный
 брахи:брахи AFTER_ROOT ;		!	брахиморфный
 наждач:наждач AFTER_ROOT ;		![наждак]|[наждач]	наждачный
 чердач:чердач AFTER_ROOT ;		![чердак]|[чердач]	чердачный
@@ -6541,7 +6594,7 @@ LEXICON Roots
 обое:обое AFTER_ROOT ;		!	обоечный
 попереч:попереч AFTER_ROOT ;		!	встречный-поперечный
 преч:преч AFTER_ROOT ;		![1переч]|[перёк]|[прек]|[прёк]|[преч]	безупречный
-огур:огур AFTER_ROOT ;		![огур]	огуречный
+огуреч:огуреч AFTER_ROOT ;		![огур]	огуречный
 тёч:тёч AFTER_ROOT ;		![1тач]|[1ток]|[1точ]|[тёк]|[тёк]|[теч]|[тёч]	натёчный
 почеч:почеч AFTER_ROOT ;		![почеч]|[почк]	почечный
 кишеч:кишеч AFTER_ROOT ;		![кишк]|[кишеч]	кишечный
@@ -7112,7 +7165,7 @@ LEXICON Roots
 феномен:феномен AFTER_ROOT ;		!	эпифеномен
 яхтс:яхтс AFTER_ROOT ;		!	яхтсмен
 олиго:олиго AFTER_ROOT ;		!	олигофрен
-ново:ново AFTER_ROOT ;		!	новокаин
+! нов:нов AFTER_ROOT ;		!	новокаин
 каин:каин AFTER_ROOT ;		!	новокаин
 тромб:тромб AFTER_ROOT ;		!	протромбин
 аг:аг AFTER_ROOT ;		!	нитрагин
@@ -7527,7 +7580,7 @@ LEXICON Roots
 шепот:шепот AFTER_ROOT ;		!	полушепот
 шиворот:шиворот AFTER_ROOT ;		!	шиворот-навыворот
 восемь:восемь AFTER_ROOT ;		!	восемьсот
-ьсот:ьсот AFTER_ROOT ;		!	шестьсот
+сот:сот AFTER_ROOT ;		!	шестьсот
 медэксперт:медэксперт AFTER_ROOT ;		!	судмедэксперт
 гала:гала AFTER_ROOT ;		!	гала-концерт
 штир:штир AFTER_ROOT ;		!	штирборт
@@ -8074,7 +8127,7 @@ LEXICON Roots
 дрых:дрых AFTER_ROOT ;		![дрых]	дрыхать
 два:два AFTER_ROOT ;		!	сам-двадцать
 легч:легч AFTER_ROOT ;		!	облегчать
-мягч:мягч AFTER_ROOT ;		!	помягчать
+мягк:мягк AFTER_ROOT ;		!	помягчать
 ъябед:ъябед AFTER_ROOT ;		!	съябедничать
 полд:полд AFTER_ROOT ;		!	пополдничать
 проказ:проказ AFTER_ROOT ;		!	попроказничать
@@ -8483,7 +8536,7 @@ LEXICON Roots
 опи:опи AFTER_ROOT ;		!	опиекурильня
 тюр:тюр AFTER_ROOT ;		![тюр]	тюря
 мые:мые AFTER_ROOT ;		!	пресмыкающееся
-ий:ий AFTER_ROOT ;		!	запекшийся
+! ий:ий AFTER_ROOT ;		!	запекшийся
 бь:бь AFTER_ROOT ;		![би]|[1бо]|[бь]	небьющийся
 ймет:ймет AFTER_ROOT ;		!	неймется
 разум:разум AFTER_ROOT ;		!	подразумеваться
@@ -8515,7 +8568,7 @@ LEXICON Roots
 гермет:гермет AFTER_ROOT ;		!	разгерметизироваться
 ретир:ретир AFTER_ROOT ;		!	отретироваться
 христос:христос AFTER_ROOT ;		!	похристосоваться
-ся:ся AFTER_ROOT ;		!	спрессовываться
+! ся:ся AFTER_ROOT ;		!	спрессовываться
 тапт:тапт AFTER_ROOT ;		!	перетаптываться
 двиз:двиз AFTER_ROOT ;		![дви]|[двиг]|[движ]|[двиз]	подвизаться
 челом:челом AFTER_ROOT ;		![челом]	почеломкаться
@@ -8559,6 +8612,97 @@ LEXICON Roots
 берет:берет AFTER_ROOT ;
 свиде:свиде AFTER_ROOT ;
 образ:образ AFTER_ROOT ;
+якут:якут AFTER_ROOT ;
+постичь:постичь AFTER_ROOT ;
+постиж:постиж AFTER_ROOT ;
+уз:уз AFTER_ROOT ;
+кол:кол AFTER_ROOT ;
+имени:имени AFTER_ROOT ;
+намер:намер AFTER_ROOT ;
+сентимент:сентимент AFTER_ROOT ;
+сумерк:сумерк AFTER_ROOT ;
+побед:побед AFTER_ROOT ;
+астм:астм AFTER_ROOT ;
+мемориал:мемориал AFTER_ROOT ;
+стар:стар AFTER_ROOT ;
+собственн:собственн AFTER_ROOT ;                ! собственно
+вздор:вздор AFTER_ROOT ;
+лосн:лосн AFTER_ROOT ;            ! лосниться
+способн:способн AFTER_ROOT ;          ! способность
+алфавит:алфавит AFTER_ROOT ;
+порядок:порядок AFTER_ROOT ;
+нечаянн:нечаянн AFTER_ROOT ;
+кандидат:кандидат AFTER_ROOT ;
+созна:созна AFTER_ROOT ;
+курд:курд AFTER_ROOT ;
+войск:войск AFTER_ROOT ;
+эквивалент:эквивалент AFTER_ROOT ;
+махин:махин AFTER_ROOT ;              ! махинация
+гинек:гинек AFTER_ROOT ;
+поряд:поряд AFTER_ROOT ;              ! распорядить
+подозр:подозр AFTER_ROOT ;
+эквилибр:эквилибр AFTER_ROOT ;
+палоч:палоч AFTER_ROOT ;
+экстрак:экстрак AFTER_ROOT ;
+экстракт:экстракт AFTER_ROOT ;
+базилик:базилик AFTER_ROOT ;
+скульпт:скульпт AFTER_ROOT ;
+алкогол:алкогол AFTER_ROOT ;
+алкоголь:алкоголь AFTER_ROOT ;
+знаком:знаком AFTER_ROOT ;
+пресвитер:пресвитер AFTER_ROOT ;
+страниц:страниц AFTER_ROOT ;
+сним:сним AFTER_ROOT ;
+пенк:пенк AFTER_ROOT ;
+интеллект:интеллект AFTER_ROOT ;
+споко:споко AFTER_ROOT ;
+провор:провор AFTER_ROOT ;
+исследова:исследова AFTER_ROOT ;
+мышь:мышь AFTER_ROOT ;
+мыш:мыш AFTER_ROOT ;
+аргумент:аргумент AFTER_ROOT ;
+дирижёр:дирижёр AFTER_ROOT ;
+дирижер:дирижёр AFTER_ROOT ;
+силлог:силлог AFTER_ROOT ;
+тождествл:тождествл AFTER_ROOT ;
+тождеств:тождеств AFTER_ROOT ;
+сюртук:сюртук AFTER_ROOT ;
+сюртуч:сюртуч AFTER_ROOT ;
+обиль:обиль AFTER_ROOT ;
+светоч:светоч AFTER_ROOT ;
+бульон:бульон AFTER_ROOT ;
+добы:добы AFTER_ROOT ;              ! добыча
+высок:высок AFTER_ROOT ;
+социал:социал AFTER_ROOT ;
+музей:музей AFTER_ROOT ;
+армей:армей AFTER_ROOT ;
+невест:невест AFTER_ROOT ;
+приют:приют AFTER_ROOT ;
+конц:конц AFTER_ROOT ;              ! концевой
+пройм:пройм AFTER_ROOT ;
+вопль:вопль AFTER_ROOT ;
+де:де AFTER_ROOT ;                  ! одеваться
+вак:вак AFTER_ROOT ;                ! вакация
+дистан:дистан AFTER_ROOT ;
+крепч:крепч AFTER_ROOT ;
+вс:вс AFTER_ROOT ;                  ! всепобедный
+саг:саг AFTER_ROOT ;
+фехт:фехт AFTER_ROOT ;              ! фехтовать
+истреб:истреб AFTER_ROOT ;
+парокс:парокс AFTER_ROOT ;
+салак:салак AFTER_ROOT ;            ! салака
+сопер:сопер AFTER_ROOT ;            ! соперничать
+балов:балов AFTER_ROOT ;            ! баловство
+усадьб:усадьб AFTER_ROOT ;
+аудиенц:аудиенц AFTER_ROOT ;
+простир:простир AFTER_ROOT ;
+совершен:совершен AFTER_ROOT ;
+крачк:крачк AFTER_ROOT ;
+повстан:повстан AFTER_ROOT ;
+центавр:центавр AFTER_ROOT ;
+унци:унци AFTER_ROOT ;
+подлинн:подлинн AFTER_ROOT ;
+пенси:пенси AFTER_ROOT ;
 LEXICON ROOTS_AGAIN
 лог:лог AFTER_ROOT ;
 скоп:скоп AFTER_ROOT ;
@@ -8646,8 +8790,8 @@ LEXICON ROOTS_AGAIN
 журь:журь AFTER_ROOT ;		![жур]	журьба
 кось:кось AFTER_ROOT ;		![1кос]|[1каш]|[1кош]	косьба
 прось:прось AFTER_ROOT ;		![праш]|[прос]|[прош]	просьба
-! та:та AFTER_ROOT ;		![1та]	татьба
-! сел:сел AFTER_ROOT ;		![сел]|[сёл]	селитьба
+та:та AFTER_ROOT ;		![1та]	таить
+сел:сел AFTER_ROOT ;		![сел]|[сёл]	селитьба
 жен:жен AFTER_ROOT ;		![жен]|[жён]	женитьба
 колоть:колоть AFTER_ROOT ;		![колот]|[колач]|[колоч]	колотьба
 пас:пас AFTER_ROOT ;		![2пас]	пастьба
@@ -8731,7 +8875,7 @@ LEXICON ROOTS_AGAIN
 би:би AFTER_ROOT ;		![би(j)]|[1бо(j)]|[бь]	битва
 мол:мол AFTER_ROOT ;		![2мал]|[мол]	молитва
 бр:бр AFTER_ROOT ;		![2бр]	бритва
-электро:электро AFTER_ROOT ;		!	электробритва
+! электр:электр AFTER_ROOT ;		!	электробритва
 ботв:ботв AFTER_ROOT ;		![ботв]	ботва
 плот:плот AFTER_ROOT ;		![3плот]	плотва
 жертв:жертв AFTER_ROOT ;		![жертв]	жертва
@@ -8852,7 +8996,7 @@ LEXICON ROOTS_AGAIN
 бедн:бедн AFTER_ROOT ;		![бед]|[бежд]	бедняга
 кон:кон AFTER_ROOT ;		![2кон]	коняга
 двор:двор AFTER_ROOT ;		![двор]	дворняга
-сот:сот AFTER_ROOT ;		![1сот]|[ст]	сотняга
+! сот:сот AFTER_ROOT ;		![1сот]|[ст]	сотняга
 кочевряг:кочевряг AFTER_ROOT ;		![кочевряг]|[кочевряж]	кочевряга
 дряг:дряг AFTER_ROOT ;		![дряг]	передряга
 скряг:скряг AFTER_ROOT ;		![скряг]|[скряж]	скряга
@@ -8885,7 +9029,7 @@ LEXICON ROOTS_AGAIN
 всегда:всегда AFTER_ROOT ;		![4вес]|[вс]	всегда
 когда:когда AFTER_ROOT ;		![когда]	когда
 кой:кой AFTER_ROOT ;		!	кой-когда
-! ин:ин AFTER_ROOT ;		![1ин]	иногда
+ин:ин AFTER_ROOT ;		![1ин]	иногородний
 тогда:тогда AFTER_ROOT ;		![тогда]	тогда
 ед:ед AFTER_ROOT ;		![ед]|[1е]|[2ес]|[3я]|[яд]	еда
 лебед:лебед AFTER_ROOT ;		![лебед]|[лебёд]|[лебяж]	лебеда
@@ -9613,7 +9757,7 @@ LEXICON ROOTS_AGAIN
 кинет:кинет AFTER_ROOT ;		!	кинетостатика
 астр:астр AFTER_ROOT ;		!	астронавтика
 навт:навт AFTER_ROOT ;		!	астронавтика
-аэро:аэро AFTER_ROOT ;		!	аэронавтика
+аэр:аэр AFTER_ROOT ;		!	аэронавтика
 цит:цит AFTER_ROOT ;		!	цитогенетика
 ген:ген AFTER_ROOT ;		!	цитогенетика
 клит:клит AFTER_ROOT ;		!	энклитика
@@ -9746,7 +9890,7 @@ LEXICON ROOTS_AGAIN
 точ:точ AFTER_ROOT ;		![1тач]|[1ток]|[тек]|[тёк]|[теч]|[тёч]|[точ]	точилка
 ворош:ворош AFTER_ROOT ;		!	сеноворошилка
 суш:суш AFTER_ROOT ;		![2сох]|[сух]|[суш]|[сых]	сушилка
-вакуум:вакуум AFTER_ROOT ;		!	вакуум-сушилка
+! вакуум:вакуум AFTER_ROOT ;		!	вакуум-сушилка
 хлопк:хлопк AFTER_ROOT ;		!	хлопкосушилка
 кокон:кокон AFTER_ROOT ;		!	коконосушилка
 лощ:лощ AFTER_ROOT ;		![2лащ]|[2лос]|[лоск]|[лощ]	лощилка
@@ -9864,7 +10008,7 @@ LEXICON ROOTS_AGAIN
 греч:греч AFTER_ROOT ;		![грек]|[грец]|[греч]	гречанка
 волч:волч AFTER_ROOT ;		![волк]|[волч]	волчанка
 молч:молч AFTER_ROOT ;		![малк]|[малч]|[молк]|[молч]	молчанка
-оч:оч AFTER_ROOT ;		![ок]|[оч]	очанка
+! оч:оч AFTER_ROOT ;		![ок]|[оч]	очанка
 пес:пес AFTER_ROOT ;		![1пес]	песчанка
 мш:мш AFTER_ROOT ;		![1мош]|[мох]|[мш]	мшанка
 уш:уш AFTER_ROOT ;		![1ух]|[уш]	ушанка
@@ -10137,6 +10281,7 @@ LEXICON ROOTS_AGAIN
 табак:табак AFTER_ROOT ;		![табак]|[табач]	табакерка
 мер:мер AFTER_ROOT ;		![1мер]	мерка
 восьм:восьм AFTER_ROOT ;		![восем]|[восьм]|[осьм]	восьмёрка
+восьми:восьми AFTER_ROOT ;		![восем]|[восьм]|[осьм]	восьмёрка
 фанер:фанер AFTER_ROOT ;		![фанер]	фанерка
 поз:поз AFTER_ROOT ;		!	оппозиционерка
 революц:революц AFTER_ROOT ;		!	контрреволюционерка
@@ -10688,7 +10833,7 @@ LEXICON ROOTS_AGAIN
 дрем:дрем AFTER_ROOT ;		![дрем]|[дрём]	дрема
 дрём:дрём AFTER_ROOT ;		![дрем]|[дрём]	дрёма
 стрём:стрём AFTER_ROOT ;		![2стрем]|[стрём]	стрёма
-ант:ант AFTER_ROOT ;		!	энантема
+! ант:ант AFTER_ROOT ;		!	энантема
 схем:схем AFTER_ROOT ;		!	микросхема
 плазм:плазм AFTER_ROOT ;		!	метаплазма
 эндо:эндо AFTER_ROOT ;		!	эндоплазма
@@ -11538,7 +11683,7 @@ LEXICON ROOTS_AGAIN
 марш:марш AFTER_ROOT ;		!	марш-парад
 крад:крад AFTER_ROOT ;		!	казнокрад
 смрад:смрад AFTER_ROOT ;		![смерд]|[смород]|[смрад]	смрад
-пали:пали AFTER_ROOT ;		!	палисад
+! пали:пали AFTER_ROOT ;		!	палисад
 кита:кита AFTER_ROOT ;		!	китаевед
 музе:музе AFTER_ROOT ;		!	музеевед
 сердц:сердц AFTER_ROOT ;		!	сердцевед
@@ -11835,7 +11980,7 @@ LEXICON ROOTS_AGAIN
 рык:рык AFTER_ROOT ;		![рык]|[рыч]	рыкание
 брык:брык AFTER_ROOT ;		![брык]	брыкание
 мельк:мельк AFTER_ROOT ;		![мельк]|[мельт]	мелькание
-че:че AFTER_ROOT ;		!	ничегонеделание
+чего:чего AFTER_ROOT ;		!	ничегонеделание
 кла:кла AFTER_ROOT ;		![кла]|[клад]|[клаж]|[клас]	заклание
 стара:стара AFTER_ROOT ;		![стара]	старание
 пр:пр AFTER_ROOT ;		![1пер]|[1пёр]|[3пар]|[3пор]|[пир]|[пр]	попрание
@@ -12033,7 +12178,7 @@ LEXICON ROOTS_AGAIN
 лач:лач AFTER_ROOT ;		!	облачение
 конопач:конопач AFTER_ROOT ;		![конопат]|[конопач]	конопачение
 мрач:мрач AFTER_ROOT ;		![3мер]|[мерек]|[мереч]|[мерк]|[мерц]|[морач]|[морок]|[мороч]|[мрак]|[мрач]	помрачение
-мяг:мяг AFTER_ROOT ;		![мяг]|[мяк]	размягчение
+мягч:мягч AFTER_ROOT ;		![мяг]|[мяк]	размягчение
 веч:веч AFTER_ROOT ;		![1век]|[1веч]	увековечение
 увеч:увеч AFTER_ROOT ;		!	самоизувечение
 калеч:калеч AFTER_ROOT ;		![калек]|[калеч]	искалечение
@@ -12081,7 +12226,7 @@ LEXICON ROOTS_AGAIN
 вая:вая AFTER_ROOT ;		![вая]	ваяние
 ка:ка AFTER_ROOT ;		![1ка]	покаяние
 бле:бле AFTER_ROOT ;		![бле]	блеяние
-зи:зи AFTER_ROOT ;		![зи]	зияние
+зия:зия AFTER_ROOT ;		![зи]	зияние
 сия:сия AFTER_ROOT ;		![сия]	сияние
 ковыл:ковыл AFTER_ROOT ;		![1ковыл]	ковыляние
 обон:обон AFTER_ROOT ;		![обон]	обоняние
@@ -13316,6 +13461,7 @@ LEXICON ROOTS_AGAIN
 булыж:булыж AFTER_ROOT ;		![булыг]|[булыж]	булыжный
 вальяж:вальяж AFTER_ROOT ;		![вальяж]	вальяжный
 медвед:медвед AFTER_ROOT ;		!	медведеобразный
+медведь:медведь AFTER_ROOT ;
 желе:желе AFTER_ROOT ;		!	желеобразный
 кисел:кисел AFTER_ROOT ;		!	киселеобразный
 солнц:солнц AFTER_ROOT ;		!	солнцеобразный
@@ -13384,11 +13530,11 @@ LEXICON ROOTS_AGAIN
 паром:паром AFTER_ROOT ;		![паром]	паромный
 огром:огром AFTER_ROOT ;		!	преогромный
 дром:дром AFTER_ROOT ;		!	аэродромный
-скром:скром AFTER_ROOT ;		!	нескромный
+! скром:скром AFTER_ROOT ;		!	нескромный
 сором:сором AFTER_ROOT ;		![сором]|[срам]	соромный
 атом:атом AFTER_ROOT ;		!	субатомный
 кошом:кошом AFTER_ROOT ;		![кошм]|[кошом]	кошомный
-ваку:ваку AFTER_ROOT ;		!	электровакуумный
+вакуум:вакуум AFTER_ROOT ;		!	электровакуумный
 рев:рев AFTER_ROOT ;		!	зареванный
 диван:диван AFTER_ROOT ;		![диван]	диванный
 квалифиц:квалифиц AFTER_ROOT ;		!	неквалифицированный
@@ -13461,7 +13607,7 @@ LEXICON ROOTS_AGAIN
 любл:любл AFTER_ROOT ;		!	влюбленный
 ставл:ставл AFTER_ROOT ;		!	новопреставленный
 живл:живл AFTER_ROOT ;		!	оживленный
-ъяв:ъяв AFTER_ROOT ;		!	отъявленный
+яв:яв AFTER_ROOT ;		!	отъявленный
 хлам:хлам AFTER_ROOT ;		![хлам]	захламлённый
 щем:щем AFTER_ROOT ;		![щем]	ущемлённый
 холмл:холмл AFTER_ROOT ;		!	всхолмленный
@@ -13747,7 +13893,7 @@ LEXICON ROOTS_AGAIN
 памя:памя AFTER_ROOT ;		!	незлопамятный
 присн:присн AFTER_ROOT ;		!	приснопамятный
 вероят:вероят AFTER_ROOT ;		!	маловероятный
-ъя:ъя AFTER_ROOT ;		!	необъятный
+я:я AFTER_ROOT ;		!	необъятный
 брахи:брахи AFTER_ROOT ;		!	брахиморфный
 наждач:наждач AFTER_ROOT ;		![наждак]|[наждач]	наждачный
 чердач:чердач AFTER_ROOT ;		![чердак]|[чердач]	чердачный
@@ -13769,7 +13915,7 @@ LEXICON ROOTS_AGAIN
 обое:обое AFTER_ROOT ;		!	обоечный
 попереч:попереч AFTER_ROOT ;		!	встречный-поперечный
 преч:преч AFTER_ROOT ;		![1переч]|[перёк]|[прек]|[прёк]|[преч]	безупречный
-огур:огур AFTER_ROOT ;		![огур]	огуречный
+огуреч:огуреч AFTER_ROOT ;		![огур]	огуречный
 тёч:тёч AFTER_ROOT ;		![1тач]|[1ток]|[1точ]|[тёк]|[тёк]|[теч]|[тёч]	натёчный
 почеч:почеч AFTER_ROOT ;		![почеч]|[почк]	почечный
 кишеч:кишеч AFTER_ROOT ;		![кишк]|[кишеч]	кишечный
@@ -14340,7 +14486,7 @@ LEXICON ROOTS_AGAIN
 феномен:феномен AFTER_ROOT ;		!	эпифеномен
 яхтс:яхтс AFTER_ROOT ;		!	яхтсмен
 олиго:олиго AFTER_ROOT ;		!	олигофрен
-ново:ново AFTER_ROOT ;		!	новокаин
+! нов:нов AFTER_ROOT ;		!	новокаин
 каин:каин AFTER_ROOT ;		!	новокаин
 тромб:тромб AFTER_ROOT ;		!	протромбин
 аг:аг AFTER_ROOT ;		!	нитрагин
@@ -14755,7 +14901,7 @@ LEXICON ROOTS_AGAIN
 шепот:шепот AFTER_ROOT ;		!	полушепот
 шиворот:шиворот AFTER_ROOT ;		!	шиворот-навыворот
 восемь:восемь AFTER_ROOT ;		!	восемьсот
-ьсот:ьсот AFTER_ROOT ;		!	шестьсот
+сот:сот AFTER_ROOT ;		!	шестьсот
 медэксперт:медэксперт AFTER_ROOT ;		!	судмедэксперт
 гала:гала AFTER_ROOT ;		!	гала-концерт
 штир:штир AFTER_ROOT ;		!	штирборт
@@ -15302,7 +15448,7 @@ LEXICON ROOTS_AGAIN
 дрых:дрых AFTER_ROOT ;		![дрых]	дрыхать
 два:два AFTER_ROOT ;		!	сам-двадцать
 легч:легч AFTER_ROOT ;		!	облегчать
-мягч:мягч AFTER_ROOT ;		!	помягчать
+мягк:мягк AFTER_ROOT ;		!	помягчать
 ъябед:ъябед AFTER_ROOT ;		!	съябедничать
 полд:полд AFTER_ROOT ;		!	пополдничать
 проказ:проказ AFTER_ROOT ;		!	попроказничать
@@ -15711,7 +15857,7 @@ LEXICON ROOTS_AGAIN
 опи:опи AFTER_ROOT ;		!	опиекурильня
 тюр:тюр AFTER_ROOT ;		![тюр]	тюря
 мые:мые AFTER_ROOT ;		!	пресмыкающееся
-ий:ий AFTER_ROOT ;		!	запекшийся
+! ий:ий AFTER_ROOT ;		!	запекшийся
 бь:бь AFTER_ROOT ;		![би]|[1бо]|[бь]	небьющийся
 ймет:ймет AFTER_ROOT ;		!	неймется
 разум:разум AFTER_ROOT ;		!	подразумеваться
@@ -15743,7 +15889,7 @@ LEXICON ROOTS_AGAIN
 гермет:гермет AFTER_ROOT ;		!	разгерметизироваться
 ретир:ретир AFTER_ROOT ;		!	отретироваться
 христос:христос AFTER_ROOT ;		!	похристосоваться
-ся:ся AFTER_ROOT ;		!	спрессовываться
+! ся:ся AFTER_ROOT ;		!	спрессовываться
 тапт:тапт AFTER_ROOT ;		!	перетаптываться
 двиз:двиз AFTER_ROOT ;		![дви]|[двиг]|[движ]|[двиз]	подвизаться
 челом:челом AFTER_ROOT ;		![челом]	почеломкаться
@@ -15787,3 +15933,94 @@ LEXICON ROOTS_AGAIN
 берет:берет AFTER_ROOT ;
 свиде:свиде AFTER_ROOT ;
 образ:образ AFTER_ROOT ;
+якут:якут AFTER_ROOT ;
+постичь:постичь AFTER_ROOT ;
+постиж:постиж AFTER_ROOT ;
+уз:уз AFTER_ROOT ;
+кол:кол AFTER_ROOT ;
+имени:имени AFTER_ROOT ;
+намер:намер AFTER_ROOT ;
+сентимент:сентимент AFTER_ROOT ;
+сумерк:сумерк AFTER_ROOT ;
+побед:побед AFTER_ROOT ;
+астм:астм AFTER_ROOT ;
+мемориал:мемориал AFTER_ROOT ;
+стар:стар AFTER_ROOT ;
+собственн:собственн AFTER_ROOT ;                ! собственно
+вздор:вздор AFTER_ROOT ;
+лосн:лосн AFTER_ROOT ;            ! лосниться
+способн:способн AFTER_ROOT ;          ! способность
+алфавит:алфавит AFTER_ROOT ;
+порядок:порядок AFTER_ROOT ;
+нечаянн:нечаянн AFTER_ROOT ;
+кандидат:кандидат AFTER_ROOT ;
+созна:созна AFTER_ROOT ;
+курд:курд AFTER_ROOT ;
+войск:войск AFTER_ROOT ;
+эквивалент:эквивалент AFTER_ROOT ;
+махин:махин AFTER_ROOT ;              ! махинация
+гинек:гинек AFTER_ROOT ;
+поряд:поряд AFTER_ROOT ;              ! распорядить
+подозр:подозр AFTER_ROOT ;
+эквилибр:эквилибр AFTER_ROOT ;
+палоч:палоч AFTER_ROOT ;
+экстрак:экстрак AFTER_ROOT ;
+экстракт:экстракт AFTER_ROOT ;
+базилик:базилик AFTER_ROOT ;
+скульпт:скульпт AFTER_ROOT ;
+алкогол:алкогол AFTER_ROOT ;
+алкоголь:алкоголь AFTER_ROOT ;
+знаком:знаком AFTER_ROOT ;
+пресвитер:пресвитер AFTER_ROOT ;
+страниц:страниц AFTER_ROOT ;
+сним:сним AFTER_ROOT ;
+пенк:пенк AFTER_ROOT ;
+интеллект:интеллект AFTER_ROOT ;
+споко:споко AFTER_ROOT ;
+провор:провор AFTER_ROOT ;
+исследова:исследова AFTER_ROOT ;
+мышь:мышь AFTER_ROOT ;
+мыш:мыш AFTER_ROOT ;
+аргумент:аргумент AFTER_ROOT ;
+дирижёр:дирижёр AFTER_ROOT ;
+дирижер:дирижёр AFTER_ROOT ;
+силлог:силлог AFTER_ROOT ;
+тождествл:тождествл AFTER_ROOT ;
+тождеств:тождеств AFTER_ROOT ;
+сюртук:сюртук AFTER_ROOT ;
+сюртуч:сюртуч AFTER_ROOT ;
+обиль:обиль AFTER_ROOT ;
+светоч:светоч AFTER_ROOT ;
+бульон:бульон AFTER_ROOT ;
+добы:добы AFTER_ROOT ;              ! добыча
+высок:высок AFTER_ROOT ;
+социал:социал AFTER_ROOT ;
+музей:музей AFTER_ROOT ;
+армей:армей AFTER_ROOT ;
+невест:невест AFTER_ROOT ;
+приют:приют AFTER_ROOT ;
+конц:конц AFTER_ROOT ;              ! концевой
+пройм:пройм AFTER_ROOT ;
+вопль:вопль AFTER_ROOT ;
+де:де AFTER_ROOT ;                  ! одеваться
+вак:вак AFTER_ROOT ;                ! вакация
+дистан:дистан AFTER_ROOT ;
+крепч:крепч AFTER_ROOT ;
+вс:вс AFTER_ROOT ;                  ! всепобедный
+саг:саг AFTER_ROOT ;
+фехт:фехт AFTER_ROOT ;              ! фехтовать
+истреб:истреб AFTER_ROOT ;
+парокс:парокс AFTER_ROOT ;
+салак:салак AFTER_ROOT ;            ! салака
+сопер:сопер AFTER_ROOT ;            ! соперничать
+балов:балов AFTER_ROOT ;            ! баловство
+усадьб:усадьб AFTER_ROOT ;
+аудиенц:аудиенц AFTER_ROOT ;
+простир:простир AFTER_ROOT ;
+совершен:совершен AFTER_ROOT ;
+крачк:крачк AFTER_ROOT ;
+повстан:повстан AFTER_ROOT ;
+центавр:центавр AFTER_ROOT ;
+унци:унци AFTER_ROOT ;
+подлинн:подлинн AFTER_ROOT ;
+пенси:пенси AFTER_ROOT ;
