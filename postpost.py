@@ -24,5 +24,5 @@ for line in fileinput.input():
                     addendum.append(raz.replace(cmb, to_replace[cmb]))
         if addendum:
             addendum = list(set(addendum))
-            line += f'/{'/'.join(addendum)}'
+            line += f'\t{'\t'.join(addendum)}'
         print(line)

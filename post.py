@@ -20,8 +20,8 @@ for line in fileinput.input():
 
 for word, item in res_all:
     if len(item) == 1 and item[list(item.keys())[0]][0].endswith('?'):
-        print(f'^{word}/*{word}')
+        print(f'{word}\t*{word}')
     else:
         maxx = max(item.keys())
-        raz = '/'.join(item[maxx])
-        print(f'^{word}/{raz}')
+        raz = '\t'.join(item[maxx])
+        print(f'{word}\t{raz}')

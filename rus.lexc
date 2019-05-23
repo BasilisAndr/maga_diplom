@@ -105,7 +105,7 @@ LEXICON Noun_Prefixes
 LEXICON NOUN_PREFIXES1
 
 : Noun_Prefixes "weight: -0.5" ;
-: Roots "weight: -0.5" ;
+: Roots ;
 : Verb_prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
 !
@@ -129,6 +129,7 @@ LEXICON AFTER_ROOT
 е:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
 о%-:%.root%-о%- Noun_Prefixes "weight: -1.0" ;
 %-:%.root%- Noun_Prefixes "weight: -1.0" ;
+:%.root%- Noun_Prefixes "weight: -1.0" ;
 :%.root # ;
 а:%.root%-а # ;
 о:%.root%-о # ;
@@ -140,6 +141,7 @@ LEXICON AFTER_ROOT
 и:%.root%-и # ;
 ый:%.root%-ой # ;
 ий:%.root%-ой # ;
+ая:%.root%-ая # ;
 ой:%.root%-ой # ;
 ть:%.root%-ть POST ;
 ти:%.root%-ти POST ;
@@ -529,6 +531,7 @@ LEXICON NOUNS_FROM_NOUNS
 смен:%-смен NOUN_END ;
 мейстер:%-мейстер NOUN_END ;
 оз:%-оз NOUN_END ;
+оз:%-оз FLEXION_NOUN ;
 ёз:%-оз NOUN_END ;
 ол:%-ол NOUN_END ;
 арий:%-арий NOUN_END ;
@@ -725,6 +728,8 @@ LEXICON NOUNS_FROM_NOUNS
 уз:%-уз NOUN_END ;
 уж:%-уж NOUN_END ;
 ум:%-ум NOUN_END ;
+ове:%-ове NOUN_END ;
+ен:%-ен NOUN_END ;
 
 
 LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
@@ -767,7 +772,7 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 ичанин:%-ичан%-ин NOUN_END ;
 овчанин:%-овчан%-ин NOUN_END ;
 арь:%-арь NOUN_END ;
-ар:%-арь NOUN_END ;
+ар:%-арь FLEXION_NOUN ;
 атор:%-атор NOUN_END ;
 ятор:%-атор NOUN_END ;
 тор:%-тор NOUN_END ;
@@ -1277,6 +1282,7 @@ LEXICON ADJ_FROM_ADJ
 юсеньк:%-юсеньк FLEXION_ADJ_SOFT ;
 ущ:%-ущ FLEXION_ADJ_SOFT ;
 ейш:%-ейш FLEXION_ADJ_SOFT ;
+айш:%-айш FLEXION_ADJ_SOFT ;
 ш:%-ш FLEXION_ADJ_SOFT ;
 ецк:%-ецк FLEXION_ADJ_SOFT ;
 ящ:%-ящ FLEXION_ADJ_SOFT ;
@@ -1321,6 +1327,7 @@ LEXICON FLEXION_ADJ_SOFT
 
 LEXICON Verb_prefixes
 в:в%- VERB_PREFIXES2 ;
+въ:в%- VERB_PREFIXES2 ;
 во:во%- VERB_PREFIXES2 ;
 вз:вз%- VERB_PREFIXES2 ;
 взъ:вз%- VERB_PREFIXES2 ;
@@ -1398,6 +1405,7 @@ LEXICON VERB_SUFF
 и:%-и VERB_SUFF2 ;
 ова:%-ова VERB_SUFF2 ;
 ева:%-ева VERB_SUFF2 ;
+ва:%-ва VERB_SUFF2 ;
 изова:%-изова VERB_SUFF2 ;
 ирова:%-ирова VERB_SUFF2 ;
 изирова:%-изирова VERB_SUFF2 ;
@@ -4336,7 +4344,7 @@ LEXICON Roots
 таг:таг AFTER_ROOT ;		!	рейхстаг
 штаг:штаг AFTER_ROOT ;		!	оверштаг
 фаг:фаг AFTER_ROOT ;		!	ихтиофаг
-андро:андро AFTER_ROOT ;		!	андрофаг
+! андр:андр AFTER_ROOT ;		!	андрофаг
 очаг:очаг AFTER_ROOT ;		![очаг]|[очаж]	очаг
 бочаг:бочаг AFTER_ROOT ;		![бочаг]|[бочаж]	бочаг
 рычаг:рычаг AFTER_ROOT ;		![рычаг]|[рычаж]	рычаг
@@ -8785,6 +8793,48 @@ LEXICON Roots
 пастернак:пастернак AFTER_ROOT ;
 бюргер:бюргер AFTER_ROOT ;
 экзамин:экзамин AFTER_ROOT ;        ! экзаминатор
+разнобой:разнобой AFTER_ROOT ;
+монолит:монолит AFTER_ROOT ;
+литург:литург AFTER_ROOT ;
+картин:картин AFTER_ROOT ;
+темперамент:темперамент AFTER_ROOT ;
+фермент:фермент AFTER_ROOT ;
+фосфор:фосфор AFTER_ROOT ;
+сатурн:сатурн AFTER_ROOT ;
+семи:семи AFTER_ROOT ;
+колорит:колорит AFTER_ROOT ;
+гос:гос AFTER_ROOT ;
+издат:издат AFTER_ROOT ;
+иллюмин:иллюмин AFTER_ROOT ;
+любопыт:любопыт AFTER_ROOT ;
+усерд:усерд AFTER_ROOT ;
+постановл:постановл AFTER_ROOT ;
+гоме:гоме AFTER_ROOT ;
+стюард:стюард AFTER_ROOT ;
+агон:агон AFTER_ROOT ;
+прем:прем AFTER_ROOT ;              ! премия
+интуит:интуит AFTER_ROOT ;
+интуиц:интуиц AFTER_ROOT ;
+акуш:акуш AFTER_ROOT ;
+утес:утёс AFTER_ROOT ;
+утёс:утёс AFTER_ROOT ;
+рецидив:рецидив AFTER_ROOT ;
+гаранти:гаранти AFTER_ROOT ;
+гарант:гарант AFTER_ROOT ;
+кротч:кротч AFTER_ROOT ;            ! кротчайший
+красн:красн AFTER_ROOT ;
+руль:руль AFTER_ROOT ;
+гавань:гавань AFTER_ROOT ;
+коллектив:коллектив AFTER_ROOT ;
+коменд:коменд AFTER_ROOT ;
+петух:петух AFTER_ROOT ;
+маяк:маяк AFTER_ROOT ;
+маяч:маяк AFTER_ROOT ;
+каолин:каолин AFTER_ROOT ;
+интенсив:интенсив AFTER_ROOT ;
+фракци:фракци AFTER_ROOT ;
+контраст:контраст AFTER_ROOT ;
+сплит:сплит AFTER_ROOT ;
 LEXICON ROOTS_AGAIN
 лог:лог AFTER_ROOT ;
 скоп:скоп AFTER_ROOT ;
@@ -11679,7 +11729,7 @@ LEXICON ROOTS_AGAIN
 таг:таг AFTER_ROOT ;		!	рейхстаг
 штаг:штаг AFTER_ROOT ;		!	оверштаг
 фаг:фаг AFTER_ROOT ;		!	ихтиофаг
-андро:андро AFTER_ROOT ;		!	андрофаг
+! андр:андр AFTER_ROOT ;		!	андрофаг
 очаг:очаг AFTER_ROOT ;		![очаг]|[очаж]	очаг
 бочаг:бочаг AFTER_ROOT ;		![бочаг]|[бочаж]	бочаг
 рычаг:рычаг AFTER_ROOT ;		![рычаг]|[рычаж]	рычаг
@@ -16128,3 +16178,45 @@ LEXICON ROOTS_AGAIN
 пастернак:пастернак AFTER_ROOT ;
 бюргер:бюргер AFTER_ROOT ;
 экзамин:экзамин AFTER_ROOT ;        ! экзаминатор
+разнобой:разнобой AFTER_ROOT ;
+монолит:монолит AFTER_ROOT ;
+литург:литург AFTER_ROOT ;
+картин:картин AFTER_ROOT ;
+темперамент:темперамент AFTER_ROOT ;
+фермент:фермент AFTER_ROOT ;
+фосфор:фосфор AFTER_ROOT ;
+сатурн:сатурн AFTER_ROOT ;
+семи:семи AFTER_ROOT ;
+колорит:колорит AFTER_ROOT ;
+гос:гос AFTER_ROOT ;
+издат:издат AFTER_ROOT ;
+иллюмин:иллюмин AFTER_ROOT ;
+любопыт:любопыт AFTER_ROOT ;
+усерд:усерд AFTER_ROOT ;
+постановл:постановл AFTER_ROOT ;
+гоме:гоме AFTER_ROOT ;
+стюард:стюард AFTER_ROOT ;
+агон:агон AFTER_ROOT ;
+прем:прем AFTER_ROOT ;              ! премия
+интуит:интуит AFTER_ROOT ;
+интуиц:интуиц AFTER_ROOT ;
+акуш:акуш AFTER_ROOT ;
+утес:утёс AFTER_ROOT ;
+утёс:утёс AFTER_ROOT ;
+рецидив:рецидив AFTER_ROOT ;
+гаранти:гаранти AFTER_ROOT ;
+гарант:гарант AFTER_ROOT ;
+кротч:кротч AFTER_ROOT ;            ! кротчайший
+красн:красн AFTER_ROOT ;
+руль:руль AFTER_ROOT ;
+гавань:гавань AFTER_ROOT ;
+коллектив:коллектив AFTER_ROOT ;
+коменд:коменд AFTER_ROOT ;
+петух:петух AFTER_ROOT ;
+маяк:маяк AFTER_ROOT ;
+маяч:маяк AFTER_ROOT ;
+каолин:каолин AFTER_ROOT ;
+интенсив:интенсив AFTER_ROOT ;
+фракци:фракци AFTER_ROOT ;
+контраст:контраст AFTER_ROOT ;
+сплит:сплит AFTER_ROOT ;
