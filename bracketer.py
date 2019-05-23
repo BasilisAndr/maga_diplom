@@ -16,15 +16,15 @@ def get_closest(razz):
             if '.root' in raz[i]:
                 rt = {'root': i}
                 if i > 0:
-                    if raz[i - 1] == 'о' and 'root' in raz[i - 2]:
-                        rt['pref'] == i - 2
+                    if i > 1 and raz[i - 1] == 'о' and 'root' in raz[i - 2]:
+                        rt['pref'] = i - 2
                     else:
-                        rt['pref'] == i - 1
-                if i < len(raz):
-                    if raz[i + 1] == 'о' and 'root' in raz[i + 2]:
-                        rt['suf'] == i + 2
+                        rt['pref'] = i - 1
+                if i < len(raz) - 1 and i != 0:
+                    if i < len(raz) - 2 and 'root' in raz[i + 2] and raz[i + 1] == 'о':
+                        rt['suf'] = i + 2
                     else:
-                        rt['suf'] == i + 1
+                        rt['suf'] = i + 1
                 raz2.append(rt)
         razz2.append(raz2)
     return razz2
@@ -32,7 +32,7 @@ def get_closest(razz):
 
 def get_brackets(razz, razz2):
     res = []
-    for raz, raz2 in razz, razz2:
+    for raz, raz2 in zip(razz, razz2):
         # 3. look up the root
         # 4. look up the adjacent affixes
         # 5. compare the compat number of pref and suf
@@ -44,15 +44,17 @@ def get_brackets(razz, razz2):
             pref_num = 0
             suf_num = 0
             root = raz[rt['root']]
-            if pref in rt:
+            pref = ''
+            suf = ''
+            if 'pref' in rt:
                 pref = raz[rt['pref']]
-            if suf in rt:
+            if 'suf' in rt:
                 suf = raz[rt['suf']]
             if root in roots:
                 if pref and pref in roots[root]['prefs']:
                     pref_num = roots[root]['prefs'][pref]
                 if suf and suf in roots[root]['sufs']:
-                    suf_num = roots[root]['sufs'][pref]
+                    suf_num = roots[root]['sufs'][suf]
             winner = False
             if pref_num > suf_num:
                 winner = True
@@ -67,7 +69,9 @@ def get_brackets(razz, razz2):
                     right_br.append(rt['root'])
         stri = []
         for i in range(len(raz)):
-            if i in left_br:
+            if i in left_br and i in right_br:
+                stri.append('[{}]'.format(raz[i]))
+            elif i in left_br:
                 stri.append('[{}'.format(raz[i]))
             elif i in right_br:
                 stri.append('{}]'.format(raz[i]))
@@ -80,7 +84,7 @@ def get_brackets(razz, razz2):
 for line in fileinput.input():
     line = line.strip()
     # parse line into parts
-    razz = line.split('\t')[1:]
+    razz = line.split('/')[1:]
     razz2 = get_closest(razz)
     analyses_with_brackets = get_brackets(razz, razz2)
-    print(line[0], '\t', '\t'.join(analyses_with_brackets), sep='')
+    print(line[1:].split('/')[0], '\t', '\t'.join(analyses_with_brackets), sep='')
