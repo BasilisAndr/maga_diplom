@@ -19,7 +19,7 @@ def get_closest(razz):
                         rt['pref'] = raz[i - 2]
                     else:
                         rt['pref'] = raz[i - 1]
-                if i < len(raz) - 1 and i != 0:
+                if i < len(raz) - 1:
                     if i < len(raz) - 2 and 'root' in raz[i + 2] and raz[i + 1] == 'о':
                         rt['suf'] = raz[i + 2]
                     else:
