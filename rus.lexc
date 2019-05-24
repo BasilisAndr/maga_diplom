@@ -119,7 +119,7 @@ LEXICON AFTER_ROOT
 е:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
 о%-:%.root%-о%- ROOTS_AGAIN "weight: -1.0" ;
 %-:%.root%- ROOTS_AGAIN "weight: -1.0" ;
-:%.root%- ROOTS_AGAIN "weight: -1.0" ;        ! кинопроба
+:%.root%- ROOTS_AGAIN "weight: -1.0" ;        ! зарплата
 : T_AUG "weight: -0.5" ;
 :%.root VERB_SUFF "weight: -0.5" ;
 :%.root ADJ_SUFF "weight: -0.5" ;
@@ -772,7 +772,7 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 ичанин:%-ичан%-ин NOUN_END ;
 овчанин:%-овчан%-ин NOUN_END ;
 арь:%-арь NOUN_END ;
-ар:%-арь FLEXION_NOUN ;
+ар:%-арь INTER ;
 атор:%-атор NOUN_END ;
 ятор:%-атор NOUN_END ;
 тор:%-тор NOUN_END ;
@@ -906,6 +906,13 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 ёх:%-ох FLEXION_NOUN ;
 
 
+LEXICON INTER
+: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
+: ADJ_FROM_NOUNS "weight: -0.5" ;
+: VERB_SUFF "weight: -0.5" ;
+: ADV "weight: -0.5" ;
+
+
 LEXICON NOUN_END
 : NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
 : ADJ_FROM_NOUNS "weight: -0.5" ;
@@ -1007,7 +1014,7 @@ LEXICON ADJ_PREFIXES
 : Verb_prefixes "weight: -0.5" ;
 : Noun_Prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
-: Roots "weight: -0.5" ;
+: Roots ;
 
 
 LEXICON ADJ_FROM_NOUNS
@@ -1398,7 +1405,7 @@ LEXICON VERB_PREFIXES2
 : Verb_prefixes "weight: -0.5" ;
 : Noun_Prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
-: Roots "weight: -0.5" ;
+: Roots ;
 
 
 LEXICON VERB_SUFF
@@ -8835,6 +8842,8 @@ LEXICON Roots
 фракци:фракци AFTER_ROOT ;
 контраст:контраст AFTER_ROOT ;
 сплит:сплит AFTER_ROOT ;
+арлекин:арлекин AFTER_ROOT ;
+быдл:быдл AFTER_ROOT ;          ! быдлокодер
 LEXICON ROOTS_AGAIN
 лог:лог AFTER_ROOT ;
 скоп:скоп AFTER_ROOT ;
@@ -16220,3 +16229,5 @@ LEXICON ROOTS_AGAIN
 фракци:фракци AFTER_ROOT ;
 контраст:контраст AFTER_ROOT ;
 сплит:сплит AFTER_ROOT ;
+арлекин:арлекин AFTER_ROOT ;
+быдл:быдл AFTER_ROOT ;          ! быдлокодер

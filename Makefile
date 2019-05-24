@@ -30,7 +30,7 @@ all: $(LANG1)_rules.lexc $(LANG1).twoc
 	cat lexc/morphoids.lexc >> $(LANG1).lexc
 	cat lexc/roots.lexc >> $(LANG1).lexc
 	# --Werror
-	hfst-lexc $(LANG1).lexc -o $(LANG1).hfst
+	hfst-lexc -v $(LANG1).lexc -o $(LANG1).hfst
 	# hfst-twolc $(LANG1).twoc -o $(LANG1).twoc.hfst
 	# hfst-compose-intersect -1 $(LANG1).lexc.hfst -2 $(LANG1).twoc.hfst -o $(LANG1).hfst
 	hfst-invert $(LANG1).hfst -o $(LANG1).gen.hfst
