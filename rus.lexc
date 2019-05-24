@@ -105,7 +105,7 @@ LEXICON Noun_Prefixes
 LEXICON NOUN_PREFIXES1
 
 : Noun_Prefixes "weight: -0.5" ;
-: Roots ;
+: Roots "weight: -0.5" ;
 : Verb_prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
 !
@@ -318,7 +318,7 @@ LEXICON NOUNS_FROM_VERBS
 еж:%-еж NOUN_END ;
 ! ость
 ость:%-ость NOUN_END ;                   ! леность, жалость, погрешность
-ост:%-ост NOUN_END ;
+ост:%-ост INTER ;
 ть:%-ть NOUN_END ;
 ность:%-ность NOUN_END ;
 ! изм
@@ -330,7 +330,7 @@ LEXICON NOUNS_FROM_VERBS
 ч:%-ч FLEXION_NOUN ;
 @D.AUG@ель:@D.AUG@%-ель NOUN_END ;                       ! FIXME тель = т+ель - вроде done
 @D.AUG@ль:@D.AUG@%-ль NOUN_END ;
-@D.AUG@ел:@D.AUG@%-ель NOUN_END ;                ! метелица
+@D.AUG@ел:@D.AUG@%-ель INTER ;                ! метелица
 от:%-от NOUN_END ;                         ! топот цокот
 он:%-он NOUN_END ;                         ! выпивон
 ! к
@@ -1014,7 +1014,7 @@ LEXICON ADJ_PREFIXES
 : Verb_prefixes "weight: -0.5" ;
 : Noun_Prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
-: Roots ;
+: Roots "weight: -0.5" ;
 
 
 LEXICON ADJ_FROM_NOUNS
@@ -1276,11 +1276,12 @@ LEXICON ADJ_FROM_ADJ
 яв:%-яв FLEXION_ADJ ;
 ичн:%-ичн FLEXION_ADJ ;
 ическ:%-ическ FLEXION_ADJ ;
-н:%-н FLEXION_ADJ ;
+! н:%-н FLEXION_ADJ ;
 менн:%-менн FLEXION_ADJ ;
 ственн:%-ственн FLEXION_ADJ ;
 
-оньк:%-оньк FLEXION_ADJ_SOFT ;
+! оньк:%-оньк FLEXION_ADJ_SOFT ;
+еньк:%-еньк FLEXION_ADJ_SOFT ;
 охоньк:%-охоньк FLEXION_ADJ_SOFT ;
 ошеньк:%-ошеньк FLEXION_ADJ_SOFT ;
 ёхоньк:%-ёхоньк FLEXION_ADJ_SOFT ;
@@ -1297,7 +1298,7 @@ LEXICON ADJ_FROM_ADJ
 ишн:%-ишн FLEXION_ADJ_SOFT ;
 ашн:%-ашн FLEXION_ADJ_SOFT ;
 шн:%-шн FLEXION_ADJ_SOFT ;
-! краткие формы
+! ! краткие формы
 ен:%-ен # ;
 ствен:%-ствен # ;
 енек:%-енек # ;
@@ -1333,111 +1334,111 @@ LEXICON FLEXION_ADJ_SOFT
 !!! VERBAL STUFF
 
 LEXICON Verb_prefixes
-в:в%- VERB_PREFIXES2 ;
-въ:в%- VERB_PREFIXES2 ;
-во:во%- VERB_PREFIXES2 ;
-вз:вз%- VERB_PREFIXES2 ;
-взъ:вз%- VERB_PREFIXES2 ;
-вс:вс%- VERB_PREFIXES2 ;
-взо:взо%- VERB_PREFIXES2 ;
-воз:воз%- VERB_PREFIXES2 ;
-возъ:воз%- VERB_PREFIXES2 ;
-возо:возо%- VERB_PREFIXES2 ;
-вос:вос%- VERB_PREFIXES2 ;
-вы:вы%- VERB_PREFIXES2 ;
-де:де%- VERB_PREFIXES2 ;
-дез:дез%- VERB_PREFIXES2 ;
-дезъ:дез%- VERB_PREFIXES2 ;
-дис:дис%- VERB_PREFIXES2 ;
-дисъ:дис%- VERB_PREFIXES2 ;
-до:до%- VERB_PREFIXES2 ;
-за:за%- VERB_PREFIXES2 ;
-из:из%- VERB_PREFIXES2 ;
-изъ:из%- VERB_PREFIXES2 ;
-изо:изо%- VERB_PREFIXES2 ;
-ис:ис%- VERB_PREFIXES2 ;
-исъ:ис%- VERB_PREFIXES2 ;
-на:на%- VERB_PREFIXES2 ;
-над:над%- VERB_PREFIXES2 ;
-надъ:над%- VERB_PREFIXES2 ;
-надо:надо%- VERB_PREFIXES2 ;
-недо:недо%- VERB_PREFIXES2 ;
-низ:низ%- VERB_PREFIXES2 ;
-низъ:низ%- VERB_PREFIXES2 ;
-низо:низо%- VERB_PREFIXES2 ;
-о:о%- VERB_PREFIXES2 ;
-об:об%- VERB_PREFIXES2 ;
-объ:об%- VERB_PREFIXES2 ;
-обо:обо%- VERB_PREFIXES2 ;
-от:от%- VERB_PREFIXES2 ;
-отъ:от%- VERB_PREFIXES2 ;
-ото:ото%- VERB_PREFIXES2 ;
-пере:пере%- VERB_PREFIXES2 ;
-по:по%- VERB_PREFIXES2 ;
-под:под%- VERB_PREFIXES2 ;
-подъ:под%- VERB_PREFIXES2 ;
-подо:подо%- VERB_PREFIXES2 ;
-пре:пре%- VERB_PREFIXES2 ;
-пред:пред%- VERB_PREFIXES2 ;
-предъ:пред%- VERB_PREFIXES2 ;
-предо:предо%- VERB_PREFIXES2 ;
-при:при%- VERB_PREFIXES2 ;
-про:про%- VERB_PREFIXES2 ;
-раз:раз%- VERB_PREFIXES2 ;
-разъ:раз%- VERB_PREFIXES2 ;
-рас:рас%- VERB_PREFIXES2 ;
-роз:раз%- VERB_PREFIXES2 ;
-розъ:раз%- VERB_PREFIXES2 ;
-рос:рас%- VERB_PREFIXES2 ;
-разо:разо%- VERB_PREFIXES2 ;
-ре:ре%- VERB_PREFIXES2 ;
-с:с%- VERB_PREFIXES2 ;
-съ:с%- VERB_PREFIXES2 ;
-со:со%- VERB_PREFIXES2 ;
-у:у%- VERB_PREFIXES2 ;
-противо:противо%- VERB_PREFIXES2 ;
-сверх:сверх%- VERB_PREFIXES2 ;
-сверхъ:сверх%- VERB_PREFIXES2 ;
-меж:меж%- VERB_PREFIXES2 ;
+в:в.verb%- VERB_PREFIXES2 ;
+въ:в.verb%- VERB_PREFIXES2 ;
+во:во.verb%- VERB_PREFIXES2 ;
+вз:вз.verb%- VERB_PREFIXES2 ;
+взъ:вз.verb%- VERB_PREFIXES2 ;
+вс:вс.verb%- VERB_PREFIXES2 ;
+взо:взо.verb%- VERB_PREFIXES2 ;
+воз:воз.verb%- VERB_PREFIXES2 ;
+возъ:воз.verb%- VERB_PREFIXES2 ;
+возо:возо.verb%- VERB_PREFIXES2 ;
+вос:вос.verb%- VERB_PREFIXES2 ;
+вы:вы.verb%- VERB_PREFIXES2 ;
+де:де.verb%- VERB_PREFIXES2 ;
+дез:дез.verb%- VERB_PREFIXES2 ;
+дезъ:дез.verb%- VERB_PREFIXES2 ;
+дис:дис.verb%- VERB_PREFIXES2 ;
+дисъ:дис.verb%- VERB_PREFIXES2 ;
+до:до.verb%- VERB_PREFIXES2 ;
+за:за.verb%- VERB_PREFIXES2 ;
+из:из.verb%- VERB_PREFIXES2 ;
+изъ:из.verb%- VERB_PREFIXES2 ;
+изо:изо.verb%- VERB_PREFIXES2 ;
+ис:ис.verb%- VERB_PREFIXES2 ;
+исъ:ис.verb%- VERB_PREFIXES2 ;
+на:на.verb%- VERB_PREFIXES2 ;
+над:над.verb%- VERB_PREFIXES2 ;
+надъ:над.verb%- VERB_PREFIXES2 ;
+надо:надо.verb%- VERB_PREFIXES2 ;
+недо:недо.verb%- VERB_PREFIXES2 ;
+низ:низ.verb%- VERB_PREFIXES2 ;
+низъ:низ.verb%- VERB_PREFIXES2 ;
+низо:низо.verb%- VERB_PREFIXES2 ;
+о:о.verb%- VERB_PREFIXES2 ;
+об:об.verb%- VERB_PREFIXES2 ;
+объ:об.verb%- VERB_PREFIXES2 ;
+обо:обо.verb%- VERB_PREFIXES2 ;
+от:от.verb%- VERB_PREFIXES2 ;
+отъ:от.verb%- VERB_PREFIXES2 ;
+ото:ото.verb%- VERB_PREFIXES2 ;
+пере:пере.verb%- VERB_PREFIXES2 ;
+по:по.verb%- VERB_PREFIXES2 ;
+под:под.verb%- VERB_PREFIXES2 ;
+подъ:под.verb%- VERB_PREFIXES2 ;
+подо:подо.verb%- VERB_PREFIXES2 ;
+пре:пре.verb%- VERB_PREFIXES2 ;
+пред:пред.verb%- VERB_PREFIXES2 ;
+предъ:пред.verb%- VERB_PREFIXES2 ;
+предо:предо.verb%- VERB_PREFIXES2 ;
+при:при.verb%- VERB_PREFIXES2 ;
+про:про.verb%- VERB_PREFIXES2 ;
+раз:раз.verb%- VERB_PREFIXES2 ;
+разъ:раз.verb%- VERB_PREFIXES2 ;
+рас:рас.verb%- VERB_PREFIXES2 ;
+роз:раз.verb%- VERB_PREFIXES2 ;
+розъ:раз.verb%- VERB_PREFIXES2 ;
+рос:рас.verb%- VERB_PREFIXES2 ;
+разо:разо.verb%- VERB_PREFIXES2 ;
+ре:ре.verb%- VERB_PREFIXES2 ;
+с:с.verb%- VERB_PREFIXES2 ;
+съ:с.verb%- VERB_PREFIXES2 ;
+со:со.verb%- VERB_PREFIXES2 ;
+у:у.verb%- VERB_PREFIXES2 ;
+противо:противо.verb%- VERB_PREFIXES2 ;
+сверх:сверх.verb%- VERB_PREFIXES2 ;
+сверхъ:сверх.verb%- VERB_PREFIXES2 ;
+меж:меж.verb%- VERB_PREFIXES2 ;
 
 
 LEXICON VERB_PREFIXES2
 : Verb_prefixes "weight: -0.5" ;
 : Noun_Prefixes "weight: -0.5" ;
 : Adj_prefixes "weight: -0.5" ;
-: Roots ;
+: Roots "weight: -0.5" ;
 
 
 LEXICON VERB_SUFF
-и:%-и VERB_SUFF2 ;
-ова:%-ова VERB_SUFF2 ;
-ева:%-ева VERB_SUFF2 ;
-ва:%-ва VERB_SUFF2 ;
-изова:%-изова VERB_SUFF2 ;
-ирова:%-ирова VERB_SUFF2 ;
-изирова:%-изирова VERB_SUFF2 ;
-нича:%-нича VERB_SUFF2 ;
-ича:%-ича VERB_SUFF2 ;
-ствова:%-ствова VERB_SUFF2 ;
-ествова:%-ествова VERB_SUFF2 ;
-а:%-а VERB_SUFF2 ;
-я:%-а VERB_SUFF2 ;
-ка:%-ка VERB_SUFF2 ;
-е:%-е VERB_SUFF2 ;
-ну:%-ну VERB_SUFF2 ;
-ану:%-ану VERB_SUFF2 ;
-яну:%-ану VERB_SUFF2 ;
-ива:%-ива VERB_SUFF2 ;
-ыва:%-ыва VERB_SUFF2 ;
-у:%-у VERB_SUFF2 ;
-ю:%-ю VERB_SUFF2 ;
+и:%-и.verb VERB_SUFF2 ;
+ова:%-ова.verb VERB_SUFF2 ;
+ева:%-ева.verb VERB_SUFF2 ;
+ва:%-ва.verb VERB_SUFF2 ;
+изова:%-изова.verb VERB_SUFF2 ;
+ирова:%-ирова.verb VERB_SUFF2 ;
+изирова:%-изирова.verb VERB_SUFF2 ;
+нича:%-нича.verb VERB_SUFF2 ;
+ича:%-ича.verb VERB_SUFF2 ;
+ствова:%-ствова.verb VERB_SUFF2 ;
+ествова:%-ествова.verb VERB_SUFF2 ;
+а:%-а.verb VERB_SUFF2 ;
+я:%-а.verb VERB_SUFF2 ;
+ка:%-ка.verb VERB_SUFF2 ;
+е:%-е.verb VERB_SUFF2 ;
+ну:%-ну.verb VERB_SUFF2 ;
+ану:%-ану.verb VERB_SUFF2 ;
+яну:%-ану.verb VERB_SUFF2 ;
+ива:%-ива.verb VERB_SUFF2 ;
+ыва:%-ыва.verb VERB_SUFF2 ;
+у:%-у.verb VERB_SUFF2 ;
+ю:%-ю.verb VERB_SUFF2 ;
 
 
 LEXICON VERB_SUFF2
 : NOUNS_FROM_VERBS "weight: -0.5" ;
 : ADJ_FROM_VERBS "weight: -0.5" ;
 : PART "weight: -0.5" ;
-ть:%-ть POST ;
+ть:%-ть.verb POST ;
 ти:%-ти POST ;
 сть:%-сть POST ;
 сти:%-сти POST ;
@@ -1461,8 +1462,8 @@ LEXICON Adv_prefixes
 по%-:по%- Roots "weight: -0.5";
 
 LEXICON ADV
-е:%-о # ;
-о:%-о # ;
+! е:%-о.adv # ;
+! о:%-о # ;
 ! и:%-и # ;
 ом:%-ом # ;
 LEXICON Roots
@@ -2021,7 +2022,7 @@ LEXICON Roots
 смол:смол AFTER_ROOT ;		![смал]|[смол]	смолёвка
 огн:огн AFTER_ROOT ;		![огн]|[огон]	огнёвка
 дн:дн AFTER_ROOT ;		![ден]|[дён]|[1дн]	днёвка
-шест:шест AFTER_ROOT ;		!	шестидневка
+шести:шести AFTER_ROOT ;		!	шестидневка
 кремн:кремн AFTER_ROOT ;		![кремен]|[кремеш]|[кремн]	кремнёвка
 вишн:вишн AFTER_ROOT ;		![вишн]|[вишен]	вишнёвка
 пе:пе AFTER_ROOT ;		![3по]|[пе]	запевка
@@ -2358,7 +2359,7 @@ LEXICON Roots
 павлин:павлин AFTER_ROOT ;		!	павлиноглазка
 злат:злат AFTER_ROOT ;		!	златоглазка
 желт:желт AFTER_ROOT ;		!	желтоглазка
-четыр:четыр AFTER_ROOT ;		!	четырехглазка
+четырех:четырех AFTER_ROOT ;		!	четырехглазка
 маз:маз AFTER_ROOT ;		![маз]	мазка
 желёз:желёз AFTER_ROOT ;		![2желез]|[желёз]	желёзка
 слёз:слёз AFTER_ROOT ;		![слез]|[слёз]	слёзка
@@ -7353,8 +7354,8 @@ LEXICON Roots
 зёрн:зёрн AFTER_ROOT ;		![зерн]|[зёрн]	зёрнышко
 рёбр:рёбр AFTER_ROOT ;		![ребер]|[рёбер]|[ребр]|[рёбр]	рёбрышко
 вёдр:вёдр AFTER_ROOT ;		![1ведр]|[ведёр]|[1вёдр]	вёдрышко
-ск:ск AFTER_ROOT ;		!	несколько
-лько:лько AFTER_ROOT ;		!	несколько
+! ск:ск AFTER_ROOT ;		!	несколько
+сколько:сколько AFTER_ROOT ;		!	несколько
 колько:колько AFTER_ROOT ;		!	нисколько
 только:только AFTER_ROOT ;		!	только-только
 табл:табл AFTER_ROOT ;		!	электротабло
@@ -7683,7 +7684,7 @@ LEXICON Roots
 лифт:лифт AFTER_ROOT ;		!	эрлифт
 пульт:пульт AFTER_ROOT ;		!	краскопульт
 инсульт:инсульт AFTER_ROOT ;		!	микроинсульт
-ьдесят:ьдесят AFTER_ROOT ;		!	шестьдесят
+! десят:десят AFTER_ROOT ;		!	шестьдесят
 блау:блау AFTER_ROOT ;		!	метиленблау
 фрау:фрау AFTER_ROOT ;		!	камер-фрау
 ноу:ноу AFTER_ROOT ;		!	ноу-хау
@@ -8844,6 +8845,11 @@ LEXICON Roots
 сплит:сплит AFTER_ROOT ;
 арлекин:арлекин AFTER_ROOT ;
 быдл:быдл AFTER_ROOT ;          ! быдлокодер
+дцати:дцати AFTER_ROOT ;
+пяти:пяти AFTER_ROOT ;
+двух:двух AFTER_ROOT ;
+девяти:девяти AFTER_ROOT ;
+десяти:десяти AFTER_ROOT ;
 LEXICON ROOTS_AGAIN
 лог:лог AFTER_ROOT ;
 скоп:скоп AFTER_ROOT ;
@@ -9408,7 +9414,7 @@ LEXICON ROOTS_AGAIN
 смол:смол AFTER_ROOT ;		![смал]|[смол]	смолёвка
 огн:огн AFTER_ROOT ;		![огн]|[огон]	огнёвка
 дн:дн AFTER_ROOT ;		![ден]|[дён]|[1дн]	днёвка
-шест:шест AFTER_ROOT ;		!	шестидневка
+шести:шести AFTER_ROOT ;		!	шестидневка
 кремн:кремн AFTER_ROOT ;		![кремен]|[кремеш]|[кремн]	кремнёвка
 вишн:вишн AFTER_ROOT ;		![вишн]|[вишен]	вишнёвка
 пе:пе AFTER_ROOT ;		![3по]|[пе]	запевка
@@ -9745,7 +9751,7 @@ LEXICON ROOTS_AGAIN
 павлин:павлин AFTER_ROOT ;		!	павлиноглазка
 злат:злат AFTER_ROOT ;		!	златоглазка
 желт:желт AFTER_ROOT ;		!	желтоглазка
-четыр:четыр AFTER_ROOT ;		!	четырехглазка
+четырех:четырех AFTER_ROOT ;		!	четырехглазка
 маз:маз AFTER_ROOT ;		![маз]	мазка
 желёз:желёз AFTER_ROOT ;		![2желез]|[желёз]	желёзка
 слёз:слёз AFTER_ROOT ;		![слез]|[слёз]	слёзка
@@ -14740,8 +14746,8 @@ LEXICON ROOTS_AGAIN
 зёрн:зёрн AFTER_ROOT ;		![зерн]|[зёрн]	зёрнышко
 рёбр:рёбр AFTER_ROOT ;		![ребер]|[рёбер]|[ребр]|[рёбр]	рёбрышко
 вёдр:вёдр AFTER_ROOT ;		![1ведр]|[ведёр]|[1вёдр]	вёдрышко
-ск:ск AFTER_ROOT ;		!	несколько
-лько:лько AFTER_ROOT ;		!	несколько
+! ск:ск AFTER_ROOT ;		!	несколько
+сколько:сколько AFTER_ROOT ;		!	несколько
 колько:колько AFTER_ROOT ;		!	нисколько
 только:только AFTER_ROOT ;		!	только-только
 табл:табл AFTER_ROOT ;		!	электротабло
@@ -15070,7 +15076,7 @@ LEXICON ROOTS_AGAIN
 лифт:лифт AFTER_ROOT ;		!	эрлифт
 пульт:пульт AFTER_ROOT ;		!	краскопульт
 инсульт:инсульт AFTER_ROOT ;		!	микроинсульт
-ьдесят:ьдесят AFTER_ROOT ;		!	шестьдесят
+! десят:десят AFTER_ROOT ;		!	шестьдесят
 блау:блау AFTER_ROOT ;		!	метиленблау
 фрау:фрау AFTER_ROOT ;		!	камер-фрау
 ноу:ноу AFTER_ROOT ;		!	ноу-хау
@@ -16231,3 +16237,8 @@ LEXICON ROOTS_AGAIN
 сплит:сплит AFTER_ROOT ;
 арлекин:арлекин AFTER_ROOT ;
 быдл:быдл AFTER_ROOT ;          ! быдлокодер
+дцати:дцати AFTER_ROOT ;
+пяти:пяти AFTER_ROOT ;
+двух:двух AFTER_ROOT ;
+девяти:девяти AFTER_ROOT ;
+десяти:десяти AFTER_ROOT ;

@@ -5,6 +5,7 @@ res_all = []
 res = {}
 current = ''
 for line in fileinput.input():
+    line = line.replace('.verb', '').replace('.adv', '')
     line = line.strip()
     if line:
         pieces = line.split('\t')
@@ -23,5 +24,5 @@ for word, item in res_all:
         print(f'{word}\t*{word}')
     else:
         maxx = max(item.keys())
-        raz = '\t'.join(item[maxx])
+        raz = '\t'.join(list(set(item[maxx])))
         print(f'{word}\t{raz}')
