@@ -12,4 +12,4 @@ then
 - Change the path CMD to your file in `corpus-stat.sh` (your file should be one word per line)
 - Run `corpus-stat.sh`
 or
-- for one word lookup, run `echo "your_word" | hfst-lookup rus.hfstol | python post.py | python postpost.py `
+- for one word lookup, run `echo "your_word" | hfst-lookup rus.hfstol | python post.py | python postpost.py`
