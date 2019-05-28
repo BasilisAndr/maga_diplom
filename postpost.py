@@ -17,7 +17,7 @@ for line in fileinput.input():
     if '*' in line:
         print(line)
     else:
-        razz = line.split('/')[1:]
+        razz = line.split('\t')[1:]
         for raz in razz:
             for cmb in to_replace:
                 if cmb in raz:

@@ -5,7 +5,7 @@ res_all = []
 res = {}
 current = ''
 for line in fileinput.input():
-    line = line.replace('.verb', '').replace('.adv', '')
+    line = line.replace('.verb', '').replace('.adv', '').replace('.adj', '')
     line = line.strip()
     if line:
         pieces = line.split('\t')

@@ -21,7 +21,7 @@ Vy ;
 !!! zero root word
 
 LEXICON Vy
-вынуть:вы%-ø%-ну%-ть # ;
+вынуть:вы%-ø%.root%-ну%-ть # ;
 
 
 LEXICON Noun_Prefixes
@@ -331,6 +331,7 @@ LEXICON NOUNS_FROM_VERBS
 @D.AUG@ель:@D.AUG@%-ель NOUN_END ;                       ! FIXME тель = т+ель - вроде done
 @D.AUG@ль:@D.AUG@%-ль NOUN_END ;
 @D.AUG@ел:@D.AUG@%-ель INTER ;                ! метелица
+ел:ел INTER ;                              ! загрубелость
 от:%-от NOUN_END ;                         ! топот цокот
 он:%-он NOUN_END ;                         ! выпивон
 ! к
@@ -448,8 +449,10 @@ LEXICON NOUNS_FROM_ADJ
 няк:%-няк NOUN_END ;
 няж:%-няк NOUN_END ;
 ёжь:%-ёжь NOUN_END ;
+ежь:%-ёжь NOUN_END ;
 ядь:%-ядь NOUN_END ;
 ей:%-ей NOUN_END ;
+е:%-ей INTER ;
 атор:%-атор NOUN_END ;              ! новатор
 ий:%-ий NOUN_END "weight: -0.25";                ! аграрий
 оть:%-оть NOUN_END ;               ! мякоть
@@ -582,6 +585,7 @@ LEXICON NOUNS_FROM_NOUNS
 ешек:%-ешек NOUN_END ;
 анёк:%-анёк NOUN_END ;
 ёк:%-ок NOUN_END ;
+ек:%-ок NOUN_END ;
 ук:%-ук NOUN_END ;
 лан:%-лан NOUN_END ;
 уган:%-уган NOUN_END ;
@@ -804,6 +808,7 @@ LEXICON NOUNS_FROM_NOUNS_PRODUCTIVE
 ешек:%-ешек NOUN_END ;
 анёк:%-анёк NOUN_END ;
 ёк:%-ок NOUN_END ;
+ек:%-ок NOUN_END ;
 ук:%-ук NOUN_END ;
 
 ищ:%-ищ FLEXION_NOUN_SOFT ;
@@ -914,7 +919,7 @@ LEXICON INTER
 
 
 LEXICON NOUN_END
-: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
+: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.5" ;
 : ADJ_FROM_NOUNS "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
 : ADV "weight: -0.5" ;
@@ -923,7 +928,7 @@ LEXICON NOUN_END
 
 
 LEXICON FLEXION_NOUN
-: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
+: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.5" ;
 : ADJ_FROM_NOUNS "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
 : ADV "weight: -0.5" ;
@@ -936,7 +941,7 @@ LEXICON FLEXION_NOUN
 ! ый:%-ий # ;
 
 LEXICON FLEXION_NOUN_SOFT
-: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.25" ;
+: NOUNS_FROM_NOUNS_PRODUCTIVE "weight: -0.5" ;
 : ADJ_FROM_NOUNS "weight: -0.5" ;
 : VERB_SUFF "weight: -0.5" ;
 : ADV "weight: -0.5" ;
@@ -1102,202 +1107,205 @@ LEXICON ADJ_FROM_NOUNS
 
 
 ! адъективное склонение
-@D.AUG@ин:@D.AUG@%-ин FLEXION_ADJ ;
-н:%-н FLEXION_ADJ ;
-ен:%-ен FLEXION_ADJ ;
-енн:%-енн FLEXION_ADJ ;
-альн:%-альн FLEXION_ADJ ;
-арн:%-арн FLEXION_ADJ ;
-озн:%-озн FLEXION_ADJ ;
-орн:%-орн FLEXION_ADJ ;
-уальн:%-уальн FLEXION_ADJ ;
-ичн:%-ичн FLEXION_ADJ ;
-иальн:%-иальн FLEXION_ADJ ;
-онн:%-онн FLEXION_ADJ ;
-тельн:%-тельн FLEXION_ADJ ;
-ительн:%-ительн FLEXION_ADJ ;
-йн:%-йн FLEXION_ADJ ;
-шн:%-шн FLEXION_ADJ ;
-ийн:%-ийн FLEXION_ADJ ;
-очн:%-очн FLEXION_ADJ ;
-ечн:%-ечн FLEXION_ADJ ;
-овн:%-овн FLEXION_ADJ ;
-евн:%-евн FLEXION_ADJ ;
-ебн:%-ебн FLEXION_ADJ ;
-! обн:%-обн FLEXION_ADJ ;
-ственн:%-ственн FLEXION_ADJ ;
-овенн:%-овенн FLEXION_ADJ ;
-ельн:%-ельн FLEXION_ADJ ;
-ильн:%-ильн FLEXION_ADJ ;
-идальн:%-идальн FLEXION_ADJ ;
-иозн:%-иозн FLEXION_ADJ ;
-езн:%-езн FLEXION_ADJ ;
-отн:%-отн FLEXION_ADJ ;
-ионн:%-ионн FLEXION_ADJ ;
-ион:%-ион FLEXION_ADJ ;
-ационн:%-ационн FLEXION_ADJ ;
-яжн:%-яжн FLEXION_ADJ ;
-ейн:%-ейн FLEXION_ADJ ;                 ! швейный
-альн:%-альн FLEXION_ADJ ;
-ивн:%-ивн FLEXION_ADJ ;
-озн:%-озн FLEXION_ADJ ;
+@D.AUG@ин:@D.AUG@%-ин.adj FLEXION_ADJ ;
+н:%-н.adj FLEXION_ADJ ;
+ен:%-ен.adj FLEXION_ADJ ;
+енн:%-енн.adj FLEXION_ADJ ;
+альн:%-альн.adj FLEXION_ADJ ;
+арн:%-арн.adj FLEXION_ADJ ;
+озн:%-озн.adj FLEXION_ADJ ;
+орн:%-орн.adj FLEXION_ADJ ;
+уальн:%-уальн.adj FLEXION_ADJ ;
+ичн:%-ичн.adj FLEXION_ADJ ;
+иальн:%-иальн.adj FLEXION_ADJ ;
+онн:%-онн.adj FLEXION_ADJ ;
+енн:%-енн.adj FLEXION_ADJ ;
+анн:%-анн.adj FLEXION_ADJ ;
+тельн:%-тельн.adj FLEXION_ADJ ;
+ительн:%-ительн.adj FLEXION_ADJ ;
+йн:%-йн.adj FLEXION_ADJ ;
+шн:%-шн.adj FLEXION_ADJ ;
+ийн:%-ийн.adj FLEXION_ADJ ;
+очн:%-очн.adj FLEXION_ADJ ;
+ечн:%-ечн.adj FLEXION_ADJ ;
+овн:%-овн.adj FLEXION_ADJ ;
+евн:%-евн.adj FLEXION_ADJ ;
+ебн:%-ебн.adj FLEXION_ADJ ;
+! обн:%-обн.adj FLEXION_ADJ ;
+ственн:%-ственн.adj FLEXION_ADJ ;
+овенн:%-овенн.adj FLEXION_ADJ ;
+ельн:%-ельн.adj FLEXION_ADJ ;
+ильн:%-ильн.adj FLEXION_ADJ ;
+идальн:%-идальн.adj FLEXION_ADJ ;
+иозн:%-иозн.adj FLEXION_ADJ ;
+езн:%-езн.adj FLEXION_ADJ ;
+отн:%-отн.adj FLEXION_ADJ ;
+ионн:%-ионн.adj FLEXION_ADJ ;
+ион:%-ион.adj FLEXION_ADJ ;
+ационн:%-ационн.adj FLEXION_ADJ ;
+яжн:%-яжн.adj FLEXION_ADJ ;
+ейн:%-ейн.adj FLEXION_ADJ ;                 ! швейный
+альн:%-альн.adj FLEXION_ADJ ;
+ивн:%-ивн.adj FLEXION_ADJ ;
+озн:%-озн.adj FLEXION_ADJ ;
 
-н:%-н FLEXION_ADJ_SOFT ;
-енн:%-енн FLEXION_ADJ_SOFT ;
-ашн:%-ашн FLEXION_ADJ_SOFT ;
-ишн:%-ишн FLEXION_ADJ_SOFT ;
-ешн:%-ешн FLEXION_ADJ_SOFT ;
+н:%-н.adj FLEXION_ADJ_SOFT ;
+енн:%-енн.adj FLEXION_ADJ_SOFT ;
+ашн:%-ашн.adj FLEXION_ADJ_SOFT ;
+ишн:%-ишн.adj FLEXION_ADJ_SOFT ;
+ешн:%-ешн.adj FLEXION_ADJ_SOFT ;
 ! back to normal
-ан:%-ан FLEXION_ADJ ;
-ян:%-ян FLEXION_ADJ ;
-янн:%-янн FLEXION_ADJ ;
-абельн:%-абельн FLEXION_ADJ ;
-! ибельн:%-ибельн FLEXION_ADJ ;
-ированн:%-ированн FLEXION_ADJ ;
-ов:%-ов FLEXION_ADJ ;
-ев:%-ев FLEXION_ADJ ;
-! FLEXION_ADJ_SOFT
-ск:%-ск FLEXION_ADJ_SOFT ;
-еск:%-еск FLEXION_ADJ_SOFT ;
-овск:%-овск FLEXION_ADJ_SOFT ;
-анск:%-анск FLEXION_ADJ_SOFT ;
-инск:%-инск FLEXION_ADJ_SOFT ;
-ийск:%-ийск FLEXION_ADJ_SOFT ;
-ическ:%-ическ FLEXION_ADJ_SOFT ;
-ческ:%-ческ FLEXION_ADJ_SOFT ;
-йск:%-йск FLEXION_ADJ_SOFT ;
-нск:%-нск FLEXION_ADJ_SOFT ;
-вск:%-вск FLEXION_ADJ_SOFT ;
-ианск:%-ианск FLEXION_ADJ_SOFT ;
-анск:%-анск FLEXION_ADJ_SOFT ;
-ейск:%-ейск FLEXION_ADJ_SOFT ;
-эзск:%-эзск FLEXION_ADJ_SOFT ;
-лезск:%-лезск FLEXION_ADJ_SOFT ;
-евск:%-евск FLEXION_ADJ_SOFT ;
-енск:%-енск FLEXION_ADJ_SOFT ;
-имск:%-имск FLEXION_ADJ_SOFT ;
-унск:%-унск FLEXION_ADJ_SOFT ;
-истическ:%-истическ FLEXION_ADJ_SOFT ;
-ацк:%-ацк FLEXION_ADJ_SOFT ;
-янск:%-янск FLEXION_ADJ_SOFT ;
-к:%-к FLEXION_ADJ_SOFT ;
-яч:%-яч FLEXION_ADJ_SOFT ;
+ан:%-ан.adj FLEXION_ADJ ;
+ян:%-ян.adj FLEXION_ADJ ;
+янн:%-янн.adj FLEXION_ADJ ;
+абельн:%-абельн.adj FLEXION_ADJ ;
+! ибельн:%-ибельн.adj FLEXION_ADJ ;
+ированн:%-ированн.adj FLEXION_ADJ ;
+ованн:%-ованн.adj FLEXION_ADJ ;
+ов:%-ов.adj FLEXION_ADJ ;
+ев:%-ев.adj FLEXION_ADJ ;
+!.adj FLEXION_ADJ_SOFT
+ск:%-ск.adj FLEXION_ADJ_SOFT ;
+еск:%-еск.adj FLEXION_ADJ_SOFT ;
+овск:%-овск.adj FLEXION_ADJ_SOFT ;
+анск:%-анск.adj FLEXION_ADJ_SOFT ;
+инск:%-инск.adj FLEXION_ADJ_SOFT ;
+ийск:%-ийск.adj FLEXION_ADJ_SOFT ;
+ическ:%-ическ.adj FLEXION_ADJ_SOFT ;
+ческ:%-ческ.adj FLEXION_ADJ_SOFT ;
+йск:%-йск.adj FLEXION_ADJ_SOFT ;
+нск:%-нск.adj FLEXION_ADJ_SOFT ;
+вск:%-вск.adj FLEXION_ADJ_SOFT ;
+ианск:%-ианск.adj FLEXION_ADJ_SOFT ;
+анск:%-анск.adj FLEXION_ADJ_SOFT ;
+ейск:%-ейск.adj FLEXION_ADJ_SOFT ;
+эзск:%-эзск.adj FLEXION_ADJ_SOFT ;
+лезск:%-лезск.adj FLEXION_ADJ_SOFT ;
+евск:%-евск.adj FLEXION_ADJ_SOFT ;
+енск:%-енск.adj FLEXION_ADJ_SOFT ;
+имск:%-имск.adj FLEXION_ADJ_SOFT ;
+унск:%-унск.adj FLEXION_ADJ_SOFT ;
+истическ:%-истическ.adj FLEXION_ADJ_SOFT ;
+ацк:%-ацк.adj FLEXION_ADJ_SOFT ;
+янск:%-янск.adj FLEXION_ADJ_SOFT ;
+к:%-к.adj FLEXION_ADJ_SOFT ;
+яч:%-яч.adj FLEXION_ADJ_SOFT ;
 
 ! normal
-аст:%-аст FLEXION_ADJ ;
-яст:%-яст FLEXION_ADJ ;
-ат:%-ат FLEXION_ADJ ;
-чат:%-чат FLEXION_ADJ ;
-оват:%-оват FLEXION_ADJ ;
-еват:%-еват FLEXION_ADJ ;
-овит:%-овит FLEXION_ADJ ;
-ист:%-ист FLEXION_ADJ ;
-лив:%-лив FLEXION_ADJ ;
-ив:%-ив FLEXION_ADJ ;
-елив:%-елив FLEXION_ADJ ;
-ав:%-ав FLEXION_ADJ ;
-им:%-им FLEXION_ADJ ;
-л:%-л FLEXION_ADJ ;
+аст:%-аст.adj FLEXION_ADJ ;
+яст:%-яст.adj FLEXION_ADJ ;
+ат:%-ат.adj FLEXION_ADJ ;
+чат:%-чат.adj FLEXION_ADJ ;
+оват:%-оват.adj FLEXION_ADJ ;
+еват:%-еват.adj FLEXION_ADJ ;
+овит:%-овит.adj FLEXION_ADJ ;
+ист:%-ист.adj FLEXION_ADJ ;
+лив:%-лив.adj FLEXION_ADJ ;
+ив:%-ив.adj FLEXION_ADJ ;
+елив:%-елив.adj FLEXION_ADJ ;
+ав:%-ав.adj FLEXION_ADJ ;
+им:%-им.adj FLEXION_ADJ ;
+л:%-л.adj FLEXION_ADJ ;
 
 
 
 
 LEXICON ADJ_FROM_VERBS
 
-тельск:%-тельск FLEXION_ADJ_SOFT ;
-ническ:%-ническ FLEXION_ADJ_SOFT ;
-уч:%-уч FLEXION_ADJ_SOFT ;
-ач:%-ач FLEXION_ADJ_SOFT ;
-юч:%-юч FLEXION_ADJ_SOFT ;
-яч:%-яч FLEXION_ADJ_SOFT ;
-оньк:%-оньк FLEXION_ADJ_SOFT ;
-охоньк:%-охоньк FLEXION_ADJ_SOFT ;
-ошеньк:%-ошеньк FLEXION_ADJ_SOFT ;
-усеньк:%-усеньк FLEXION_ADJ_SOFT ;
-ущ:%-ущ FLEXION_ADJ_SOFT ;
-ск:%-ск FLEXION_ADJ_SOFT ;
-еск:%-еск FLEXION_ADJ_SOFT ;
-тельск:%-тельск FLEXION_ADJ_SOFT ;
-к:%-к FLEXION_ADJ_SOFT ;
-ащ:%-ащ FLEXION_ADJ_SOFT ;
-ч:%-ч FLEXION_ADJ_SOFT ;
+тельск:%-тельск.adj FLEXION_ADJ_SOFT ;
+ническ:%-ническ.adj FLEXION_ADJ_SOFT ;
+уч:%-уч.adj FLEXION_ADJ_SOFT ;
+ач:%-ач.adj FLEXION_ADJ_SOFT ;
+юч:%-юч.adj FLEXION_ADJ_SOFT ;
+яч:%-яч.adj FLEXION_ADJ_SOFT ;
+оньк:%-оньк.adj FLEXION_ADJ_SOFT ;
+охоньк:%-охоньк.adj FLEXION_ADJ_SOFT ;
+ошеньк:%-ошеньк.adj FLEXION_ADJ_SOFT ;
+усеньк:%-усеньк.adj FLEXION_ADJ_SOFT ;
+ущ:%-ущ.adj FLEXION_ADJ_SOFT ;
+ск:%-ск.adj FLEXION_ADJ_SOFT ;
+еск:%-еск.adj FLEXION_ADJ_SOFT ;
+тельск:%-тельск.adj FLEXION_ADJ_SOFT ;
+к:%-к.adj FLEXION_ADJ_SOFT ;
+ащ:%-ащ.adj FLEXION_ADJ_SOFT ;
+ч:%-ч.adj FLEXION_ADJ_SOFT ;
 
-н:%-н FLEXION_ADJ ;
-енн:%-енн FLEXION_ADJ ;
-очн:%-очн FLEXION_ADJ ;
-отн:%-отн FLEXION_ADJ ;
-ебн:%-ебн FLEXION_ADJ ;
-ейн:%-ейн FLEXION_ADJ ;
-ственн:%-ственн FLEXION_ADJ ;
-абельн:%-абельн FLEXION_ADJ ;
-ибельн:%-ибельн FLEXION_ADJ ;
-ов:%-ов FLEXION_ADJ ;
-ев:%-ев FLEXION_ADJ ;
-ист:%-ист FLEXION_ADJ ;
-ен:%-ен FLEXION_ADJ ;
-ляв:%-ляв FLEXION_ADJ ;
-аст:%-аст FLEXION_ADJ ;
-ат:%-ат FLEXION_ADJ ;
-! овал:%-овал FLEXION_ADJ ;
-! ит:%-ит FLEXION_ADJ ;              ! имянитый
-льн:%-льн FLEXION_ADJ ;
-тельн:%-тельн FLEXION_ADJ ;           ! удовлетворительный
-ительн:%-ительн FLEXION_ADJ ;
-ом:%-ом FLEXION_ADJ ;
-им:%-им FLEXION_ADJ ;              ! растяжимый
-чат:%-чат FLEXION_ADJ ;
-лив:%-лив FLEXION_ADJ ;
-чив:%-чив FLEXION_ADJ ;
-ив:%-ив FLEXION_ADJ ;
-члив:%-члив FLEXION_ADJ ;
-овлив:%-овлив FLEXION_ADJ ;           ! шаловливый
-л:%-л FLEXION_ADJ ;
-ён:%-ён FLEXION_ADJ ;
-т:%-т FLEXION_ADJ ;
-ённ:%-ённ FLEXION_ADJ ;
-ав:%-ав FLEXION_ADJ ;
-оват:%-оват FLEXION_ADJ ;
-вш:%-вш FLEXION_ADJ_SOFT ;
-ющ:%-ющ FLEXION_ADJ_SOFT ;
-ящ:%-ящ FLEXION_ADJ_SOFT ;
-ем:%-ем FLEXION_ADJ ;
+н:%-н.adj FLEXION_ADJ ;
+енн:%-енн.adj FLEXION_ADJ ;
+очн:%-очн.adj FLEXION_ADJ ;
+отн:%-отн.adj FLEXION_ADJ ;
+ебн:%-ебн.adj FLEXION_ADJ ;
+ейн:%-ейн.adj FLEXION_ADJ ;
+ственн:%-ственн.adj FLEXION_ADJ ;
+абельн:%-абельн.adj FLEXION_ADJ ;
+ибельн:%-ибельн.adj FLEXION_ADJ ;
+ов:%-ов.adj FLEXION_ADJ ;
+ев:%-ев.adj FLEXION_ADJ ;
+ист:%-ист.adj FLEXION_ADJ ;
+ен:%-ен.adj FLEXION_ADJ ;
+ляв:%-ляв.adj FLEXION_ADJ ;
+аст:%-аст.adj FLEXION_ADJ ;
+ат:%-ат.adj FLEXION_ADJ ;
+! овал:%-овал.adj FLEXION_ADJ ;
+! ит:%-ит.adj FLEXION_ADJ ;              ! имянитый
+льн:%-льн.adj FLEXION_ADJ ;
+тельн:%-тельн.adj FLEXION_ADJ ;           ! удовлетворительный
+ительн:%-ительн.adj FLEXION_ADJ ;
+ом:%-ом.adj FLEXION_ADJ ;
+им:%-им.adj FLEXION_ADJ ;              ! растяжимый
+чат:%-чат.adj FLEXION_ADJ ;
+лив:%-лив.adj FLEXION_ADJ ;
+чив:%-чив.adj FLEXION_ADJ ;
+ив:%-ив.adj FLEXION_ADJ ;
+члив:%-члив.adj FLEXION_ADJ ;
+овлив:%-овлив.adj FLEXION_ADJ ;           ! шаловливый
+л:%-л.adj FLEXION_ADJ ;
+ён:%-ён.adj FLEXION_ADJ ;
+т:%-т.adj FLEXION_ADJ ;
+ённ:%-ённ.adj FLEXION_ADJ ;
+ав:%-ав.adj FLEXION_ADJ ;
+оват:%-оват.adj FLEXION_ADJ ;
+вш:%-вш.adj FLEXION_ADJ_SOFT ;
+ющ:%-ющ.adj FLEXION_ADJ_SOFT ;
+ящ:%-ящ.adj FLEXION_ADJ_SOFT ;
+ем:%-ем.adj FLEXION_ADJ ;
 
 
 
 LEXICON ADJ_FROM_ADJ
 
-оват:%-оват FLEXION_ADJ ;
-ощав:%-ощав FLEXION_ADJ ;
-енн:%-енн FLEXION_ADJ ;
-ист:%-ист FLEXION_ADJ ;
-ов:%-ов FLEXION_ADJ ;
-ев:%-ев FLEXION_ADJ ;
-ав:%-ав FLEXION_ADJ ;
-яв:%-яв FLEXION_ADJ ;
-ичн:%-ичн FLEXION_ADJ ;
-ическ:%-ическ FLEXION_ADJ ;
-! н:%-н FLEXION_ADJ ;
-менн:%-менн FLEXION_ADJ ;
-ственн:%-ственн FLEXION_ADJ ;
+оват:%-оват.adj FLEXION_ADJ ;
+ощав:%-ощав.adj FLEXION_ADJ ;
+енн:%-енн.adj FLEXION_ADJ ;
+ист:%-ист.adj FLEXION_ADJ ;
+ов:%-ов.adj FLEXION_ADJ ;
+ев:%-ев.adj FLEXION_ADJ ;
+ав:%-ав.adj FLEXION_ADJ ;
+яв:%-яв.adj FLEXION_ADJ ;
+ичн:%-ичн.adj FLEXION_ADJ ;
+ическ:%-ическ.adj FLEXION_ADJ ;
+! н:%-н.adj FLEXION_ADJ ;
+менн:%-менн.adj FLEXION_ADJ ;
+ственн:%-ственн.adj FLEXION_ADJ ;
 
-! оньк:%-оньк FLEXION_ADJ_SOFT ;
-еньк:%-еньк FLEXION_ADJ_SOFT ;
-охоньк:%-охоньк FLEXION_ADJ_SOFT ;
-ошеньк:%-ошеньк FLEXION_ADJ_SOFT ;
-ёхоньк:%-ёхоньк FLEXION_ADJ_SOFT ;
-ёшеньк:%-ёшеньк FLEXION_ADJ_SOFT ;
-усеньк:%-усеньк FLEXION_ADJ_SOFT ;
-юсеньк:%-юсеньк FLEXION_ADJ_SOFT ;
-ущ:%-ущ FLEXION_ADJ_SOFT ;
-ейш:%-ейш FLEXION_ADJ_SOFT ;
-айш:%-айш FLEXION_ADJ_SOFT ;
-ш:%-ш FLEXION_ADJ_SOFT ;
-ецк:%-ецк FLEXION_ADJ_SOFT ;
-ящ:%-ящ FLEXION_ADJ_SOFT ;
-ен:%-ен FLEXION_ADJ_SOFT ;
-ишн:%-ишн FLEXION_ADJ_SOFT ;
-ашн:%-ашн FLEXION_ADJ_SOFT ;
-шн:%-шн FLEXION_ADJ_SOFT ;
+! оньк:%-оньк.adj FLEXION_ADJ_SOFT ;
+еньк:%-еньк.adj FLEXION_ADJ_SOFT ;
+охоньк:%-охоньк.adj FLEXION_ADJ_SOFT ;
+ошеньк:%-ошеньк.adj FLEXION_ADJ_SOFT ;
+ёхоньк:%-ёхоньк.adj FLEXION_ADJ_SOFT ;
+ёшеньк:%-ёшеньк.adj FLEXION_ADJ_SOFT ;
+усеньк:%-усеньк.adj FLEXION_ADJ_SOFT ;
+юсеньк:%-юсеньк.adj FLEXION_ADJ_SOFT ;
+ущ:%-ущ.adj FLEXION_ADJ_SOFT ;
+ейш:%-ейш.adj FLEXION_ADJ_SOFT ;
+айш:%-айш.adj FLEXION_ADJ_SOFT ;
+ш:%-ш.adj FLEXION_ADJ_SOFT ;
+ецк:%-ецк.adj FLEXION_ADJ_SOFT ;
+ящ:%-ящ.adj FLEXION_ADJ_SOFT ;
+ен:%-ен.adj FLEXION_ADJ_SOFT ;
+ишн:%-ишн.adj FLEXION_ADJ_SOFT ;
+ашн:%-ашн.adj FLEXION_ADJ_SOFT ;
+шн:%-шн.adj FLEXION_ADJ_SOFT ;
 ! ! краткие формы
 ен:%-ен # ;
 ствен:%-ствен # ;
@@ -1364,6 +1372,7 @@ LEXICON Verb_prefixes
 надо:надо.verb%- VERB_PREFIXES2 ;
 недо:недо.verb%- VERB_PREFIXES2 ;
 низ:низ.verb%- VERB_PREFIXES2 ;
+нис:нис.verb%- VERB_PREFIXES2 ;
 низъ:низ.verb%- VERB_PREFIXES2 ;
 низо:низо.verb%- VERB_PREFIXES2 ;
 о:о.verb%- VERB_PREFIXES2 ;
