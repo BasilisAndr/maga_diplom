@@ -7,9 +7,9 @@
 
 
 #CMD="cat corpa/en.crp.txt"
-CMD="cat test_for_run.txt"
+CMD="cat ../examples/example2.txt"
 
-F=./corpus-stat-res_test.txt
+F=../examples/example2_output.txt
 # for fil in `ls ../corpora/corporatxt`; do
 #   echo "$fil";
 #   $CMD="cat ../corpora/corporatxt/$fil";
@@ -18,7 +18,7 @@ F=./corpus-stat-res_test.txt
 # for some reason putting the newline in directly doesn't work, so two seds
 # $CMD | apertium-destxt | hfst-proc ./rus.hfstol | apertium-retxt | sed 's/\$[^^]*\^/$^/g' | sed 's/\$\^/$\
 # ^/g' > $F
-$CMD | hfst-lookup rus.hfstol | python post.py | python postpost.py > $F
+$CMD | hfst-lookup ../rus.hfstol | python post.py | python postpost.py > $F
 
 # first=$CMD | apertium-destxt | hfst-lookup ckt.hfst
 # echo first
