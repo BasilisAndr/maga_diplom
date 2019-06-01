@@ -20,5 +20,5 @@ for line in fileinput.input():
         if el.strip(',.!»«()') and el.strip(',.!»«()').isalpha() and not (prev and prev[-1] not in '.!?' and el[0].isupper()):
             print(analyse_string(el))
         else:
-            print('*', el, sep='')
+            print('*', el.strip(',.!»«()'), sep='')
         prev = el
